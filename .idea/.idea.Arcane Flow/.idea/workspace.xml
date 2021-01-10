@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bdb96125-5941-4ac8-97eb-13652f13c6e0" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D2742301-E9BD-447A-A8C3-2D3F8B7DC86F/53/7f4b0408/RenderBounds.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FAA55637-FCC1-4BBF-B146-E6835A4641D9/9b/58c7e0ce/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63DD8BF9-8CFA-4BA9-85AF-735EF1A56BA9/a5/5612b8e1/Random.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FAA55637-FCC1-4BBF-B146-E6835A4641D9/78/99ffd3c5/Physics.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Datas/BaseData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/BaseBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/IActor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Generics/MemberContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/MemberContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Generics/MemberContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Actor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Core/Initializers/IGameInitializer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Commands/Command.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Commands/ICommand.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Commands/ICommandQueue.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Commands/CommandQueue.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Commands/Concrete/InitializeCommand.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/ITick.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/ITickManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/ITIckProcessor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/TickManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/TickProcessor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/Managers/ITickManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/Managers/TickManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/Processors/ITIckProcessor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/Processors/TickProcessor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/Commands/TickModuleInitializeCommand.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/Bindings/TicksBindings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Core/Installers/GameInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Core/Configurations/IProjectSettings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Core/Configs/IProjectSettings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Core/Configs/ProjectSettings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Core/Installers/ProjectSettingsInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Logger/Helpers/Log.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Core/Bindings/InitializationBindings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Core/Initializers/GameInitializer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Logger/ILogger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Logger/FakeLogger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Logger/UnityLogger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Logger/LogFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Logger/LoggerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Logger/ILoggerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Logger/Commands/LoggerModuleInitializeCommand.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Types/IActorBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Types/IActorBattle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Types/ActorBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Types/ActorBattle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Logger/Bindings/LoggerBindings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Core/Installers/BindInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Bindings/PlayerBindings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Configs/IPlayerConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Configs/PlayerConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/IPlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Core/Initializers/SceneInitializer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/PlayerManager.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1mqJho8OQrEmmRSggPrvUgGDHcv" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bdb96125-5941-4ac8-97eb-13652f13c6e0" name="Default Changelist" comment="" />
+      <created>1610215311682</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610215311682</updated>
+      <workItem from="1610215318455" duration="6005000" />
+      <workItem from="1610238533393" duration="3002000" />
+      <workItem from="1610267970841" duration="5763000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="601" y="113" key="RiderGenerateDialog" timestamp="1610271578161">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="601" y="113" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1610271578161" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1610273149776">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1610273149776" />
+  </component>
+</project>
