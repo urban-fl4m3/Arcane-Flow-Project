@@ -1,7 +1,12 @@
-﻿namespace Modules.Player.Managers
+﻿using System;
+using Modules.Actors;
+
+namespace Modules.Player.Managers
 {
     public interface IPlayerManager
     {
-        void SpawnPlayer();
+        event EventHandler<IActor> PlayerActorSpawned;
+
+        void Init();
     }
 }

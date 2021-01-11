@@ -1,5 +1,7 @@
 ﻿using Modules.Logger;
+using Modules.Maps.Managers;
 using Modules.Player.Managers;
+using Modules.Render.Managers;
 using ILogger = Modules.Logger.ILogger;
 
 namespace Modules.Core.Initializers
@@ -8,21 +10,26 @@ namespace Modules.Core.Initializers
     {
         private readonly ILoggerManager _loggerManager;
         private readonly IPlayerManager _playerManager;
-        
+        private readonly ICameraManager _cameraManager;
+        private readonly IMapManager _mapManager;
+
         private ILogger _logger;
         
         public SceneInitializer(ILoggerManager loggerManager,
-            IPlayerManager playerManager)
+            IPlayerManager playerManager,
+            ICameraManager cameraManager,
+            IMapManager mapManager)
         {
             _loggerManager = loggerManager;
             _playerManager = playerManager;
+            _cameraManager = cameraManager;
+            _mapManager = mapManager;
         }
 
         public void Init()
         {
-            _logger = _loggerManager.GetLogger();
-            _logger.Log("Debug", "Logger test");
-            _playerManager.SpawnPlayer();
+            _cameraManager.LoadCamera();
+            _mapManager.LoadMap();
         }
     }
 }

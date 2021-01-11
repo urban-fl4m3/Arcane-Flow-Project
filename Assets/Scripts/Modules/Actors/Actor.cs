@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Generics;
 using Modules.Behaviours;
 using Modules.Datas;
+using Modules.Ticks.Processors;
 using UnityEngine;
 
 namespace Modules.Actors
@@ -17,20 +18,17 @@ namespace Modules.Actors
         private readonly MemberContainer<IBaseData> _actorDatas = new MemberContainer<IBaseData>();
 
         public event EventHandler OnInitializeComplete;
-
-        public virtual Transform GetRootTransform()
-        {
-            return transform;
-        }
+        public ITickProcessor TickProcessor { get; private set; }
 
         public Actor GetChild()
         {
             return _child;
         }
 
-        public void Init()
+        public void Init(ITickProcessor tickProcessor)
         {
-            if (_child) _child.Init();
+            TickProcessor = tickProcessor;
+            if (_child) _child.Init(tickProcessor);
             
             //PRE
             //if (_child) _child.PreInitialize();
