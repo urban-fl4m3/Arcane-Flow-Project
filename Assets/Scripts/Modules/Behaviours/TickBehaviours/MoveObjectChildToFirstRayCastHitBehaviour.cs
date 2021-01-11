@@ -29,7 +29,9 @@ namespace Modules.Behaviours.TickBehaviours
         public override void Tick()
         {
             var offset = _defaultOffset;
-            if (Physics.SphereCast(_rootTransform.position, 0.1f, (_childTransform.position - _rootTransform.position).normalized, out _hit, _defaultOffset, LayerMask.GetMask("Default")))
+            if (Physics.SphereCast(_rootTransform.position,
+                0.1f, (_childTransform.position - _rootTransform.position).normalized,
+                out _hit, _defaultOffset, LayerMask.GetMask("Default")))
             {
                 offset = (_hit.point - _rootTransform.position).magnitude;
             }

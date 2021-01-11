@@ -6,5 +6,6 @@ namespace Modules.Maps.Managers
     {
         event EventHandler OnMapLoaded;
         void LoadMap();
+        void RunGameRoom();
     }
 }

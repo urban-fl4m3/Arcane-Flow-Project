@@ -1,13 +1,22 @@
 ﻿using Modules.Actors;
 using Modules.Actors.Types;
 using Modules.Behaviours.TickBehaviours;
+using UnityEngine;
 
 namespace Modules.Render.Actors
 {
     public class CameraActor : ActorBase
     {
-        private IActor _followingActor;
+        public Camera Camera { get; private set; }
         
+        private IActor _followingActor;
+
+        protected override void OnAwake()
+        {
+            Camera = GetComponent<Camera>();
+            base.OnAwake();
+        }
+
         public void FollowActor(IActor actor)
         {
             _followingActor = actor;

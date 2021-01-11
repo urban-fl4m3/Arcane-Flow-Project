@@ -9,17 +9,12 @@ namespace Modules.Behaviours.TickBehaviours
     {
         private Transform _followingActorTransform;
         private Transform _ownerActorTransform;
-        
-        //govno
-        private Vector3 _kostilPosition;
-        
+
         protected override void OnInitialize(IActor owner)
         {  
             ITransformData ownerTransformData = Owner.GetData<TransformData>();
             _ownerActorTransform = ownerTransformData.GetTransform();
             
-            //cringe
-            _kostilPosition = _ownerActorTransform.localPosition;
             base.OnInitialize(owner);
         }
 
@@ -31,8 +26,7 @@ namespace Modules.Behaviours.TickBehaviours
         
         public override void Tick()
         {
-            //pzdc.......
-            _ownerActorTransform.position = _followingActorTransform.position + _kostilPosition;
+            _ownerActorTransform.position = _followingActorTransform.position;
         }
     }
 }

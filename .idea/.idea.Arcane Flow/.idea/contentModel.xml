@@ -417,6 +417,12 @@
                 <e p="AnimationData.cs" t="Include" />
                 <e p="IAnimationData.cs" t="Include" />
               </e>
+              <e p="Attributes" t="Include">
+                <e p="HealthData.cs" t="Include" />
+                <e p="IHealthData.cs" t="Include" />
+                <e p="IStaminaData.cs" t="Include" />
+                <e p="StaminaData.cs" t="Include" />
+              </e>
               <e p="BaseData.cs" t="Include" />
               <e p="IBaseData.cs" t="Include" />
               <e p="KeyBindings" t="Include">
@@ -460,12 +466,17 @@
                 <e p="MapsBindings.cs" t="Include" />
               </e>
               <e p="Configs" t="Include">
+                <e p="AvailableEnemiesConfig.cs" t="Include" />
                 <e p="AvailableLightningsConfig.cs" t="Include" />
                 <e p="AvailableMapsConfig.cs" t="Include" />
+                <e p="IAvailableEnemiesConfig.cs" t="Include" />
                 <e p="IAvailableLightningsConfig.cs" t="Include" />
                 <e p="IAvailableMapsConfig.cs" t="Include" />
               </e>
+              <e p="GameRoom.cs" t="Include" />
               <e p="Managers" t="Include">
+                <e p="EnemyManager.cs" t="Include" />
+                <e p="IEnemyManager.cs" t="Include" />
                 <e p="IMapManager.cs" t="Include" />
                 <e p="MapManager.cs" t="Include" />
               </e>
@@ -528,6 +539,54 @@
                 <e p="ITIckProcessor.cs" t="Include" />
                 <e p="TickProcessor.cs" t="Include" />
               </e>
+            </e>
+          </e>
+          <e p="UI" t="Include">
+            <e p="Bindings" t="Include">
+              <e p="SchemeBindings.cs" t="Include" />
+              <e p="UiBindings.cs" t="Include" />
+            </e>
+            <e p="Data" t="Include">
+              <e p="CanvasContainer.cs" t="Include" />
+              <e p="Models" t="Include">
+                <e p="WindowViewModel.cs" t="Include" />
+              </e>
+              <e p="ViewsContainer.cs" t="Include" />
+            </e>
+            <e p="Factory" t="Include">
+              <e p="IViewFactory.cs" t="Include" />
+              <e p="ViewFactory.cs" t="Include" />
+            </e>
+            <e p="Helpers" t="Include">
+              <e p="Scheme.cs" t="Include" />
+              <e p="Window.cs" t="Include" />
+            </e>
+            <e p="ICustomModel.cs" t="Include" />
+            <e p="Managers" t="Include">
+              <e p="IViewManager.cs" t="Include" />
+              <e p="IViewSchemeManager.cs" t="Include" />
+              <e p="ViewManager.cs" t="Include" />
+              <e p="ViewSchemeManager.cs" t="Include" />
+            </e>
+            <e p="Providers" t="Include">
+              <e p="IViewSchemeProvider.cs" t="Include" />
+              <e p="ViewSchemeProvider.cs" t="Include" />
+            </e>
+            <e p="Schemes" t="Include">
+              <e p="BaseViewScheme.cs" t="Include" />
+              <e p="ISchemeModelMarkup.cs" t="Include" />
+              <e p="IViewScheme.cs" t="Include" />
+            </e>
+            <e p="Views" t="Include">
+              <e p="BaseGenericView.cs" t="Include" />
+              <e p="BaseView.cs" t="Include" />
+              <e p="GameHudWindow" t="Include">
+                <e p="GameHudModel.cs" t="Include" />
+                <e p="GameHudScheme.cs" t="Include" />
+                <e p="GameHudSchemeModel.cs" t="Include" />
+                <e p="GameHudView.cs" t="Include" />
+              </e>
+              <e p="IView.cs" t="Include" />
             </e>
           </e>
         </e>

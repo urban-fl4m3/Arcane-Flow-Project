@@ -937,6 +937,8 @@ GameObject:
   - component: {fileID: 7575373131749617902}
   - component: {fileID: 7575373131740351658}
   - component: {fileID: 8392461936357911016}
+  - component: {fileID: 7458440144790466403}
+  - component: {fileID: 5786360292730546993}
   m_Layer: 0
   m_Name: Character_Rock_Golem
   m_TagString: Untagged
@@ -1015,6 +1017,38 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ab788ec8f4962a64f85c273aecf368dc, type: 2}
   - {fileID: 11400000, guid: c283a4f155673fe408363e4b60888faa, type: 2}
   - {fileID: 11400000, guid: bcf03470d3adc524686589e60296b3f6, type: 2}
+  - {fileID: 11400000, guid: 7a0b62bb255f37c4a8c4499948c66b0a, type: 2}
+  - {fileID: 11400000, guid: 370d07df9e0f7e8439afb134935dcbec, type: 2}
+--- !u!136 &7458440144790466403
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7575373131749811554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.25764227
+  m_Height: 1.7670293
+  m_Direction: 1
+  m_Center: {x: 0.0024458468, y: 0.8813317, z: -0.005997777}
+--- !u!54 &5786360292730546993
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7575373131749811554}
+  serializedVersion: 2
+  m_Mass: 80
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &7575373131749813192
 GameObject:
   m_ObjectHideFlags: 0

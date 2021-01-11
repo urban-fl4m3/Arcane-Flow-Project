@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e5626297f0f42eebe3012408d7906bc, type: 3}
-  m_Name: CommonPlayerBehaviour
+  m_Script: {fileID: 11500000, guid: 3695e219dfc2461fbd3d11828eb93901, type: 3}
+  m_Name: DummyHealthData
   m_EditorClassIdentifier: 
+  _healthPoints: 200

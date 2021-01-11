@@ -15,6 +15,19 @@ namespace Modules.Render.Managers
         private readonly ITickManager _tickManager;
 
         private CameraActor _cameraActor;
+
+        public CameraActor CameraActor
+        {
+            get
+            {
+                if (_cameraActor == null)
+                {
+                    LoadCamera();
+                }
+
+                return _cameraActor;
+            }    
+        }
         
         public CameraManager(ICameraConfig cameraConfig, IPlayerManager playerManager, ITickManager tickManager)
         {

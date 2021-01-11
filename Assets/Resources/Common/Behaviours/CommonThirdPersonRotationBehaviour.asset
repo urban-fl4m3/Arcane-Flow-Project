@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47c3d66a58b84acd9a879c40930efc10, type: 3}
   m_Name: CommonThirdPersonRotationBehaviour
   m_EditorClassIdentifier: 
-  _turnTime: 0.3
+  _turnTime: 0.1

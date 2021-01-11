@@ -5,6 +5,7 @@ using Modules.Maps.Bindings;
 using Modules.Player.Bindings;
 using Modules.Render.Bindings;
 using Modules.Ticks.Bindings;
+using UI.Bindings;
 using Zenject;
 
 namespace Modules.Core.Installers
@@ -21,6 +22,8 @@ namespace Modules.Core.Installers
             CameraBindings.Bind(Container);
             PlayerBindings.Bind(Container);
             MapsBindings.Bind(Container);
+            UiBindings.Bind(Container);
+            SchemeBindings.Bind(Container);
         }
     }
 }
