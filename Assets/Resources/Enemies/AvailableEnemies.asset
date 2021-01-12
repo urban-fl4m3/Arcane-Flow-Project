@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6448255e30d47f9a2eb13f0abbe13f3, type: 3}
   m_Name: AvailableEnemies
   m_EditorClassIdentifier: 
-  _dummy: {fileID: 7431578704763417021, guid: de5efce6b8dc3414e8f6958b8fda8cda, type: 3}
+  _dummy: {fileID: 8421215355207130611, guid: 12215461613431a408de9ec98933b6b8, type: 3}

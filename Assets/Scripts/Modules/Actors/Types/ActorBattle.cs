@@ -1,6 +1,6 @@
 ﻿namespace Modules.Actors.Types
 {
-    public class ActorBattle : Actor, IActorBattle
+    public class ActorBattle : ActorBase, IActorBattle
     {
         protected override void OnAwake()
         {

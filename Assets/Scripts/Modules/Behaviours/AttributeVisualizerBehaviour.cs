@@ -15,8 +15,7 @@ namespace Modules.Behaviours
 
         private Camera _camera;
         private DynamicProperty _attributeProperty;
-        
-        
+
         protected override void OnInitialize(IActor owner)
         {
             var attributesData = owner.GetData<AttributesData>();

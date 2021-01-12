@@ -16,6 +16,3 @@ MonoBehaviour:
   - Attribute: 0
     Property:
       _value: 200
-  - Attribute: 1
-    Property:
-      _value: 150
