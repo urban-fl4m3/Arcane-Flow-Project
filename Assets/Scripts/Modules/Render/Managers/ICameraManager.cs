@@ -1,4 +1,5 @@
-﻿using Modules.Render.Actors;
+﻿using Modules.Actors;
+using Modules.Render.Actors;
 
 namespace Modules.Render.Managers
 {
@@ -8,5 +9,6 @@ namespace Modules.Render.Managers
         
         void Init();
         void LoadCamera();
+        void SetCameraTarget(IActor actor);
     }
 }

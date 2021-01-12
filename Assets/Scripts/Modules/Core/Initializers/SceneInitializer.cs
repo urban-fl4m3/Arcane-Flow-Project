@@ -37,7 +37,6 @@ namespace Modules.Core.Initializers
         {
             Cursor.lockState = CursorLockMode.Locked;
             
-            _cameraManager.LoadCamera();
             _mapManager.LoadMap();
             _viewManager.AddView(Window.GameHud, new GameHudModel(_playerManager));
 

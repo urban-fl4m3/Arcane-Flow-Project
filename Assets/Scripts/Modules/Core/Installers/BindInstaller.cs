@@ -1,5 +1,6 @@
 ﻿using Modules.Core.Bindings;
 using Modules.Core.Initializers;
+using Modules.Enemies.Bindings;
 using Modules.Logger.Bindings;
 using Modules.Maps.Bindings;
 using Modules.Player.Bindings;
@@ -21,6 +22,7 @@ namespace Modules.Core.Installers
             LoggerBindings.Bind(Container);
             CameraBindings.Bind(Container);
             PlayerBindings.Bind(Container);
+            EnemyBindings.Bind(Container);
             MapsBindings.Bind(Container);
             UiBindings.Bind(Container);
             SchemeBindings.Bind(Container);

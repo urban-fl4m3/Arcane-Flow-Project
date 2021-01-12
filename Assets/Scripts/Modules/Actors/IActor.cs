@@ -1,7 +1,7 @@
 ﻿using System;
 using Modules.Behaviours;
 using Modules.Datas;
-using Modules.Ticks.Managers;
+using Modules.Render.Actors;
 using Modules.Ticks.Processors;
 using UnityEngine;
 
@@ -9,10 +9,12 @@ namespace Modules.Actors
 {
     public interface IActor
     {
-        ITickProcessor TickProcessor { get; }
         event EventHandler OnInitializeComplete;
 
-        void Init(ITickProcessor tickProcessor);
+        ITickProcessor TickProcessor { get; }
+        Camera Camera { get; }
+        
+        void Init(ITickProcessor tickProcessor, CameraActor mainCamera);
         
         GameObject GetGameObject();
 

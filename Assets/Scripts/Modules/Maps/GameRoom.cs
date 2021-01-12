@@ -1,8 +1,8 @@
 ﻿using Modules.Actors.Types;
+using Modules.Enemies.Configs;
+using Modules.Enemies.Managers;
 using Modules.Maps.Actors;
-using Modules.Maps.Configs;
 using Modules.Ticks.Processors;
-using UnityEngine;
 
 namespace Modules.Maps
 {
@@ -10,23 +10,21 @@ namespace Modules.Maps
     {
         private readonly IMapActor _map;
         private readonly IActorBase _illumination;
+        private readonly IEnemyManager _enemyManager;
         private readonly ITickProcessor _tickProcessor;
         private readonly IAvailableEnemiesConfig _availableEnemiesConfig;
 
-        public GameRoom(IMapActor map, IActorBase illumination, ITickProcessor tickProcessor,
-            IAvailableEnemiesConfig availableEnemiesConfig)
+        public GameRoom(IMapActor map, IActorBase illumination, IEnemyManager enemyManager)
         {
             _map = map;
             _illumination = illumination;
-            _tickProcessor = tickProcessor;
-            _availableEnemiesConfig = availableEnemiesConfig;
+            _enemyManager = enemyManager;
         }
 
         public void Run()
         {
-            var enemyActor =  Object.Instantiate(_availableEnemiesConfig.GetAvailableEnemy());
-            enemyActor.Init(_tickProcessor);
-            _map.AddEnemy(enemyActor);
+            var enemy = _enemyManager.SpawnEnemy();
+            _map.AddEnemy(enemy);
         }
     }
 }

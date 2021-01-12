@@ -1,7 +1,6 @@
 ﻿using System;
-using Modules.Maps.Configs;
+using Modules.Enemies.Managers;
 using Modules.Maps.Providers;
-using Modules.Ticks.Managers;
 
 namespace Modules.Maps.Managers
 {
@@ -10,17 +9,14 @@ namespace Modules.Maps.Managers
         public event EventHandler OnMapLoaded;
         
         private readonly IMapSettingsProvider _mapSettingsProvider;
-        private readonly IAvailableEnemiesConfig _availableEnemiesConfig;
-        private readonly ITickManager _tickManager;
+        private readonly IEnemyManager _enemyManager;
 
         private GameRoom _gameRoom;
         
-        public MapManager(IMapSettingsProvider mapSettingsProvider, IAvailableEnemiesConfig availableEnemiesConfig,
-            ITickManager tickManager)
+        public MapManager(IMapSettingsProvider mapSettingsProvider, IEnemyManager enemyManager)
         {
             _mapSettingsProvider = mapSettingsProvider;
-            _availableEnemiesConfig = availableEnemiesConfig;
-            _tickManager = tickManager;
+            _enemyManager = enemyManager;
         }
 
         public void LoadMap()
@@ -29,7 +25,7 @@ namespace Modules.Maps.Managers
             var currentMap = generatedMapModel.MapActor;
             var currentLightnings = generatedMapModel.MapLightnings;
             
-            _gameRoom = new GameRoom(currentMap, currentLightnings, _tickManager.Processor, _availableEnemiesConfig);
+            _gameRoom = new GameRoom(currentMap, currentLightnings, _enemyManager);
             OnMapLoaded?.Invoke(this, EventArgs.Empty);
         }
 

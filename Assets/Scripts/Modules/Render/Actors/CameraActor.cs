@@ -7,13 +7,13 @@ namespace Modules.Render.Actors
 {
     public class CameraActor : ActorBase
     {
-        public Camera Camera { get; private set; }
+        public Camera Component { get; private set; }
         
         private IActor _followingActor;
 
         protected override void OnAwake()
         {
-            Camera = GetComponent<Camera>();
+            Component = GetChild().GetComponent<Camera>();
             base.OnAwake();
         }
 

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using Generics;
 using Modules.Behaviours;
 using Modules.Datas;
+using Modules.Render.Actors;
 using Modules.Ticks.Processors;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 namespace Modules.Actors
 {
@@ -18,17 +20,21 @@ namespace Modules.Actors
         private readonly MemberContainer<IBaseData> _actorDatas = new MemberContainer<IBaseData>();
 
         public event EventHandler OnInitializeComplete;
+        
         public ITickProcessor TickProcessor { get; private set; }
-
+        public Camera Camera { get; private set; }
+        
         public Actor GetChild()
         {
             return _child;
         }
 
-        public void Init(ITickProcessor tickProcessor)
+        public void Init(ITickProcessor tickProcessor, CameraActor mainCamera)
         {
             TickProcessor = tickProcessor;
-            if (_child) _child.Init(tickProcessor);
+            Camera = mainCamera.Component;
+            
+            if (_child) _child.Init(tickProcessor, mainCamera);
             
             //PRE
             //if (_child) _child.PreInitialize();
@@ -41,7 +47,7 @@ namespace Modules.Actors
             OnAwake();
             //POST
             //if (_child) _child.PostInitialize();
-
+            
             foreach (var behaviour in _behaviours)
             {
                 _actorBehaviours.SetAndInitialize(this, Instantiate(behaviour));

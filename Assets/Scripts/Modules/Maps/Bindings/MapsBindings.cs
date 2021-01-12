@@ -13,8 +13,6 @@ namespace Modules.Maps.Bindings
                 .FromScriptableObjectResource("Maps/AvailableLightnings").AsSingle();
             container.Bind<IAvailableMapsConfig>().To<AvailableMapsConfig>()
                 .FromScriptableObjectResource("Maps/AvailableMaps").AsSingle();
-            container.Bind<IAvailableEnemiesConfig>().To<AvailableEnemiesConfig>()
-                .FromScriptableObjectResource("Maps/AvailableEnemies").AsSingle();
 
             container.Bind<IMapSettingsProvider>().To<MapSettingsProvider>().AsSingle();
             container.Bind<IMapManager>().To<MapManager>().AsSingle();

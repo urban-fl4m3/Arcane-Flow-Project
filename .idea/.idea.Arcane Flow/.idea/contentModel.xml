@@ -372,10 +372,12 @@
               </e>
             </e>
             <e p="Behaviours" t="Include">
+              <e p="AttributeVisualizerBehaviour.cs" t="Include" />
               <e p="BaseBehaviour.cs" t="Include" />
               <e p="IBaseBehaviour.cs" t="Include" />
               <e p="TickBehaviour.cs" t="Include" />
               <e p="TickBehaviours" t="Include">
+                <e p="LookAtActorBehaviour.cs" t="Include" />
                 <e p="MouseRotationBehaviour.cs" t="Include" />
                 <e p="MovementBehaviour.cs" t="Include" />
                 <e p="MoveObjectChildToFirstRayCastHitBehaviour.cs" t="Include" />
@@ -392,6 +394,10 @@
               </e>
               <e p="ICommand.cs" t="Include" />
               <e p="ICommandQueue.cs" t="Include" />
+            </e>
+            <e p="Common" t="Include">
+              <e p="Attribute.cs" t="Include" />
+              <e p="DynamicProperty.cs" t="Include" />
             </e>
             <e p="Core" t="Include">
               <e p="Bindings" t="Include">
@@ -418,10 +424,8 @@
                 <e p="IAnimationData.cs" t="Include" />
               </e>
               <e p="Attributes" t="Include">
-                <e p="HealthData.cs" t="Include" />
-                <e p="IHealthData.cs" t="Include" />
-                <e p="IStaminaData.cs" t="Include" />
-                <e p="StaminaData.cs" t="Include" />
+                <e p="AttributesData.cs" t="Include" />
+                <e p="IAttributesData.cs" t="Include" />
               </e>
               <e p="BaseData.cs" t="Include" />
               <e p="IBaseData.cs" t="Include" />
@@ -438,6 +442,34 @@
                 <e p="ITransformData.cs" t="Include" />
                 <e p="RotationData.cs" t="Include" />
                 <e p="TransformData.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Enemies" t="Include">
+              <e p="Actors" t="Include">
+                <e p="UI" t="Include">
+                  <e p="EnemyInfoWindow.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Bindings" t="Include">
+                <e p="EnemyBindings.cs" t="Include" />
+              </e>
+              <e p="Configs" t="Include">
+                <e p="AvailableEnemiesConfig.cs" t="Include" />
+                <e p="EnemyCommonHelpersConfig.cs" t="Include" />
+                <e p="IAvailableEnemiesConfig.cs" t="Include" />
+                <e p="IEnemyCommonHelpersConfig.cs" t="Include" />
+              </e>
+              <e p="Factory" t="Include">
+                <e p="EnemyFactory.cs" t="Include" />
+                <e p="IEnemyFactory.cs" t="Include" />
+              </e>
+              <e p="Managers" t="Include">
+                <e p="EnemyManager.cs" t="Include" />
+                <e p="IEnemyManager.cs" t="Include" />
+              </e>
+              <e p="Providers" t="Include">
+                <e p="EnemyProvider.cs" t="Include" />
+                <e p="IEnemyProvider.cs" t="Include" />
               </e>
             </e>
             <e p="Logger" t="Include">
@@ -466,17 +498,13 @@
                 <e p="MapsBindings.cs" t="Include" />
               </e>
               <e p="Configs" t="Include">
-                <e p="AvailableEnemiesConfig.cs" t="Include" />
                 <e p="AvailableLightningsConfig.cs" t="Include" />
                 <e p="AvailableMapsConfig.cs" t="Include" />
-                <e p="IAvailableEnemiesConfig.cs" t="Include" />
                 <e p="IAvailableLightningsConfig.cs" t="Include" />
                 <e p="IAvailableMapsConfig.cs" t="Include" />
               </e>
               <e p="GameRoom.cs" t="Include" />
               <e p="Managers" t="Include">
-                <e p="EnemyManager.cs" t="Include" />
-                <e p="IEnemyManager.cs" t="Include" />
                 <e p="IMapManager.cs" t="Include" />
                 <e p="MapManager.cs" t="Include" />
               </e>
