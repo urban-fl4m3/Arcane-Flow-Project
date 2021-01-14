@@ -377,7 +377,6 @@
               <e p="IBaseBehaviour.cs" t="Include" />
               <e p="TickBehaviour.cs" t="Include" />
               <e p="TickBehaviours" t="Include">
-                <e p="CastBehaviour.cs" t="Include" />
                 <e p="LookAtActorBehaviour.cs" t="Include" />
                 <e p="MouseRotationBehaviour.cs" t="Include" />
                 <e p="MovementBehaviour.cs" t="Include" />
@@ -551,6 +550,42 @@
                 <e p="CameraManager.cs" t="Include" />
                 <e p="ICameraManager.cs" t="Include" />
               </e>
+            </e>
+            <e p="SpellSystem" t="Include">
+              <e p="Actors" t="Include">
+                <e p="SpellActor.cs" t="Include" />
+              </e>
+              <e p="Behaviours" t="Include">
+                <e p="CastBehaviour.cs" t="Include" />
+              </e>
+              <e p="Bindings" t="Include">
+                <e p="SpellSystemBindings.cs" t="Include" />
+              </e>
+              <e p="Configs" t="Include">
+                <e p="ISpellContainer.cs" t="Include" />
+                <e p="ISpellPreset.cs" t="Include" />
+                <e p="SpellContainer.cs" t="Include" />
+                <e p="SpellPreset.cs" t="Include" />
+              </e>
+              <e p="Data" t="Include">
+                <e p="ISpellData.cs" t="Include" />
+                <e p="SpellData.cs" t="Include" />
+              </e>
+              <e p="Enum" t="Include">
+                <e p="SpellType.cs" t="Include" />
+                <e p="Tag.cs" t="Include" />
+              </e>
+              <e p="ICaster.cs" t="Include" />
+              <e p="ISpell.cs" t="Include" />
+              <e p="Managers" t="Include">
+                <e p="ISpellManager.cs" t="Include" />
+                <e p="SpellManager.cs" t="Include" />
+              </e>
+              <e p="Providers" t="Include">
+                <e p="ISpellProvider.cs" t="Include" />
+                <e p="SpellProvider.cs" t="Include" />
+              </e>
+              <e p="Spell.cs" t="Include" />
             </e>
             <e p="Ticks" t="Include">
               <e p="Bindings" t="Include">

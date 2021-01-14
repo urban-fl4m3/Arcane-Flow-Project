@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1571372197627090045}
   - component: {fileID: 1571372197627090046}
   - component: {fileID: 1571372197627090047}
-  - component: {fileID: -1121318800532426297}
-  m_Layer: 0
+  - component: {fileID: 4774695568057303072}
+  m_Layer: 2
   m_Name: Fireball_Spell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-1121318800532426297
+--- !u!114 &4774695568057303072
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,10 +103,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1571372197627090032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2523d973981c4f2e84d2553f8d3bc6c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 341f8100c1a14f929b29fd5b0aa699f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _child: {fileID: 0}
   _behaviours: []
   _datas: []
-  _spawnPoint: {fileID: 0}
+  _speed: 2

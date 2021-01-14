@@ -5,6 +5,7 @@ using Modules.Logger.Bindings;
 using Modules.Maps.Bindings;
 using Modules.Player.Bindings;
 using Modules.Render.Bindings;
+using Modules.SpellSystem.Bindings;
 using Modules.Ticks.Bindings;
 using UI.Bindings;
 using Zenject;
@@ -21,6 +22,7 @@ namespace Modules.Core.Installers
             TicksBinding.Bind(Container);
             LoggerBindings.Bind(Container);
             CameraBindings.Bind(Container);
+            SpellSystemBindings.Bind(Container);
             PlayerBindings.Bind(Container);
             EnemyBindings.Bind(Container);
             MapsBindings.Bind(Container);

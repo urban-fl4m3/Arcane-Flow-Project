@@ -20,29 +20,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdb96125-5941-4ac8-97eb-13652f13c6e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/CastBehaviour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/CastBehaviour.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/SpellActor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/SpellActor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Behaviours.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Behaviours/CastBehaviour.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Behaviours/CastBehaviour.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Bindings.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Bindings/SpellSystemBindings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Bindings/SpellSystemBindings.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/ISpellContainer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/ISpellContainer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/ISpellPreset.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/ISpellPreset.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/SpellContainer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/SpellContainer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/SpellPreset.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Data.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Data/ISpellData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Data/ISpellData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Data/SpellData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Data/SpellData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Enum.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Enum/SpellType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Enum/SpellType.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Enum/Tag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Enum/Tag.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ICaster.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ICaster.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ISpell.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ISpell.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Managers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Managers/ISpellManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Managers/ISpellManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Managers/SpellManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Managers/SpellManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Providers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Providers/ISpellProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Providers/ISpellProvider.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Providers/SpellProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Providers/SpellProvider.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Spell.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Spell.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane Flow/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane Flow/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane Flow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane Flow/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Animations/RockGolemAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Animations/RockGolemAnimator.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Player_Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Player_Character.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/_Base/Base_Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/_Base/Base_Character.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player/CharacterBehaviours/CharacterBehaviour.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player/CharacterBehaviours/CharacterBehaviour.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player/CharacterDatas/CharacterAnimationData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player/CharacterDatas/CharacterAnimationData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player/CharacterDatas/PlayerBindingsData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player/CharacterDatas/PlayerBindingsData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Actor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Actor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Spells/Fireball/Fireball_Spell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Spells/Fireball/Fireball_Spell.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Types/ActorBattle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Types/ActorBattle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MovementBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MovementBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/ThirdPersonRotationBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/ThirdPersonRotationBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Datas/Animation/AnimationData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Datas/Animation/AnimationData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Datas/Animation/IAnimationData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Datas/Animation/IAnimationData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Datas/KeyBindings/IKeyBindingsData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Datas/KeyBindings/IKeyBindingsData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Datas/KeyBindings/KeyBindingsData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Datas/KeyBindings/KeyBindingsData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Datas/Movement/IMovementData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Datas/Movement/IMovementData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Datas/Movement/MovementData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Datas/Movement/MovementData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/HDRPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/HDRPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/CastBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/CastBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Core/Installers/BindInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Core/Installers/BindInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/PlayerManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,32 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Providers/EnemyProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Actors/UI/EnemyInfoWindow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/LookAtActorBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Common/Attribute.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Common/AttributeModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Datas/Attributes/IAttributesData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Datas/Attributes/AttributesData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Common/DynamicProperty.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Managers/EnemyManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Providers/IEnemyProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Commands/RenderModuleInitializeCommand.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Core/Initializers/SceneInitializer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Bindings/EnemyBindings.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Factory/IEnemyFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Managers/EnemyManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Managers/IEnemyManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/GameRoom.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Managers/MapManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Factory/ViewFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Factory/EnemyFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/ICameraManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/PlayerManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/IPlayerManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/CameraManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Actors/CameraActor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/IActor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/AttributeVisualizerBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Configs/AvailableEnemiesConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MouseRotationBehaviour.cs" />
@@ -105,8 +109,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MovementBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Actor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/CastBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Types/ActorBattle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Spells/Data/CastData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Spells/ISpell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Spells/Spell.cs" />
@@ -116,6 +118,34 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Spells/SpellTag.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Spells/Modifiers/SpellModifier.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Spells/Modifiers/AoESpellModifier.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/CastBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Enum/Tag.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/Spell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/ISpell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Enum/SpellType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/ISpellPreset.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/SkillPresetsConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/ISpellPresetsConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/SpellPresetsConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/ISpellContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/SpellPreset.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Providers/SpellProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Providers/ISpellProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/SpellManager/SpellManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Core/Installers/BindInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ICaster.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Types/ActorBattle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ISpell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Behaviours/CastBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Spell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/SpellActor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Managers/SpellManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Managers/ISpellManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/PlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Data/ISpellData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Data/SpellData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Bindings/SpellSystemBindings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/SpellContainer.cs" />
       </list>
     </option>
   </component>
@@ -148,10 +178,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="15080">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="15080" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -177,6 +207,7 @@
       <workItem from="1610388744445" duration="8872000" />
       <workItem from="1610479935148" duration="12915000" />
       <workItem from="1610575325169" duration="7918000" />
+      <workItem from="1610642499674" duration="9937000" />
     </task>
     <servers />
   </component>
@@ -201,78 +232,78 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="504" height="553" key="DebuggerActiveHint" timestamp="1610491729361">
+    <state width="521" height="553" key="DebuggerActiveHint" timestamp="1610653471758">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="504" height="553" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1610491729361" />
-    <state width="1493" height="288" key="GridCell.Tab.0.bottom" timestamp="1610495548523">
+    <state width="521" height="553" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1610653471758" />
+    <state width="1493" height="277" key="GridCell.Tab.0.bottom" timestamp="1610654073726">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610495548523" />
-    <state width="1493" height="288" key="GridCell.Tab.0.center" timestamp="1610495548523">
+    <state width="1493" height="277" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610654073726" />
+    <state width="1493" height="277" key="GridCell.Tab.0.center" timestamp="1610654073725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610495548523" />
-    <state width="1493" height="288" key="GridCell.Tab.0.left" timestamp="1610495548523">
+    <state width="1493" height="277" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610654073725" />
+    <state width="1493" height="277" key="GridCell.Tab.0.left" timestamp="1610654073725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610495548523" />
-    <state width="1493" height="288" key="GridCell.Tab.0.right" timestamp="1610495548523">
+    <state width="1493" height="277" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610654073725" />
+    <state width="1493" height="277" key="GridCell.Tab.0.right" timestamp="1610654073725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610495548523" />
-    <state width="1493" height="288" key="GridCell.Tab.1.bottom" timestamp="1610495548523">
+    <state width="1493" height="277" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610654073725" />
+    <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1610654073727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610495548523" />
-    <state width="1493" height="288" key="GridCell.Tab.1.center" timestamp="1610495548523">
+    <state width="1493" height="277" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610654073727" />
+    <state width="1493" height="277" key="GridCell.Tab.1.center" timestamp="1610654073726">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610495548523" />
-    <state width="1493" height="288" key="GridCell.Tab.1.left" timestamp="1610495548523">
+    <state width="1493" height="277" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610654073726" />
+    <state width="1493" height="277" key="GridCell.Tab.1.left" timestamp="1610654073726">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610495548523" />
-    <state width="1493" height="288" key="GridCell.Tab.1.right" timestamp="1610495548523">
+    <state width="1493" height="277" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610654073726" />
+    <state width="1493" height="277" key="GridCell.Tab.1.right" timestamp="1610654073726">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610495548523" />
-    <state width="1493" height="288" key="GridCell.Tab.2.bottom" timestamp="1610495548523">
+    <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610654073726" />
+    <state width="1493" height="277" key="GridCell.Tab.2.bottom" timestamp="1610654073727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610495548523" />
-    <state width="1493" height="288" key="GridCell.Tab.2.center" timestamp="1610495548523">
+    <state width="1493" height="277" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610654073727" />
+    <state width="1493" height="277" key="GridCell.Tab.2.center" timestamp="1610654073727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1610495548523" />
-    <state width="1493" height="288" key="GridCell.Tab.2.left" timestamp="1610495548523">
+    <state width="1493" height="277" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1610654073727" />
+    <state width="1493" height="277" key="GridCell.Tab.2.left" timestamp="1610654073727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1610495548523" />
-    <state width="1493" height="288" key="GridCell.Tab.2.right" timestamp="1610495548523">
+    <state width="1493" height="277" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1610654073727" />
+    <state width="1493" height="277" key="GridCell.Tab.2.right" timestamp="1610654073727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1610495548523" />
-    <state width="1493" height="288" key="GridCell.Tab.3.bottom" timestamp="1610495548523">
+    <state width="1493" height="277" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1610654073727" />
+    <state width="1493" height="277" key="GridCell.Tab.3.bottom" timestamp="1610654073728">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610495548523" />
-    <state width="1493" height="288" key="GridCell.Tab.3.center" timestamp="1610495548523">
+    <state width="1493" height="277" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610654073728" />
+    <state width="1493" height="277" key="GridCell.Tab.3.center" timestamp="1610654073727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1610495548523" />
-    <state width="1493" height="288" key="GridCell.Tab.3.left" timestamp="1610495548523">
+    <state width="1493" height="277" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1610654073727" />
+    <state width="1493" height="277" key="GridCell.Tab.3.left" timestamp="1610654073727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1610495548523" />
-    <state width="1493" height="288" key="GridCell.Tab.3.right" timestamp="1610495548523">
+    <state width="1493" height="277" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1610654073727" />
+    <state width="1493" height="277" key="GridCell.Tab.3.right" timestamp="1610654073728">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1610495548523" />
-    <state x="601" y="113" key="RiderGenerateDialog" timestamp="1610487600025">
+    <state width="1493" height="277" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1610654073728" />
+    <state x="601" y="113" key="RiderGenerateDialog" timestamp="1610650270139">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="601" y="113" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1610487600025" />
+    <state x="601" y="113" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1610650270139" />
     <state x="308" y="89" width="1005" height="811" key="dock-window-1" timestamp="1610583000904">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -281,10 +312,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1610288057688" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1610577662805">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1610652647962">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1610577662805" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1610652647962" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,4 +1,4 @@
-﻿using Modules.Behaviours.TickBehaviours;
+﻿using Modules.SpellSystem;
 using UnityEngine;
 
 namespace Modules.Actors.Types
@@ -7,7 +7,7 @@ namespace Modules.Actors.Types
     {
         [SerializeField] public Transform _spawnPoint;
 
-        public int Id => 0;
+        public string Id => "0";
         public Transform SpawnPoint => _spawnPoint;
         
         protected override void OnAwake()
