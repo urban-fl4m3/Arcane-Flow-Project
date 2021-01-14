@@ -6,5 +6,6 @@ namespace Modules.Datas.Animation
     {
         Animator GetAnimator();
         string MovingAnimationKey { get; }
+        string AttackAnimationKey { get; }
     }
 }

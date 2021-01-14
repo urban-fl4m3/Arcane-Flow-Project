@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31265a355d4749f788645e7d09684669, type: 3}
   m_Name: PlayerBindingsData
   m_EditorClassIdentifier: 
-  _keyForward: 119
-  _keyBack: 115
-  _keyRight: 100
-  _keyLeft: 97
+  _horizontalKeyAxis: Horizontal
+  _verticalKeyAxis: Vertical
   _dodge: 304
   _attack: 323

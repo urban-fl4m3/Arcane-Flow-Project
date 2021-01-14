@@ -4,15 +4,9 @@ namespace Modules.Datas.KeyBindings
 {
     public interface IKeyBindingsData
     {
-        KeyCode GetForwardKey();
-        KeyCode GetBackKey();
-        KeyCode GetLeftKey();
-        KeyCode GetRightKey();
+        string HorizontalKeyAxis();
+        string VerticalKeyAxis();
         KeyCode GetDodgeKey();
         KeyCode GetAttackKey();
-
-
-        Vector2 GetMovementAxis();
-        bool IsMovementButtonHolding();
     }
 }

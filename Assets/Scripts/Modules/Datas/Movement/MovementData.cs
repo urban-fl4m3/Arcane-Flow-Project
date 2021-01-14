@@ -8,8 +8,6 @@ namespace Modules.Datas.Movement
     {
         public bool IsMoving { get; set; }
 
-        public Vector2 MovementAxis { get; set; }
-
         protected override void OnInitialize(IActor owner)
         {
             

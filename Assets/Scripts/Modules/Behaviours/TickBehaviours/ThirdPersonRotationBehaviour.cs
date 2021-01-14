@@ -37,7 +37,7 @@ namespace Modules.Behaviours.TickBehaviours
 
         public override void Tick()
         {
-            if (_rotationData.CanRotate && _movementData.IsMoving) ApplyRotation();
+            if (_rotationData.CanRotate) ApplyRotation();
         }
 
         private void ApplyRotation()
@@ -45,24 +45,17 @@ namespace Modules.Behaviours.TickBehaviours
             var actorTransformForward = _actorTransform.forward;
             actorTransformForward.Scale(new Vector3(1.0f, 0.0f, 1.0f));
             actorTransformForward.Normalize();
-            
+
             var cameraForward = _cameraTransform.forward;
             cameraForward.Scale(new Vector3(1.0f, 0.0f, 1.0f));
             cameraForward.Normalize();
 
             var inCameraRotation = Vector3.SignedAngle(actorTransformForward, cameraForward, Vector3.up);
-
-
-            var movementDirection = -_movementData.MovementAxis.x * Vector3.right + _movementData.MovementAxis.y * Vector3.forward;
-            movementDirection.Normalize();
-
-            var targetAngle = Vector3.SignedAngle(Vector3.forward, movementDirection, Vector3.up);
-
-            _rotationInMovementDirection = Mathf.SmoothDampAngle(_rotationInMovementDirection, targetAngle, ref _velocity, _turnTime);
-
+           
             var newRotation = _actorTransform.rotation;
-            newRotation =  Quaternion.Slerp(newRotation, newRotation * Quaternion.Euler(0.0f, _rotationInMovementDirection + inCameraRotation, 0.0f), 0.1f);
-            
+            newRotation = Quaternion.Slerp(newRotation,
+                newRotation * Quaternion.Euler(0.0f, inCameraRotation, 0.0f), 0.1f);
+
             _actorTransform.rotation = newRotation;
         }
     }

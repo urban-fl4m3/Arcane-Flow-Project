@@ -6,7 +6,6 @@ using Modules.Datas;
 using Modules.Render.Actors;
 using Modules.Ticks.Processors;
 using UnityEngine;
-using UnityEngine.Profiling;
 
 namespace Modules.Actors
 {
@@ -36,17 +35,10 @@ namespace Modules.Actors
             
             if (_child) _child.Init(tickProcessor, mainCamera);
             
-            //PRE
-            //if (_child) _child.PreInitialize();
-
             foreach (var data in _datas)
             {
                 _actorDatas.SetAndInitialize(this, Instantiate(data));
             }
-            
-            OnAwake();
-            //POST
-            //if (_child) _child.PostInitialize();
             
             foreach (var behaviour in _behaviours)
             {
@@ -56,6 +48,7 @@ namespace Modules.Actors
             OnInitializeComplete?.Invoke(this, null);
             OnInitializeComplete = null;
 
+            OnAwake();
         }
 
         public GameObject GetGameObject()

@@ -377,6 +377,7 @@
               <e p="IBaseBehaviour.cs" t="Include" />
               <e p="TickBehaviour.cs" t="Include" />
               <e p="TickBehaviours" t="Include">
+                <e p="CastBehaviour.cs" t="Include" />
                 <e p="LookAtActorBehaviour.cs" t="Include" />
                 <e p="MouseRotationBehaviour.cs" t="Include" />
                 <e p="MovementBehaviour.cs" t="Include" />

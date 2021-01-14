@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c98ff074cd184ab092dfa7858343dead, type: 3}
-  m_Name: CharacterAnimationData
+  m_Script: {fileID: 11500000, guid: 67dfb06a53d34103acf151600eb20ecf, type: 3}
+  m_Name: PlayerMovementBehaviour
   m_EditorClassIdentifier: 
-  _movingAnimationKey: IsMoving
-  _attackAnimationKey: Cast
