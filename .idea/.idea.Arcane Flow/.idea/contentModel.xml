@@ -412,6 +412,8 @@
             </e>
             <e p="Common" t="Include">
               <e p="Attribute.cs" t="Include" />
+              <e p="DynamicActor.cs" t="Include" />
+              <e p="DynamicFloat.cs" t="Include" />
               <e p="DynamicProperty.cs" t="Include" />
             </e>
             <e p="Core" t="Include">

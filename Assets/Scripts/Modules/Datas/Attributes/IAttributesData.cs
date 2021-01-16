@@ -5,6 +5,6 @@ namespace Modules.Datas.Attributes
 {
     public interface IAttributesData
     {
-        IReadOnlyDictionary<Attribute, DynamicProperty> Attributes { get; }
+        IReadOnlyDictionary<Attribute, DynamicFloat> Attributes { get; }
     }
 }

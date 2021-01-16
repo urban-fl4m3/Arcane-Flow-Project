@@ -3,7 +3,6 @@ using Modules.AI.Data;
 using Modules.Behaviours;
 using Modules.Datas.Transforms;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Modules.AI.Behaviours
 {
@@ -12,27 +11,31 @@ namespace Modules.AI.Behaviours
     {
         private AiNavigationData _aiNavigationData;
 
-        private NavMeshDataInstance _navMeshDataInstance;
+        private IActor _followActor;
         
         protected override void OnInitialize(IActor owner)
         {
             _aiNavigationData = owner.GetData<AiNavigationData>();
-            
-            base.OnInitialize(owner);
+            _aiNavigationData.Player.PropertyChanged += HandleFollowingActorChanged;
         }
 
         public override void Tick()
         {
-            var navMeshData = _aiNavigationData.NavMeshData;
-            var player = _aiNavigationData.Player;
-            
-            if (navMeshData != null && player != null)
+            var navMeshAgent = _aiNavigationData.NavMeshAgent;
+            navMeshAgent.SetDestination(_followActor.GetData<TransformData>().GetTransform().position);
+        }
+
+        private void HandleFollowingActorChanged(object sender, IActor actor)
+        {
+            _followActor = actor;
+
+            if (actor != null)
             {
-                _navMeshDataInstance = NavMesh.AddNavMeshData(navMeshData);
-                    
-                var navMeshAgent = _aiNavigationData.NavMeshAgent;
-                
-                navMeshAgent.SetDestination(player.GetData<TransformData>().GetTransform().position);
+                StartTick();
+            }
+            else
+            {
+                StopTick();
             }
         }
     }

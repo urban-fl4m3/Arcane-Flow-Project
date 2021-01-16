@@ -17,7 +17,7 @@ namespace Modules.Behaviours
         [SerializeField] private GameObject _healthBar;
 
         private Camera _camera;
-        private DynamicProperty _attributeProperty;
+        private DynamicFloat _attributeFloat;
 
         protected override void OnInitialize(IActor owner)
         {
@@ -32,11 +32,11 @@ namespace Modules.Behaviours
                 return;
             }
 
-            _attributeProperty = property;
-            _attributeProperty.PropertyChanged += HandleHealthChanged;
+            _attributeFloat = property;
+            _attributeFloat.PropertyChanged += HandleHealthChanged;
 
             _healthBar.transform.localScale = new Vector3(
-                _attributeProperty.Value / 100,
+                _attributeFloat.Value / 100,
                 _healthBar.transform.localScale.y,
                 _healthBar.transform.localScale.z);
             

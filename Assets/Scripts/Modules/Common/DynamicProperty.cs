@@ -1,31 +1,33 @@
 ﻿using System;
-using UnityEngine;
 
 namespace Modules.Common
 {
-    [Serializable]
-    public class DynamicProperty
+    public abstract class DynamicProperty<T>
     {
-        [SerializeField] private float _value;
-
-        public float Value
+        protected abstract T DynamicValue { get; set; }
+        
+        public T Value
         {
             get
             {
-                return _value;
+                return DynamicValue;
             }
             set
             {
-                if (Mathf.Approximately(_value, value))
+                var isEquals = Equals(DynamicValue, value);
+
+                if (isEquals)
                 {
                     return;
                 }
-
-                _value = value;
-                PropertyChanged?.Invoke(this, _value);
+                
+                DynamicValue = value;
+                PropertyChanged?.Invoke(this, DynamicValue);
             }
         }
 
-        public event EventHandler<float> PropertyChanged;
+        protected abstract bool Equals(T lhs, T rhs);
+
+        public event EventHandler<T> PropertyChanged;
     }
 }
