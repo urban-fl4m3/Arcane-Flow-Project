@@ -33,6 +33,11 @@ namespace Modules.Behaviours.TickBehaviours
         
         public override void Tick()
         {
+            if (Input.GetKeyDown(_bindingData.GetAttackKey()))
+            {
+                _animator.SetTrigger(_animationData.AttackAnimationKey);
+            }
+            
             var horizontalMovement = Input.GetAxis(_horizontalKeyAxis);
             var verticalMovement = Input.GetAxis(_verticalKeyAxis);
 

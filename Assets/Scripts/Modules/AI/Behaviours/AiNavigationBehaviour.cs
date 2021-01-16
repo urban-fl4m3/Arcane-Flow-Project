@@ -38,6 +38,11 @@ namespace Modules.AI.Behaviours
 
             var reachedTarget = _navMeshAgent.remainingDistance < _aiNavigationData.ReachDistance;
             _animationData.GetAnimator().SetBool(_animationData.MovingAnimationKey, !reachedTarget);
+
+            if (reachedTarget)
+            {
+                _animationData.GetAnimator().SetTrigger(_animationData.AttackAnimationKey);
+            }
         }
 
         private void HandleFollowingActorChanged(object sender, IActor actor)
