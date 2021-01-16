@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attributeList:
   - Attribute: 0
-    Property:
-      _value: 150
+    float:
+      _value: 200
   - Attribute: 1
-    Property:
+    float:
       _value: 100

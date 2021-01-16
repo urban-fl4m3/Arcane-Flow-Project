@@ -34,7 +34,7 @@ namespace Modules.Maps.Actors
         {
             enemy.GetData<TransformData>().GetTransform().position = _spawnPoints[0].position;
             var aiNavigationData = enemy.GetData<AiNavigationData>();
-            aiNavigationData.Player = _player;
+            aiNavigationData.Player.Value = _player.Value;
 
             _player.PropertyChanged += aiNavigationData.HandlePlayerChanged;
         }

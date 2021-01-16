@@ -9,9 +9,13 @@ namespace Modules.AI.Data
     [CreateAssetMenu(fileName = "Nav Mesh Data", menuName = "Data/Nav Mesh")]
     public class AiNavigationData : BaseData
     {
+        [SerializeField] private float _reachDistance;
+        
         public DynamicActor Player { get; set; }
         public NavMeshAgent NavMeshAgent { get; private set; }
-        
+
+        public float ReachDistance => _reachDistance;
+
         protected override void OnInitialize(IActor owner)
         {
             NavMeshAgent = owner.GetGameObject().GetComponent<NavMeshAgent>();
