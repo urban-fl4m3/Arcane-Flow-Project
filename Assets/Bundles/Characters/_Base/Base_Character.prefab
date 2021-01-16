@@ -4581,6 +4581,7 @@ GameObject:
   - component: {fileID: 8392461936357911016}
   - component: {fileID: 7458440144790466403}
   - component: {fileID: 5786360292730546993}
+  - component: {fileID: 8941159928025853654}
   m_Layer: 2
   m_Name: Base_Character
   m_TagString: Untagged
@@ -4653,6 +4654,7 @@ MonoBehaviour:
   _child: {fileID: 0}
   _behaviours: []
   _datas: []
+  _spawnPoint: {fileID: 0}
 --- !u!136 &7458440144790466403
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4683,3 +4685,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &8941159928025853654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7575373131749811554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce3b3f2255e448cb82bbbcd526e066a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

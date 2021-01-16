@@ -1,8 +1,11 @@
-﻿using Modules.Actors;
+﻿using System;
+using Modules.Actors;
+using Modules.Animations.Data;
 using Modules.Common;
 using Modules.Datas.Attributes;
 using Modules.Datas.Transforms;
 using UnityEngine;
+using Attribute = Modules.Common.Attribute;
 
 namespace Modules.Behaviours
 {
@@ -30,13 +33,18 @@ namespace Modules.Behaviours
             }
 
             _attributeProperty = property;
+            _attributeProperty.PropertyChanged += HandleHealthChanged;
+
+            _healthBar.transform.localScale = new Vector3(
+                _attributeProperty.Value / 100,
+                _healthBar.transform.localScale.y,
+                _healthBar.transform.localScale.z);
             
             _camera = owner.Camera;
             
             var ownerTransform = owner.GetData<TransformData>().GetTransform();
             _healthBar = Instantiate(_healthBar, new Vector3(0, _height, 0), Quaternion.identity);
             _healthBar.transform.SetParent(ownerTransform, false);
-
             
             base.OnInitialize(owner);
         }
@@ -44,6 +52,14 @@ namespace Modules.Behaviours
         public override void Tick()
         {
             _healthBar.transform.LookAt(_camera.transform);
+        }
+
+        private void HandleHealthChanged(object sender, float value)
+        {
+            _healthBar.transform.localScale = new Vector3(
+                value / 100,
+                _healthBar.transform.localScale.y,
+                _healthBar.transform.localScale.z);
         }
     }
 }

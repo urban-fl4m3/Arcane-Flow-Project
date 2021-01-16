@@ -371,6 +371,13 @@
                 <e p="IActorBattle.cs" t="Include" />
               </e>
             </e>
+            <e p="Animations" t="Include">
+              <e p="AnimationEventHandler.cs" t="Include" />
+              <e p="Data" t="Include">
+                <e p="AnimationEventHandlerData.cs" t="Include" />
+              </e>
+              <e p="IAnimationEventHanler.cs" t="Include" />
+            </e>
             <e p="Behaviours" t="Include">
               <e p="AttributeVisualizerBehaviour.cs" t="Include" />
               <e p="BaseBehaviour.cs" t="Include" />

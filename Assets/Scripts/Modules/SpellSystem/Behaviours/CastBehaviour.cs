@@ -1,4 +1,7 @@
-﻿using Modules.Actors;
+﻿using System;
+using Modules.Actors;
+using Modules.Animations;
+using Modules.Animations.Data;
 using Modules.Behaviours;
 using Modules.Behaviours.TickBehaviours;
 using Modules.Datas.Animation;
@@ -18,6 +21,7 @@ namespace Modules.SpellSystem.Behaviours
         private IKeyBindingsData _bindingData;
         private ISpellData _spellData;
         private ITransformData _ownerTransformData;
+        private AnimationEventHandlerData _animationEventHandlerData;
 
         private ICaster _caster;
         
@@ -28,12 +32,14 @@ namespace Modules.SpellSystem.Behaviours
             _bindingData = Owner.GetData<KeyBindingsData>();
             _spellData = Owner.GetData<SpellData>();
             _ownerTransformData = Owner.GetData<TransformData>();
+            _animationEventHandlerData = Owner.GetData<AnimationEventHandlerData>();
             
             if (owner is ICaster caster)
             {
                 _caster = caster;
             }
 
+            _animationEventHandlerData.EventHandler.AddEvent("Cast", Cast);
             base.OnInitialize(owner);
 
         }
@@ -43,12 +49,10 @@ namespace Modules.SpellSystem.Behaviours
             if (Input.GetKeyDown(_bindingData.GetAttackKey()))
             {
                 _animator.SetTrigger(_animationData.AttackAnimationKey);
-                
-                Cast();
             }
         }
 
-        private void Cast()
+        private void Cast(object sender, EventArgs e)
         {
             var activeSpell = _spellData.Spells[_caster.Id];
             activeSpell.Cast(_caster.SpawnPoint, _ownerTransformData.GetTransform().forward);

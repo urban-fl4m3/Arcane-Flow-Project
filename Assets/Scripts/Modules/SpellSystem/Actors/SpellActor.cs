@@ -1,14 +1,17 @@
 ﻿using System;
+using Modules.Actors;
 using Modules.Actors.Types;
+using Modules.Datas.Attributes;
 using Modules.SpellSystem.Enum;
 using UnityEngine;
+using Attribute = Modules.Common.Attribute;
 
 namespace Modules.SpellSystem.Actors
 {
     public class SpellActor : ActorBase
     {
         public event EventHandler OnCastEventHandler;
-        public event EventHandler OnHitEventHandler;
+        public event EventHandler<Collision> OnHitEventHandler;
         
         private Tag[] _tags;
         
@@ -25,10 +28,27 @@ namespace Modules.SpellSystem.Actors
         public Vector3 Direction { get; set; }
 
         [SerializeField] private float _speed;
+        [SerializeField] private float _damage;
 
         private void Update()
         {
             transform.position += Direction.normalized * (_speed * Time.deltaTime);
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            OnHitEventHandler?.Invoke(this, other);
+
+            bool isActor = other.gameObject.TryGetComponent<Actor>(out var actor);
+
+            if (isActor)
+            {
+                var attributesData = actor.GetData<AttributesData>();
+                var healthProperty = attributesData.Attributes[Attribute.Health];
+                healthProperty.Value -= _damage;
+            }
+            
+            Destroy(gameObject);
         }
     }
 }

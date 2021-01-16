@@ -21,12 +21,11 @@ namespace Modules.Common
                     return;
                 }
 
-                PropertyChanged?.Invoke(this, EventArgs.Empty);
                 _value = value;
-
+                PropertyChanged?.Invoke(this, _value);
             }
         }
 
-        public event EventHandler PropertyChanged;
+        public event EventHandler<float> PropertyChanged;
     }
 }
