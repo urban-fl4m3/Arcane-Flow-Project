@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelUserStore">
-    <attachedFolders />
+    <attachedFolders>
+      <Path>../../Users/urban/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.render-pipelines.high-definition-config@7.3.1</Path>
+      <Path>../../Users/urban/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.render-pipelines.high-definition@7.3.1</Path>
+      <Path>../../Users/urban/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.visualeffectgraph@7.3.1</Path>
+    </attachedFolders>
     <explicitIncludes>
       <Path>Library/PackageCache/com.unity.collab-proxy@1.2.16</Path>
       <Path>Library/PackageCache/com.unity.ext.nunit@1.0.5</Path>

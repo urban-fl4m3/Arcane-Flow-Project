@@ -48,7 +48,7 @@ namespace UI.Factory
             if (!_canvasInstances.ContainsKey(mainCanvasId))
             {
                 var canvas = Object.Instantiate(_canvasContainer.MainCanvas);
-                canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+                canvas.renderMode = RenderMode.ScreenSpaceCamera;
                 canvas.worldCamera = _cameraManager.GameCamera.Component;
                 _canvasInstances.Add(mainCanvasId, canvas);
             }
