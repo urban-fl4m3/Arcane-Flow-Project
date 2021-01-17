@@ -5,10 +5,11 @@ namespace Modules.Render.Managers
 {
     public interface ICameraManager
     {
-        CameraActor CameraActor { get; }
+        CameraActor GameCamera { get; }
+        CameraActor UiCamera { get; }
         
         void Init();
-        void LoadCamera();
+        void LoadMainCamera();
         void SetCameraTarget(IActor actor);
     }
 }

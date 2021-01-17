@@ -20,28 +20,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdb96125-5941-4ac8-97eb-13652f13c6e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Bundles/Common/Health Bar/BarShader.shadergraph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Bundles/Common/Health Bar/BarShader.shadergraph.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Common/Components.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Common/MeshBarComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Common/MeshBarComponent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane Flow/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane Flow/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane Flow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane Flow/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Dummy/Data/DummyAttributesData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Dummy/Data/DummyAttributesData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Dummy/Dummy_Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Dummy/Dummy_Character.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Data/PlayerAttributesData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Data/PlayerAttributesData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Common/Health Bar/HealthBar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Common/Health Bar/HealthBar.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Common/Health Bar/HealthBarMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Common/Health Bar/HealthBarMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Common/Behaviours/CommonHealthVisualizerBehaviour.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Common/Behaviours/CommonHealthVisualizerBehaviour.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Common/Data/CommonNavMeshData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Dummy/Data/DummyNavMeshData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Common/Data/CommonNavMeshData.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Dummy/Data/DummyNavMeshData.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generics/MemberContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generics/MemberContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Actor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Actor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/AttributeVisualizerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/AttributeVisualizerBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Common/DynamicFloat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Common/DynamicFloat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Common/DynamicProperty.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Common/DynamicProperty.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/SpellActor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/SpellActor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/HDRPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/HDRPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Common/Health Bar/BarShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Common/Health Bar/BarShader.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Levels/Common/Main Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Levels/Common/Main Camera.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/UI/DefaultCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/UI/DefaultCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/UI/GameHud/GameHudView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/UI/GameHud/GameHudView.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HDRPDefaultResources/Settings/HDRenderPipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HDRPDefaultResources/Settings/HDRenderPipelineAsset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HDRPDefaultResources/Settings/SampleScenePostProcessingSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HDRPDefaultResources/Settings/SampleScenePostProcessingSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HDRPDefaultResources/Settings/SampleSceneSkyandFogSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HDRPDefaultResources/Settings/SampleSceneSkyandFogSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Render/CameraConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Render/CameraConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoadScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoadScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Factory/EnemyFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Factory/EnemyFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/PlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Commands/RenderModuleInitializeCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Commands/RenderModuleInitializeCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Configs/CameraConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Configs/CameraConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Configs/ICameraConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Configs/ICameraConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/CameraManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/ICameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/ICameraManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Factory/ViewFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Factory/ViewFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Views/GameHudWindow/GameHudView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Views/GameHudWindow/GameHudView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,14 +71,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Enum/SpellType.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/ISpellPreset.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/SkillPresetsConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/ISpellPresetsConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/SpellPresetsConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/ISpellContainer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/SpellPreset.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Providers/SpellProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Providers/ISpellProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/SpellManager/SpellManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Core/Installers/BindInstaller.cs" />
@@ -123,6 +114,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Generics/MemberContainer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Actor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/SpellActor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Views/GameHudWindow/GameHudView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Configs/CameraConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Configs/ICameraConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/ICameraManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/CameraManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Bundles/NewUnlitShader.shader" />
+        <option value="$PROJECT_DIR$/Assets/Bundles/UI/GameHud/NewUnlitShader.shader" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Factory/ViewFactory.cs" />
       </list>
     </option>
   </component>
@@ -189,6 +188,7 @@
       <workItem from="1610808191104" duration="1159000" />
       <workItem from="1610812209818" duration="5018000" />
       <workItem from="1610891197533" duration="5131000" />
+      <workItem from="1610904413011" duration="7159000" />
     </task>
     <servers />
   </component>
@@ -293,9 +293,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1610288057688" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1610897003919">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1610905519634">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1610897003919" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1610905519634" />
   </component>
 </project>

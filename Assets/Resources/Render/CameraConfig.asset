@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: CameraConfig
   m_EditorClassIdentifier: 
   _main: {fileID: 4775397948294834339, guid: f172b3c2b889bee4598558825cc42874, type: 3}
+  _uiCamera: {fileID: 8904953110926315142, guid: 48a32e00a85cce043bf4d388e2794ccd,
+    type: 3}

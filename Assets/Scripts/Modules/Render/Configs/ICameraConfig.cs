@@ -5,5 +5,6 @@ namespace Modules.Render.Configs
     public interface ICameraConfig
     {
         CameraActor MainCamera { get; }
+        CameraActor UICamera { get; }
     }
 }

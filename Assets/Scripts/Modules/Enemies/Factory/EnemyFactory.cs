@@ -25,7 +25,7 @@ namespace Modules.Enemies.Factory
         public IActor CreateEnemy()
         {
             var enemyActor = Object.Instantiate(_enemyProvider.GetAvailableEnemy());
-            enemyActor.Init(_tickManager.Processor, _cameraManager.CameraActor);
+            enemyActor.Init(_tickManager.Processor, _cameraManager.GameCamera);
 
             return enemyActor;
         }

@@ -15,7 +15,7 @@ namespace Modules.Render.Commands
         public override void Execute()
         {
             _cameraManager.Init();
-            _cameraManager.LoadCamera();
+            _cameraManager.LoadMainCamera();
             CompleteCommand();
         }
     }
