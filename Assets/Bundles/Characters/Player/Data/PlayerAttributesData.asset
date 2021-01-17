@@ -16,6 +16,10 @@ MonoBehaviour:
   - Attribute: 0
     float:
       _value: 200
+      _minValue: 0
+      _maxValue: 200
   - Attribute: 1
     float:
       _value: 100
+      _minValue: 0
+      _maxValue: 100

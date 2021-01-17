@@ -66,6 +66,20 @@ namespace Modules.Actors
             return _actorDatas.GetComponent<T>();
         }
 
+        public bool TryGetData<T>(out T data) where T : class, IBaseData
+        {
+            try
+            {
+                data = GetData<T>();
+                return true;
+            }
+            catch (Exception)
+            {
+                data = null;
+                return false;
+            }
+        }
+        
         public void AddData<T>(T newData) where T : class, IBaseData
         {
             _actorDatas.SetAndInitialize(this, newData);

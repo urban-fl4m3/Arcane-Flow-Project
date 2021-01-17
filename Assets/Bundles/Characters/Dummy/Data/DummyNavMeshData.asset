@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a43a3d2f4ce3467f87604212bfdd4e1f, type: 3}
-  m_Name: CommonNavMeshData
+  m_Name: DummyNavMeshData
   m_EditorClassIdentifier: 
-  _reachDistance: 3
+  _reachDistance: 7

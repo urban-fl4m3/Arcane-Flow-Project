@@ -10,7 +10,7 @@ namespace Generics
 
         public T GetComponent<T>() where T : TComponent, IActorMember
         {
-            Type t = typeof(T);
+            var t = typeof(T);
             if (!_components.ContainsKey(t))
             {
                 throw new ArgumentException($"{ToString()} doesn't have {t.Name}");

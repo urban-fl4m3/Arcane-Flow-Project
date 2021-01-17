@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1654634146455337326}
   - component: {fileID: 1599672624876301256}
   - component: {fileID: 5935583589056645857}
+  - component: {fileID: 3813020215978178232}
   m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9107723544760505755}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0.070799775, y: -0.07179151, z: 0.0051089264, w: 0.9948906}
   m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1.5, y: 0.10433051, z: 0.8603451}
   m_Children: []
@@ -58,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: abd26a3511bf6ed4a917e01585400636, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,3 +80,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3813020215978178232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9107723544760505755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a79d5b61344e298c7eb6143cc56bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mesh: {fileID: 5935583589056645857}
+  _valueKey: _value
+  _deltaKey: _delta
+  _lerpDelay: 0.05
+  _material: {fileID: 2100000, guid: abd26a3511bf6ed4a917e01585400636, type: 2}

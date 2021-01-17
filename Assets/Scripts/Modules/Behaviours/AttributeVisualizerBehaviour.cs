@@ -1,6 +1,4 @@
-﻿using System;
-using Modules.Actors;
-using Modules.Animations.Data;
+﻿using Modules.Actors;
 using Modules.Common;
 using Modules.Datas.Attributes;
 using Modules.Datas.Transforms;
@@ -14,8 +12,9 @@ namespace Modules.Behaviours
     {
         [SerializeField] private Attribute _attribute;
         [SerializeField] private float _height;
-        [SerializeField] private GameObject _healthBar;
+        [SerializeField] private MeshBarComponent _bar;
 
+        private Transform _barTransform;
         private Camera _camera;
         private DynamicFloat _attributeFloat;
 
@@ -31,35 +30,25 @@ namespace Modules.Behaviours
                                  " attribute in data");
                 return;
             }
-
-            _attributeFloat = property;
-            _attributeFloat.PropertyChanged += HandleHealthChanged;
-
-            _healthBar.transform.localScale = new Vector3(
-                _attributeFloat.Value / 100,
-                _healthBar.transform.localScale.y,
-                _healthBar.transform.localScale.z);
             
+            _attributeFloat = property;
             _camera = owner.Camera;
             
             var ownerTransform = owner.GetData<TransformData>().GetTransform();
-            _healthBar = Instantiate(_healthBar, new Vector3(0, _height, 0), Quaternion.identity);
-            _healthBar.transform.SetParent(ownerTransform, false);
+            _bar = Instantiate(_bar, new Vector3(0, _height, 0), Quaternion.identity);
+            _barTransform = _bar.transform;
+            _barTransform.SetParent(ownerTransform, false);
             
             base.OnInitialize(owner);
         }
 
         public override void Tick()
         {
-            _healthBar.transform.LookAt(_camera.transform);
-        }
+            var position = (_camera.transform.position - _bar.transform.position) * -1 
+                           + _barTransform.position;
+            _barTransform.LookAt(position);
 
-        private void HandleHealthChanged(object sender, float value)
-        {
-            _healthBar.transform.localScale = new Vector3(
-                value / 100,
-                _healthBar.transform.localScale.y,
-                _healthBar.transform.localScale.z);
+            _bar.UpdateBar(_attributeFloat.Percentage());
         }
     }
 }

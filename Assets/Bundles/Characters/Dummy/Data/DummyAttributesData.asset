@@ -16,3 +16,5 @@ MonoBehaviour:
   - Attribute: 0
     float:
       _value: 150
+      _minValue: 0
+      _maxValue: 150

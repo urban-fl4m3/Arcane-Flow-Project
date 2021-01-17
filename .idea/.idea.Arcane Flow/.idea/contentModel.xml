@@ -415,6 +415,7 @@
               <e p="DynamicActor.cs" t="Include" />
               <e p="DynamicFloat.cs" t="Include" />
               <e p="DynamicProperty.cs" t="Include" />
+              <e p="MeshBarComponent.cs" t="Include" />
             </e>
             <e p="Core" t="Include">
               <e p="Bindings" t="Include">

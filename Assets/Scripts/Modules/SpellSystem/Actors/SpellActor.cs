@@ -39,13 +39,16 @@ namespace Modules.SpellSystem.Actors
         {
             OnHitEventHandler?.Invoke(this, other);
 
-            bool isActor = other.gameObject.TryGetComponent<Actor>(out var actor);
+            var isActor = other.gameObject.TryGetComponent<Actor>(out var actor);
 
             if (isActor)
             {
-                var attributesData = actor.GetData<AttributesData>();
-                var healthProperty = attributesData.Attributes[Attribute.Health];
-                healthProperty.Value -= _damage;
+                var hasAttributesData = actor.TryGetData<AttributesData>(out var data);
+                if (hasAttributesData)
+                {
+                    var healthProperty = data.Attributes[Attribute.Health];
+                    healthProperty.Value -= _damage;
+                }
             }
             
             Destroy(gameObject);

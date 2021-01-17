@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attribute: 0
   _height: 2
-  _healthBar: {fileID: 9107723544760505755, guid: 8d090297fa1957c4aa81d8e36f4b4cf9,
-    type: 3}
+  _bar: {fileID: 3813020215978178232, guid: 8d090297fa1957c4aa81d8e36f4b4cf9, type: 3}

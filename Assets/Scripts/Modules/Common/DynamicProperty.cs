@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Modules.Common
 {
@@ -21,12 +22,17 @@ namespace Modules.Common
                     return;
                 }
                 
-                DynamicValue = value;
+                UpdateValue(value);
                 PropertyChanged?.Invoke(this, DynamicValue);
             }
         }
 
         protected abstract bool Equals(T lhs, T rhs);
+
+        protected virtual void UpdateValue(T value)
+        {
+            DynamicValue = value;
+        }
 
         public event EventHandler<T> PropertyChanged;
     }
