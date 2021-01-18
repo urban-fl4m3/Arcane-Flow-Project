@@ -50,6 +50,7 @@ namespace UI.Factory
                 var canvas = Object.Instantiate(_canvasContainer.MainCanvas);
                 canvas.renderMode = RenderMode.ScreenSpaceCamera;
                 canvas.worldCamera = _cameraManager.GameCamera.Component;
+                canvas.planeDistance = 1.0f;
                 _canvasInstances.Add(mainCanvasId, canvas);
             }
 

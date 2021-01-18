@@ -233,7 +233,7 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     - _delta: 1
-    - _value: 0.775
+    - _value: 0.925
     m_Colors:
     - Color_71A22B3C: {r: 0, g: 0, b: 0, a: 1}
     - Color_7D037CDB: {r: 1, g: 1, b: 1, a: 1}

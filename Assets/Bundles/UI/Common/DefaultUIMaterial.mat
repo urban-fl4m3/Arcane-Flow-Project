@@ -20,14 +20,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DefaultUnlitMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: bb739212735f8e047a1b814bceb7e6de,
+  m_Name: DefaultUIMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 83fe3cafed034f04bba79d78d77ce0b3,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 2501
   stringTagMap:
     MotionVector: User
   disabledShaderPasses:
@@ -208,9 +208,9 @@ Material:
     - _PPDMinSamples: 5
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
-    - _ReceivesSSR: 1
+    - _ReceivesSSR: 0
     - _RefractionModel: 0
-    - _RenderQueueType: 1
+    - _RenderQueueType: 2
     - _RequireSplitLighting: 0
     - _SSRefractionProjectionModel: 0
     - _Smoothness: 0.5
@@ -225,10 +225,10 @@ Material:
     - _StencilOp: 0
     - _StencilReadMask: 255
     - _StencilRef: 0
-    - _StencilRefDepth: 8
+    - _StencilRefDepth: 0
     - _StencilRefDistortionVec: 4
-    - _StencilRefGBuffer: 10
-    - _StencilRefMV: 40
+    - _StencilRefGBuffer: 2
+    - _StencilRefMV: 32
     - _StencilWriteMask: 6
     - _StencilWriteMaskDepth: 8
     - _StencilWriteMaskDistortionVec: 4
@@ -254,7 +254,7 @@ Material:
     - _UseEmissiveIntensity: 0
     - _UseShadowThreshold: 0
     - _UseUIAlphaClip: 0
-    - _ZTestDepthEqualForOpaque: 3
+    - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
     - _ZTestModeDistortion: 4
     - _ZTestTransparent: 4

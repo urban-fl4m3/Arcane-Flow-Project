@@ -6,7 +6,6 @@ namespace Modules.Render.Managers
     public interface ICameraManager
     {
         CameraActor GameCamera { get; }
-        CameraActor UiCamera { get; }
         
         void Init();
         void LoadMainCamera();

@@ -2,7 +2,6 @@
 using Modules.Render.Actors;
 using Modules.Render.Configs;
 using Modules.Ticks.Managers;
-using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace Modules.Render.Managers
@@ -13,7 +12,6 @@ namespace Modules.Render.Managers
         private readonly ITickManager _tickManager;
 
         private CameraActor _gameCamera;
-        private CameraActor _uiCamera;
 
         public CameraActor GameCamera
         {
@@ -27,19 +25,6 @@ namespace Modules.Render.Managers
                 return _gameCamera;
             }    
         }
-
-        public CameraActor UiCamera
-        {
-            get
-            {
-                if (_uiCamera == null)
-                {
-                    LoadUiCamera();
-                }
-
-                return _uiCamera;
-            }
-        }
         
         public CameraManager(ICameraConfig cameraConfig, ITickManager tickManager)
         {
@@ -49,7 +34,7 @@ namespace Modules.Render.Managers
 
         public void Init()
         {
-           // LoadMainCamera();
+            
         }
 
         public void SetCameraTarget(IActor actor)
@@ -61,14 +46,6 @@ namespace Modules.Render.Managers
         {
             _gameCamera = Object.Instantiate(_cameraConfig.MainCamera);
             _gameCamera.Init(_tickManager.Processor, _gameCamera);
-          //  _gameCamera.Component.clearFlags = CameraClearFlags.Depth;
-        }
-        
-        public void LoadUiCamera()
-        {
-            _uiCamera = Object.Instantiate(_cameraConfig.UICamera);
-            _uiCamera.Init(_tickManager.Processor, _uiCamera);
-            _uiCamera.Component.clearFlags = CameraClearFlags.Depth;
         }
     }
 }
