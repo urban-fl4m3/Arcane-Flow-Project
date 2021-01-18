@@ -4,43 +4,25 @@ using Modules.Player.Managers;
 using Modules.Render.Managers;
 using UI.Helpers;
 using UI.Managers;
-using UI.Views.GameHudWindow;
-using UnityEngine;
+using UI.Views.StartMenuWindow;
 using ILogger = Modules.Logger.ILogger;
 
 namespace Modules.Core.Initializers
 {
     public class SceneInitializer
     {
-        private readonly ILoggerManager _loggerManager;
-        private readonly IPlayerManager _playerManager;
-        private readonly ICameraManager _cameraManager;
-        private readonly IMapManager _mapManager;
-        private readonly IViewManager _viewManager;
+        private readonly IViewSchemeManager _schemeManager;
 
         private ILogger _logger;
         
-        public SceneInitializer(ILoggerManager loggerManager,
-            IPlayerManager playerManager,
-            ICameraManager cameraManager,
-            IMapManager mapManager,
-            IViewManager viewManager)
+        public SceneInitializer(IViewSchemeManager schemeManager)
         {
-            _loggerManager = loggerManager;
-            _playerManager = playerManager;
-            _cameraManager = cameraManager;
-            _mapManager = mapManager;
-            _viewManager = viewManager;
+            _schemeManager = schemeManager;
         }
 
         public void Init()
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            
-            _mapManager.LoadMap();
-            _viewManager.AddView(Window.GameHud, new GameHudModel(_playerManager));
-
-            _mapManager.RunGameRoom();
+            _schemeManager.AddScheme(Scheme.StartMenu, new StartMenuSchemeModel());
         }
     }
 }

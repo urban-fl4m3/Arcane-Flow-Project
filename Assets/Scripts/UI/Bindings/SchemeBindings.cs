@@ -2,6 +2,7 @@
 using UI.Providers;
 using UI.Schemes;
 using UI.Views.GameHudWindow;
+using UI.Views.StartMenuWindow;
 using Zenject;
 
 namespace UI.Bindings
@@ -11,6 +12,7 @@ namespace UI.Bindings
         public static void Bind(DiContainer container)
         {
             container.Bind<IViewScheme>().To<GameHudScheme>().AsSingle();
+            container.Bind<IViewScheme>().To<StartMenuScheme>().AsSingle();
 
             container.Bind<IViewSchemeProvider>().To<ViewSchemeProvider>().AsSingle();
             container.Bind<IViewSchemeManager>().To<ViewSchemeManager>().AsSingle();

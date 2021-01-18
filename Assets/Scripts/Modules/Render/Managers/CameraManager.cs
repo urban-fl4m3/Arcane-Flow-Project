@@ -34,7 +34,15 @@ namespace Modules.Render.Managers
 
         public void Init()
         {
-            
+            _gameCamera.Init(_tickManager.Processor, _gameCamera);
+        }
+
+        public void InitThirdPersonBehaviours()
+        {
+            foreach (var behaviour in _cameraConfig.GameSceneBaseBehaviours)
+            {
+                _gameCamera.AddBehaviour(behaviour);
+            }   
         }
 
         public void SetCameraTarget(IActor actor)
@@ -45,7 +53,6 @@ namespace Modules.Render.Managers
         public void LoadMainCamera()
         {
             _gameCamera = Object.Instantiate(_cameraConfig.MainCamera);
-            _gameCamera.Init(_tickManager.Processor, _gameCamera);
         }
     }
 }

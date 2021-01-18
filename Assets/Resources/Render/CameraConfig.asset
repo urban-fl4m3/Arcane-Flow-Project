@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: CameraConfig
   m_EditorClassIdentifier: 
   _main: {fileID: 4775397948294834339, guid: f172b3c2b889bee4598558825cc42874, type: 3}
-  _uiCamera: {fileID: 8904953110926315142, guid: 48a32e00a85cce043bf4d388e2794ccd,
-    type: 3}
+  _gameSceneBaseBehaviours:
+  - {fileID: 11400000, guid: b9899c3d259ca3048aaced65d95db884, type: 2}
+  - {fileID: 11400000, guid: 139270c7fbf99f54eb1ebddea4fc78f6, type: 2}
+  - {fileID: 11400000, guid: 9d6acdab05c31d647908c7f9fe8c97ff, type: 2}
+  - {fileID: 11400000, guid: e561dfff08fb38345a0fd2581a0bad69, type: 2}

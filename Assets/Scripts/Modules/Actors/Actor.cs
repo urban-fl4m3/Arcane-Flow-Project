@@ -80,6 +80,11 @@ namespace Modules.Actors
             }
         }
         
+        public void AddBehaviour<T>(T newBehaviour) where T : class, IBaseBehaviour
+        {
+            _actorBehaviours.SetAndInitialize(this, newBehaviour);
+        }
+
         public void AddData<T>(T newData) where T : class, IBaseData
         {
             _actorDatas.SetAndInitialize(this, newData);

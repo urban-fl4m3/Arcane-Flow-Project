@@ -687,6 +687,12 @@
                 <e p="GameHudView.cs" t="Include" />
               </e>
               <e p="IView.cs" t="Include" />
+              <e p="StartMenuWindow" t="Include">
+                <e p="StartMenuModel.cs" t="Include" />
+                <e p="StartMenuScheme.cs" t="Include" />
+                <e p="StartMenuSchemeModel.cs" t="Include" />
+                <e p="StartMenuView.cs" t="Include" />
+              </e>
             </e>
           </e>
         </e>

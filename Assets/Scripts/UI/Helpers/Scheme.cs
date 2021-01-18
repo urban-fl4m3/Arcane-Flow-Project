@@ -3,6 +3,7 @@
     public enum Scheme
     {
         Unknown = -1,
-        GameHud = 1
+        StartMenu = 0,
+        GameHud = 1,
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace UI.Views
 {
-    public class BaseGenericView<TModel> : BaseView
+    public abstract class BaseGenericView<TModel> : BaseView
         where TModel : ICustomModel
     {
         protected TModel Model;
@@ -13,9 +13,6 @@
             base.Process(model);
         }
 
-        protected virtual void OnInitialize(TModel model)
-        {
-            
-        }
+        protected abstract void OnInitialize(TModel model);
     }
 }

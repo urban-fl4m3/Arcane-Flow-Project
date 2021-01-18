@@ -8,6 +8,7 @@ namespace Modules.Render.Managers
         CameraActor GameCamera { get; }
         
         void Init();
+        void InitThirdPersonBehaviours();
         void LoadMainCamera();
         void SetCameraTarget(IActor actor);
     }

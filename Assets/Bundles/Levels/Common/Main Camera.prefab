@@ -250,10 +250,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _child: {fileID: 5540659038402722059}
-  _behaviours:
-  - {fileID: 11400000, guid: b9899c3d259ca3048aaced65d95db884, type: 2}
-  - {fileID: 11400000, guid: 139270c7fbf99f54eb1ebddea4fc78f6, type: 2}
-  - {fileID: 11400000, guid: 9d6acdab05c31d647908c7f9fe8c97ff, type: 2}
-  - {fileID: 11400000, guid: e561dfff08fb38345a0fd2581a0bad69, type: 2}
+  _behaviours: []
   _datas:
   - {fileID: 11400000, guid: c283a4f155673fe408363e4b60888faa, type: 2}
