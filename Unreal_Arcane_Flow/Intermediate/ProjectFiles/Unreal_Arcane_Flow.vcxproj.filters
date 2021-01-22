@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Unreal_Arcane_Flow.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{BA92839A-8CA5-4F87-BD75-C83313F52DEE}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Unreal_Arcane_Flow.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\Unreal_Arcane_FlowEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{AC941814-0267-4078-8E5D-BEFF3B5D8972}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Unreal_Arcane_Flow">
+      <UniqueIdentifier>{334ACDA0-BDC7-48DD-AF58-3CB856F9098E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Unreal_Arcane_Flow\Unreal_Arcane_Flow.Build.cs">
+      <Filter>Source\Unreal_Arcane_Flow</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Unreal_Arcane_Flow\Unreal_Arcane_Flow.cpp">
+      <Filter>Source\Unreal_Arcane_Flow</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Unreal_Arcane_Flow\Unreal_Arcane_Flow.h">
+      <Filter>Source\Unreal_Arcane_Flow</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Unreal_Arcane_Flow\Unreal_Arcane_FlowGameModeBase.cpp">
+      <Filter>Source\Unreal_Arcane_Flow</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Unreal_Arcane_Flow\Unreal_Arcane_FlowGameModeBase.h">
+      <Filter>Source\Unreal_Arcane_Flow</Filter>
+    </ClInclude>
+    <Filter Include="Source\Unreal_Arcane_Flow\Modules">
+      <UniqueIdentifier>{4071C309-3D96-4480-AA35-655808360206}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Unreal_Arcane_Flow\Modules\Behaviours">
+      <UniqueIdentifier>{E1F14936-1B57-4A2B-AEE7-F10A5F80BDD2}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Unreal_Arcane_Flow\Modules\Behaviours\BaseBehaviour.cpp">
+      <Filter>Source\Unreal_Arcane_Flow\Modules\Behaviours</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Unreal_Arcane_Flow\Modules\Behaviours\BaseBehaviour.h">
+      <Filter>Source\Unreal_Arcane_Flow\Modules\Behaviours</Filter>
+    </ClInclude>
+    <Filter Include="Source\Unreal_Arcane_Flow\Modules\Common">
+      <UniqueIdentifier>{5EC41D13-289E-432F-8881-3329BCF9C9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Unreal_Arcane_Flow\Modules\Common\Behaviours">
+      <UniqueIdentifier>{DA984044-01A9-4776-8814-C3ADE4280092}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Unreal_Arcane_Flow\Modules\Common\Behaviours\ForwardRunningBehaviour.cpp">
+      <Filter>Source\Unreal_Arcane_Flow\Modules\Common\Behaviours</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Unreal_Arcane_Flow\Modules\Common\Behaviours\ForwardRunningBehaviour.h">
+      <Filter>Source\Unreal_Arcane_Flow\Modules\Common\Behaviours</Filter>
+    </ClInclude>
+    <Filter Include="Source\Unreal_Arcane_Flow\Modules\Common\Data">
+      <UniqueIdentifier>{D2FAD161-EC6B-45FE-9AD0-01EF051ED710}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Unreal_Arcane_Flow\Modules\Common\Data\RootData.cpp">
+      <Filter>Source\Unreal_Arcane_Flow\Modules\Common\Data</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Unreal_Arcane_Flow\Modules\Common\Data\RootData.h">
+      <Filter>Source\Unreal_Arcane_Flow\Modules\Common\Data</Filter>
+    </ClInclude>
+    <Filter Include="Source\Unreal_Arcane_Flow\Modules\Data">
+      <UniqueIdentifier>{830EE008-D55A-48A4-8388-79020156C847}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Unreal_Arcane_Flow\Modules\Data\BaseData.cpp">
+      <Filter>Source\Unreal_Arcane_Flow\Modules\Data</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Unreal_Arcane_Flow\Modules\Data\BaseData.h">
+      <Filter>Source\Unreal_Arcane_Flow\Modules\Data</Filter>
+    </ClInclude>
+    <Filter Include="Source\Unreal_Arcane_Flow\Modules\Units">
+      <UniqueIdentifier>{B8B87389-4B2A-443C-9949-67FD4498EC49}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Unreal_Arcane_Flow\Modules\Units\Unit.cpp">
+      <Filter>Source\Unreal_Arcane_Flow\Modules\Units</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Unreal_Arcane_Flow\Modules\Units\Unit.h">
+      <Filter>Source\Unreal_Arcane_Flow\Modules\Units</Filter>
+    </ClInclude>
+    <Filter Include="Source\Unreal_Arcane_Flow\Templates">
+      <UniqueIdentifier>{E081FDCF-7404-4C35-981D-38A678AF34CE}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Unreal_Arcane_Flow\Templates\ActorMemberContainer.cpp">
+      <Filter>Source\Unreal_Arcane_Flow\Templates</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Unreal_Arcane_Flow\Templates\ActorMemberContainer.h">
+      <Filter>Source\Unreal_Arcane_Flow\Templates</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
