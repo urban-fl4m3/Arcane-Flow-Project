@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "Unreal_Arcane_Flow",
-			"Path": "C:\\Users\\urban\\Desktop\\Unreal_Arcane_Flow\\Source\\Unreal_Arcane_Flow.Target.cs",
+			"Path": "D:\\Dark_genesis\\Arcane-Flow-Project\\Unreal_Arcane_Flow\\Source\\Unreal_Arcane_Flow.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "Unreal_Arcane_FlowEditor",
-			"Path": "C:\\Users\\urban\\Desktop\\Unreal_Arcane_Flow\\Source\\Unreal_Arcane_FlowEditor.Target.cs",
+			"Path": "D:\\Dark_genesis\\Arcane-Flow-Project\\Unreal_Arcane_Flow\\Source\\Unreal_Arcane_FlowEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]
