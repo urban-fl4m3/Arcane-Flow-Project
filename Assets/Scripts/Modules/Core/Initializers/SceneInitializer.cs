@@ -1,8 +1,4 @@
-﻿using Modules.Logger;
-using Modules.Maps.Managers;
-using Modules.Player.Managers;
-using Modules.Render.Managers;
-using UI.Helpers;
+﻿using UI.Helpers;
 using UI.Managers;
 using UI.Views.StartMenuWindow;
 using ILogger = Modules.Logger.ILogger;

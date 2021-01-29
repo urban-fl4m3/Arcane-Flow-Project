@@ -1,4 +1,5 @@
-﻿using Modules.Actors;
+﻿using System;
+using Modules.Actors;
 using UnityEngine;
 
 namespace Modules.Behaviours
@@ -6,7 +7,8 @@ namespace Modules.Behaviours
     public abstract class BaseBehaviour : ScriptableObject, IBaseBehaviour
     {
         public IActor Owner { get; private set; }
-        
+        public ScriptableObject Instance => this;
+
         public void Initialize(IActor owner)
         {
             Owner = owner;
@@ -14,5 +16,10 @@ namespace Modules.Behaviours
         }
 
         protected abstract void OnInitialize(IActor owner);
+        
+        public virtual void Dispose()
+        {
+            
+        }
     }
 }

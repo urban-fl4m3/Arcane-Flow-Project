@@ -42,6 +42,18 @@ namespace UI.Views
             return nested;
         }
 
+        // protected TView RemoveNestedView<TView>(TView view)
+        //     where TView : BaseView
+        // {
+        //     var viewId = view.GetInstanceID().ToString();
+        //
+        //     if (_nestedViews.ContainsKey(viewId))
+        //     {
+        //         var nested = _nestedViews[viewId];
+        //         nested.CloseView();
+        //     }
+        // }
+
         protected virtual void Process(ICustomModel model)
         {
             

@@ -30,5 +30,10 @@ namespace Modules.Common
         {
             return (_value - _minValue) / (_maxValue - _minValue);
         }
+
+        public void Maximize()
+        {
+            _value = _maxValue;
+        }
     }
 }
