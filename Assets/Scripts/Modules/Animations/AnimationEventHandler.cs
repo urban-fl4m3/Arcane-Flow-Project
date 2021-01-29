@@ -9,6 +9,10 @@ namespace Modules.Animations
         private readonly Dictionary<string, EventHandler> _eventsDictionary
             = new Dictionary<string, EventHandler>();
         
+        /// <summary>
+        /// Executed from unity animator with given key!
+        /// </summary>
+        /// <param name="key"></param>
         public void RaiseEvent(string key)
         {
             var isExists = _eventsDictionary.TryGetValue(key, out var handler);
@@ -19,7 +23,7 @@ namespace Modules.Animations
             }
         }
 
-        public void AddEvent(string key, EventHandler handler)
+        public void Subscribe(string key, EventHandler handler)
         {
             if (!_eventsDictionary.ContainsKey(key))
             {
@@ -27,6 +31,11 @@ namespace Modules.Animations
             }
 
             _eventsDictionary[key] += handler;
+        }
+
+        public void Unsubscribe(string key)
+        {
+            _eventsDictionary.Remove(key);
         }
     }
 }

@@ -4,6 +4,7 @@ namespace Modules.Animations
 {
     public interface IAnimationEventHandler
     {
-        void AddEvent(string key, EventHandler handler);
+        void Subscribe(string key, EventHandler handler);
+        void Unsubscribe(string key);
     }
 }
