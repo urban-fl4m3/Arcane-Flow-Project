@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _main: {fileID: 5031521063332076175, guid: 8f0346ed915f0584b852322c8d10ec3e, type: 3}
   _gameSceneBaseBehaviours:
-  - {fileID: 11400000, guid: ac38e2018a533204ab987b61979a672a, type: 2}
   - {fileID: 11400000, guid: c9fe407bf5164414e877cbe8add25a73, type: 2}
-  - {fileID: 11400000, guid: 73dbbd9325825064baef7d1e6cd7a164, type: 2}
   - {fileID: 11400000, guid: 3f213630895a50f41b6d657c071a7533, type: 2}
+  - {fileID: 11400000, guid: 73dbbd9325825064baef7d1e6cd7a164, type: 2}
+  - {fileID: 11400000, guid: ac38e2018a533204ab987b61979a672a, type: 2}

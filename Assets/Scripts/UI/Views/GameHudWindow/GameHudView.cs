@@ -2,6 +2,8 @@
 using System.Collections;
 using Modules.Common;
 using Modules.Datas.Attributes;
+using Modules.Maps.Managers;
+using Modules.Player.Managers;
 using UI.Views.RestartPopupWindow;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,10 +20,14 @@ namespace UI.Views.GameHudWindow
         private float _lastValue;
         private DynamicFloat _healthProperty;
         private Coroutine _healthBarUpdate;
+
+        private World _world;
         
         protected override void OnInitialize(GameHudModel model)
         {
-            var attributesData = model.PlayerManager.PlayerActor.GetData<AttributesData>();
+            _world = World.CurrentInstance;
+            
+            var attributesData = _world.ResolveManager<PlayerManager>().PlayerActor.GetData<AttributesData>();
             _healthProperty = attributesData.Attributes[Attribute.Health];
             _healthProperty.PropertyChanged += HandleHealthChanged;
             
@@ -36,19 +42,19 @@ namespace UI.Views.GameHudWindow
             if (value <= 0)
             {
                 Cursor.lockState = CursorLockMode.None;
-                Model.MapManager.MapReset += HandleLevelRestart;
+                _world.MapReset += HandleLevelRestart;
                 
-                AddNestedView(_restartPopupView, new RestartPopupModel(Model.MapManager));
-                
+                AddNestedView(_restartPopupView, new RestartPopupModel());
+                _world.Stop();
                 _healthProperty.PropertyChanged -= HandleHealthChanged;
             }
         }
 
         private void HandleLevelRestart(object sender, EventArgs e)
         {
-            Model.MapManager.MapReset -= HandleLevelRestart;
+            _world.MapReset -= HandleLevelRestart;
             
-            var attributesData = Model.PlayerManager.PlayerActor.GetData<AttributesData>();
+            var attributesData = _world.ResolveManager<PlayerManager>().PlayerActor.GetData<AttributesData>();
             _healthProperty = attributesData.Attributes[Attribute.Health];
             _healthProperty.PropertyChanged += HandleHealthChanged;
 

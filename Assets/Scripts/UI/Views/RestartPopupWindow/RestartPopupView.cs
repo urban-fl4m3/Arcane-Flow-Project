@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Modules.Maps.Managers;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI.Views.RestartPopupWindow
@@ -15,7 +16,7 @@ namespace UI.Views.RestartPopupWindow
 
         private void RestartButtonPressed()
         {
-            Model.MapManager.RestartGameRoom();
+            World.CurrentInstance.RestartWorld();
             CloseView();
         }
 

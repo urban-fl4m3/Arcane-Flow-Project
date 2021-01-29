@@ -1,28 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Generics;
 using Modules.Actors;
 using Modules.Enemies.Factory;
-using Modules.Enemies.Providers;
+using Modules.Maps.Managers;
+using Modules.Render.Managers;
 using Modules.SpellSystem.Data;
 using Modules.SpellSystem.Managers;
+using Modules.Ticks.Managers;
 
 namespace Modules.Enemies.Managers
 {
-    public class EnemyManager : IEnemyManager
+    public class EnemyManager : BaseManager
     {
-        private readonly IEnemyProvider _enemyProvider;
         private readonly IEnemyFactory _enemyFactory;
         private readonly ISpellManager _spellManager;
         
-        private List<IActor> _spawnedEnemies = new List<IActor>();
+        private readonly List<IActor> _spawnedEnemies = new List<IActor>();
 
-        public IReadOnlyList<IActor> SpawnedEnemies => _spawnedEnemies;
-        
+        private readonly World _world;
 
-        public EnemyManager(IEnemyFactory enemyFactory, ISpellManager spellManager)
+        public EnemyManager()
         {
-            _enemyFactory = enemyFactory;
-            _spellManager = spellManager;
+            _world = World.CurrentInstance;
+            _spellManager = _world.ResolveManager<ISpellManager>();
+            _enemyFactory = new EnemyFactory(_world.ResolveManager<ITickManager>(),
+                _world.ResolveManager<ICameraManager>(), _world.Settings.AvailableEnemies);
         }
 
         public IActor SpawnEnemy()

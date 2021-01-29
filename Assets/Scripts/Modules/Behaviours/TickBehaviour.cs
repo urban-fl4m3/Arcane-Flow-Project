@@ -1,6 +1,5 @@
 ﻿using Modules.Actors;
 using Modules.Ticks;
-using UnityEngine;
 
 namespace Modules.Behaviours
 {

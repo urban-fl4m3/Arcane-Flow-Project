@@ -5,6 +5,8 @@ namespace Modules.Ticks.Processors
 {
     public interface ITickProcessor : IDisposable
     {
+        bool IsUpdating { get; set; }
+        
         GameObject Processor { get; }
         
         void AddTick(ITickUpdate tick);

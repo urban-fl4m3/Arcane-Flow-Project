@@ -19,5 +19,15 @@ namespace Modules.Ticks.Managers
             
             Processor = tickProcessor;
         }
+
+        public void StopUpdating()
+        {
+            Processor.IsUpdating = false;
+        }
+
+        public void StartUpdating()
+        {
+            Processor.IsUpdating = true;
+        }
     }
 }

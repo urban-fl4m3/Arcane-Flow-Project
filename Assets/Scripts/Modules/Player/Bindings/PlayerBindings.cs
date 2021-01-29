@@ -1,5 +1,4 @@
 ﻿using Modules.Player.Configs;
-using Modules.Player.Managers;
 using Zenject;
 
 namespace Modules.Player.Bindings
@@ -10,7 +9,6 @@ namespace Modules.Player.Bindings
         { 
             container.Bind<IPlayerConfig>().To<PlayerConfig>()
                 .FromScriptableObjectResource("Player/MainConfig").AsSingle();
-            container.Bind<IPlayerManager>().To<PlayerManager>().AsSingle();
         } 
     }
 }

@@ -5,16 +5,14 @@ namespace Modules.Player.Commands
 {
     public class PlayerModuleInitializeCommand : InitializeCommand
     {
-        private readonly IPlayerManager _playerManager;
-
-        public PlayerModuleInitializeCommand(IPlayerManager playerManager)
+        public PlayerModuleInitializeCommand()
         {
-            _playerManager = playerManager;
+            
         }
 
         public override void Execute()
         {
-            _playerManager.Init();
+            
             CompleteCommand();
         }
     }

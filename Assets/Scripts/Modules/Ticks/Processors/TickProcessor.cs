@@ -12,6 +12,8 @@ namespace Modules.Ticks.Processors
         private readonly List<ITickLateUpdate> _tickLateUpdates = new List<ITickLateUpdate>();
         private readonly List<ITickFixedUpdate> _tickFixedUpdates = new List<ITickFixedUpdate>();
         
+        public bool IsUpdating { get; set; }
+        
         #region Update
         public void AddTick(ITickUpdate tick)
         {
@@ -25,9 +27,12 @@ namespace Modules.Ticks.Processors
         
         private void Update()
         {
-            foreach (var tick in _tickUpdates)
+            if (IsUpdating)
             {
-                tick.Tick();
+                foreach (var tick in _tickUpdates)
+                {
+                    tick.Tick();
+                }
             }
         }
         #endregion
@@ -45,9 +50,12 @@ namespace Modules.Ticks.Processors
         
         private void LateUpdate()
         {
-            foreach (var tick in _tickLateUpdates)
+            if (IsUpdating)
             {
-                tick.Tick();
+                foreach (var tick in _tickLateUpdates)
+                {
+                    tick.Tick();
+                }
             }
         }
         #endregion
@@ -65,9 +73,12 @@ namespace Modules.Ticks.Processors
         
         private void FixedUpdate()
         {
-            foreach (var tick in _tickFixedUpdates)
+            if (IsUpdating)
             {
-                tick.Tick();
+                foreach (var tick in _tickFixedUpdates)
+                {
+                    tick.Tick();
+                }
             }
         }
         #endregion

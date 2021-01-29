@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3695e219dfc2461fbd3d11828eb93901, type: 3}
-  m_Name: DummyAttributesData
+  m_Script: {fileID: 11500000, guid: 3a918d2c0d684f2493fcd4bd9375147f, type: 3}
+  m_Name: DefaultWorld
   m_EditorClassIdentifier: 
-  _attributeList:
-  - Attribute: 0
-    float:
-      _value: 150
-      _minValue: 0
-      _maxValue: 150
+  _withEnemies: 0
+  _availableEnemies: {fileID: 0}

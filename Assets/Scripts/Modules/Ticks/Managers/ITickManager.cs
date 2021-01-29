@@ -7,5 +7,7 @@ namespace Modules.Ticks.Managers
         ITickProcessor Processor { get; }
         
         void SetTickProcessor(ITickProcessor tickProcessor);
+        void StopUpdating();
+        void StartUpdating();
     }
 }

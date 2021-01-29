@@ -1,14 +1,10 @@
-﻿using Modules.Maps.Managers;
-
-namespace UI.Views.RestartPopupWindow
+﻿namespace UI.Views.RestartPopupWindow
 {
     public class RestartPopupModel : ICustomModel
     {
-        public RestartPopupModel(IMapManager mapManager)
+        public RestartPopupModel()
         {
-            MapManager = mapManager;
+            
         }
-        
-        public IMapManager MapManager { get; }
     }
 }

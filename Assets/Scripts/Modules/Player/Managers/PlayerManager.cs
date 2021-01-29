@@ -1,4 +1,5 @@
-﻿using Modules.Actors;
+﻿using Generics;
+using Modules.Actors;
 using Modules.Maps.Managers;
 using Modules.Player.Configs;
 using Modules.Render.Managers;
@@ -9,7 +10,7 @@ using Object = UnityEngine.Object;
 
 namespace Modules.Player.Managers
 {
-    public class PlayerManager : IPlayerManager
+    public class PlayerManager : BaseManager
     {
         private readonly IPlayerConfig _playerConfig;
         private readonly ITickManager _tickManager;
@@ -18,19 +19,18 @@ namespace Modules.Player.Managers
 
         private Actor _playerActor;
 
-        public void Init()
-        {
-        }
-
         public IActor PlayerActor => _playerActor;
 
-        public PlayerManager(IPlayerConfig playerConfig, ITickManager tickManager,
-            ICameraManager cameraManager, ISpellManager spellManager)
+        private readonly World _world;
+        
+        public PlayerManager()
         {
-            _playerConfig = playerConfig;
-            _tickManager = tickManager;
-            _cameraManager = cameraManager;
-            _spellManager = spellManager;
+            _world = World.CurrentInstance;
+            
+            _playerConfig = _world.Settings.PlayerConfig;
+            _tickManager = _world.ResolveManager<ITickManager>();
+            _cameraManager = _world.ResolveManager<ICameraManager>();
+            _spellManager = _world.ResolveManager<ISpellManager>();
         }
 
         public void SpawnPlayer()
