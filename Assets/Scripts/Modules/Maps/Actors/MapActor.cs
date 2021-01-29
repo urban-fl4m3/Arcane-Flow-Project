@@ -17,6 +17,8 @@ namespace Modules.Maps.Actors
 
         private readonly DynamicActor _player = new DynamicActor();
         private NavMeshDataInstance _navMeshDataInstance;
+
+        private readonly List<AiNavigationData> _aiNavigationData = new List<AiNavigationData>();
         
         protected override void OnAwake()
         {
@@ -35,8 +37,19 @@ namespace Modules.Maps.Actors
             enemy.GetData<TransformData>().GetTransform().position = _spawnPoints[0].position;
             var aiNavigationData = enemy.GetData<AiNavigationData>();
             aiNavigationData.Player.Value = _player.Value;
-
+            _aiNavigationData.Add(aiNavigationData);
+            
             _player.PropertyChanged += aiNavigationData.HandlePlayerChanged;
+        }
+
+        public void Dispose()
+        {
+            foreach (var aiNavigationData in _aiNavigationData)
+            {
+                _player.PropertyChanged -= aiNavigationData.HandlePlayerChanged;
+            }
+            
+            _aiNavigationData.Clear();
         }
 
         private void OnDestroy()

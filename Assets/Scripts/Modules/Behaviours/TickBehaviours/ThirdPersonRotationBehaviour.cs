@@ -23,8 +23,6 @@ namespace Modules.Behaviours.TickBehaviours
         protected override void OnInitialize(IActor owner)
         {
             _cameraTransform = owner.GetData<TransformData>().GetTransform();
-            
-            base.OnInitialize(owner);
         }
         
         public void SetActorToFollow(IActor actor)
@@ -33,6 +31,13 @@ namespace Modules.Behaviours.TickBehaviours
             _transformData = actor.GetData<TransformData>();
             _rotationData = actor.GetData<RotationData>();
             _actorTransform = _transformData.GetTransform();
+            
+            StartTick();
+        }
+
+        public void StopFollow()
+        {
+            StopTick();
         }
 
         public override void Tick()

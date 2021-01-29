@@ -15,6 +15,9 @@ namespace Modules.Actors
         Camera Camera { get; }
         
         void Init(ITickProcessor tickProcessor, CameraActor mainCamera);
+        void Init(ITickProcessor tickProcessor, Camera mainCamera);
+        void Init();
+        void DestroyActor();
         
         GameObject GetGameObject();
 

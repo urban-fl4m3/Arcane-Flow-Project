@@ -6,7 +6,8 @@ namespace Modules.Datas
     public abstract class BaseData : ScriptableObject, IBaseData
     {
         public IActor Owner { get; private set; }
-        
+        public ScriptableObject Instance => this;
+
         public void Initialize(IActor owner)
         {
             Owner = owner;
@@ -14,5 +15,10 @@ namespace Modules.Datas
         }
 
         protected abstract void OnInitialize(IActor owner);
+
+        public virtual void Dispose()
+        {
+            
+        }
     }
 }

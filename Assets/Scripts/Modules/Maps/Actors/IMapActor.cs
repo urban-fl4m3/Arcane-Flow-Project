@@ -6,5 +6,6 @@ namespace Modules.Maps.Actors
     {
         void AddPlayer(IActor player);
         void AddEnemy(IActor enemy);
+        void Dispose();
     }
 }

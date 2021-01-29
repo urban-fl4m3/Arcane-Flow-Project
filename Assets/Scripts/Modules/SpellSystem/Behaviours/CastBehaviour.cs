@@ -28,7 +28,7 @@ namespace Modules.SpellSystem.Behaviours
                 _caster = caster;
             }
 
-            _animationEventHandlerData.EventHandler.AddEvent("Cast", Cast);
+            _animationEventHandlerData.EventHandler.Subscribe("Cast", Cast);
         }
      
         private void Cast(object sender, EventArgs e)

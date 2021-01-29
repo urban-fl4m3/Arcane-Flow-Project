@@ -3,6 +3,7 @@ using Modules.Enemies.Configs;
 using Modules.Enemies.Managers;
 using Modules.Maps.Actors;
 using Modules.Player.Managers;
+using Modules.Render.Managers;
 using Modules.Ticks.Processors;
 
 namespace Modules.Maps
@@ -27,9 +28,20 @@ namespace Modules.Maps
 
         public void Run()
         {
+            _playerManager.SpawnPlayer();
+            
             var enemy = _enemyManager.SpawnEnemy();
             _map.AddPlayer(_playerManager.PlayerActor);
             _map.AddEnemy(enemy);
+        }
+
+        public void Restart()
+        {
+            _playerManager.RemovePlayer();
+            _enemyManager.ClearAllEnemies();
+            _map.Dispose();
+
+            Run();
         }
     }
 }

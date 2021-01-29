@@ -11,7 +11,7 @@ namespace Modules.AI.Data
     {
         [SerializeField] private float _reachDistance;
         
-        public DynamicActor Player { get; set; }
+        public DynamicActor Player { get; private set; }
         public NavMeshAgent NavMeshAgent { get; private set; }
 
         public float ReachDistance => _reachDistance;

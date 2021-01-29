@@ -28,10 +28,36 @@ namespace Modules.Actors
             return _child;
         }
 
-        public void Init(ITickProcessor tickProcessor, CameraActor mainCamera)
+        public void Init(ITickProcessor tickProcessor, CameraActor cameraActor)
         {
+            InitInternal(tickProcessor, cameraActor.Component);
+        }
+        
+        public void Init(ITickProcessor tickProcessor, Camera mainCamera)
+        {
+            InitInternal(tickProcessor, mainCamera);
+        }
+
+        /// <summary>
+        /// Use only for Reinit
+        /// </summary>
+        /// <exception cref="MissingMemberException"></exception>
+        public void Init()
+        {
+            if (TickProcessor == null || Camera == null)
+            {
+                throw new MissingMemberException($"Can't initialize Actor while Tick processor and camera are null");
+            }
+            InitInternal(TickProcessor, Camera);
+        }
+
+        private void InitInternal(ITickProcessor tickProcessor, Camera mainCamera)
+        {
+            _actorDatas.Clear();
+            _actorBehaviours.Clear();
+            
             TickProcessor = tickProcessor;
-            Camera = mainCamera.Component;
+            Camera = mainCamera;
             
             if (_child) _child.Init(tickProcessor, mainCamera);
             
@@ -50,6 +76,7 @@ namespace Modules.Actors
 
             OnAwake();
         }
+        
 
         public GameObject GetGameObject()
         {
@@ -80,14 +107,24 @@ namespace Modules.Actors
             }
         }
         
-        public void AddBehaviour<T>(T newBehaviour) where T : class, IBaseBehaviour
+        public void AddBehaviour<T>(T newBehaviour) where T : BaseBehaviour
         {
+            _behaviours.Add(newBehaviour);
             _actorBehaviours.SetAndInitialize(this, newBehaviour);
         }
 
-        public void AddData<T>(T newData) where T : class, IBaseData
+        public void AddData<T>(T newData) where T : BaseData
         {
+            _datas.Add(newData);
             _actorDatas.SetAndInitialize(this, newData);
+        }
+
+        public void DestroyActor()
+        {
+            _actorBehaviours.Clear();
+            _actorDatas.Clear();
+            
+            Destroy(gameObject);
         }
 
         protected abstract void OnAwake();

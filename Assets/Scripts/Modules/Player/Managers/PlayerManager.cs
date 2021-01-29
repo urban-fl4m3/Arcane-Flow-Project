@@ -40,5 +40,12 @@ namespace Modules.Player.Managers
             _playerActor.GetData<SpellData>().Add(_spellManager.GetDefaultSpell());
             _cameraManager.SetCameraTarget(_playerActor);
         }
+
+        public void RemovePlayer()
+        {
+            _cameraManager.GameCamera.StopFollowing();
+            _playerActor.DestroyActor();
+            _playerActor = null;
+        }
     }
 }

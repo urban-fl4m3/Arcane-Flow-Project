@@ -1,5 +1,6 @@
 ﻿using Modules.Actors;
 using Modules.Ticks;
+using UnityEngine;
 
 namespace Modules.Behaviours
 {
@@ -20,6 +21,12 @@ namespace Modules.Behaviours
         protected void StartTick()
         {
             Owner.TickProcessor.AddTick(this);
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+            StopTick();
         }
     }
 }

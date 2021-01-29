@@ -8,7 +8,7 @@ namespace Modules.Maps.Managers
 {
     public class MapManager : IMapManager
     {
-        public event EventHandler OnMapLoaded;
+        public event EventHandler MapReset;
         
         private readonly IMapSettingsProvider _mapSettingsProvider;
         private readonly IEnemyManager _enemyManager;
@@ -31,16 +31,21 @@ namespace Modules.Maps.Managers
             var generatedMapModel = _mapSettingsProvider.GenerateMapModel();
             var currentMap = generatedMapModel.MapActor;
             var currentLightnings = generatedMapModel.MapLightnings;
-            _cameraManager.InitThirdPersonBehaviours();
-            _playerManager.SpawnPlayer();
             
+            _cameraManager.InitThirdPersonBehaviours();
             _gameRoom = new GameRoom(currentMap, currentLightnings, _enemyManager, _playerManager);
-            OnMapLoaded?.Invoke(this, EventArgs.Empty);
         }
 
         public void RunGameRoom()
         {
             _gameRoom.Run();
+        }
+
+        public void RestartGameRoom()
+        {
+            _gameRoom.Restart();
+            
+            MapReset?.Invoke(this, EventArgs.Empty);
         }
     }
 }

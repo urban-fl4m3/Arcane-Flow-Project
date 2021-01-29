@@ -4,8 +4,10 @@ namespace Modules.Maps.Managers
 {
     public interface IMapManager
     {
-        event EventHandler OnMapLoaded;
+        event EventHandler MapReset;
+        
         void LoadMap();
         void RunGameRoom();
+        void RestartGameRoom();
     }
 }

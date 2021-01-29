@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Modules.Actors;
+using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Generics
 {
@@ -23,6 +25,17 @@ namespace Generics
         {
             actorMember.Initialize(actor);
             _components.Add(actorMember.GetType(), actorMember);
+        }
+
+        public void Clear()
+        {
+            foreach (var component in _components)
+            {
+                component.Value.Dispose();
+                Object.Destroy(component.Value.Instance);
+            }
+            
+            _components.Clear();
         }
     }
 }

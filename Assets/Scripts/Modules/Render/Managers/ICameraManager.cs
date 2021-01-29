@@ -11,5 +11,6 @@ namespace Modules.Render.Managers
         void InitThirdPersonBehaviours();
         void LoadMainCamera();
         void SetCameraTarget(IActor actor);
+        
     }
 }

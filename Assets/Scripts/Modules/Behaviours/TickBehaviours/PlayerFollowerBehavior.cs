@@ -14,14 +14,19 @@ namespace Modules.Behaviours.TickBehaviours
         {  
             ITransformData ownerTransformData = Owner.GetData<TransformData>();
             _ownerActorTransform = ownerTransformData.GetTransform();
-            
-            base.OnInitialize(owner);
         }
 
         public void SetActorToFollow(IActor actor)
         {
             ITransformData actorTransformData = actor.GetData<TransformData>();
             _followingActorTransform = actorTransformData.GetTransform();
+            
+            StartTick();
+        }
+
+        public void StopFollow()
+        {
+            StopTick();
         }
         
         public override void Tick()

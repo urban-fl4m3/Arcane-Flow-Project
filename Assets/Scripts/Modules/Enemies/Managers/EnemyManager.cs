@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Modules.Actors;
 using Modules.Enemies.Factory;
 using Modules.Enemies.Providers;
@@ -12,9 +13,12 @@ namespace Modules.Enemies.Managers
         private readonly IEnemyProvider _enemyProvider;
         private readonly IEnemyFactory _enemyFactory;
         private readonly ISpellManager _spellManager;
-
-        private List<IActor> _spawnedEnemies = new List<IActor>();
         
+        private List<IActor> _spawnedEnemies = new List<IActor>();
+
+        public IReadOnlyList<IActor> SpawnedEnemies => _spawnedEnemies;
+        
+
         public EnemyManager(IEnemyFactory enemyFactory, ISpellManager spellManager)
         {
             _enemyFactory = enemyFactory;
@@ -28,6 +32,16 @@ namespace Modules.Enemies.Managers
             spawnedEnemy.GetData<SpellData>().Add(_spellManager.GetDefaultSpell());
 
             return spawnedEnemy;
+        }
+
+        public void ClearAllEnemies()
+        {
+            foreach (var spawnedEnemy in _spawnedEnemies)
+            {
+                spawnedEnemy.DestroyActor();
+            }
+            
+            _spawnedEnemies.Clear();
         }
     }
 }
