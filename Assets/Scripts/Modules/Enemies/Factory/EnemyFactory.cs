@@ -23,7 +23,7 @@ namespace Modules.Enemies.Factory
         public IActor CreateEnemy()
         {
             var enemyActor = Object.Instantiate(_enemiesConfig.GetAvailableEnemy());
-            enemyActor.Init(_tickManager.Processor, _cameraManager.GameCamera);
+            enemyActor.Init(_tickManager, _cameraManager.GameCamera);
 
             return enemyActor;
         }

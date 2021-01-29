@@ -31,7 +31,7 @@ namespace Modules.Behaviours.TickBehaviours
             _verticalKeyAxis = _bindingData.VerticalKeyAxis();
         }
         
-        public override void Tick()
+        protected override void OnTick()
         {
             if (Input.GetKeyDown(_bindingData.GetAttackKey()))
             {

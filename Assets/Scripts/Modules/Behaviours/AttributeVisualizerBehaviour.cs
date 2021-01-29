@@ -42,7 +42,7 @@ namespace Modules.Behaviours
             base.OnInitialize(owner);
         }
 
-        public override void Tick()
+        protected override void OnTick()
         {
             var position = (_camera.transform.position - _bar.transform.position) * -1 
                            + _barTransform.position;

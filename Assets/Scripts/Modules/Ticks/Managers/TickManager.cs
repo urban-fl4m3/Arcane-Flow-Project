@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Modules.Actors;
 using Modules.Ticks.Processors;
 
 namespace Modules.Ticks.Managers
@@ -7,6 +9,8 @@ namespace Modules.Ticks.Managers
     {
         public ITickProcessor Processor { get; private set; }
 
+        private readonly Dictionary<object, List<ITick>> _allTicks = new Dictionary<object, List<ITick>>();
+            
         public void SetTickProcessor(ITickProcessor tickProcessor)
         {
             if (Processor != null)
@@ -20,14 +24,55 @@ namespace Modules.Ticks.Managers
             Processor = tickProcessor;
         }
 
-        public void StopUpdating()
+        public void CheckActorTicksState(bool enabled)
         {
-            Processor.IsUpdating = false;
+            foreach (var pair in _allTicks)
+            {
+                if (pair.Key is IActor)
+                {
+                    foreach (var tick in pair.Value)
+                    {
+                        tick.Enabled = enabled;
+                    }
+                }
+            }
         }
 
-        public void StartUpdating()
+        public void AddTick(object owner, ITickLateUpdate tick)
         {
-            Processor.IsUpdating = true;
+            AddTickInternal(owner, tick);
+            Processor.AddTick(tick);
+        }
+
+        public void RemoveTick(ITickLateUpdate tickUpdate)
+        {
+            Processor.RemoveTick(tickUpdate);
+        }
+        
+        public void AddTick(object owner, ITickUpdate tick)
+        {
+            AddTickInternal(owner, tick);
+            Processor.AddTick(tick);
+        }
+
+        public void RemoveTick(ITickUpdate tickUpdate)
+        {
+            Processor.RemoveTick(tickUpdate);
+        }
+
+        private void AddTickInternal(object owner, ITick tick)
+        {
+            var hasOwner = _allTicks.TryGetValue(owner, out var tickList);
+
+            if (hasOwner)
+            {
+                tickList.Add(tick);
+            }
+            else
+            {
+                tickList = new List<ITick> {tick};
+                _allTicks.Add(owner, tickList);
+            }
         }
     }
 }

@@ -19,7 +19,6 @@ namespace Modules.Ticks.Commands
             var tickObject = new GameObject("_Tick_Processor");
             var tickProcessor = tickObject.AddComponent<TickProcessor>();
             _tickManager.SetTickProcessor(tickProcessor);
-            _tickManager.StartUpdating();
 
             CompleteCommand();
         }

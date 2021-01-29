@@ -26,10 +26,10 @@ namespace Modules.Behaviours.TickBehaviours
 
         public void StopFollow()
         {
-            StopTick();
+            DisposeTick();
         }
         
-        public override void Tick()
+        protected override void OnTick()
         {
             _ownerActorTransform.position = _followingActorTransform.position;
         }

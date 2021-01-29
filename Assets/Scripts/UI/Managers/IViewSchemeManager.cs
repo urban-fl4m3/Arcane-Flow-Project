@@ -7,7 +7,7 @@ namespace UI.Managers
     {
         IViewScheme CurrentScheme { get; }
 
-        void AddScheme(Scheme type, ISchemeModelMarkup model);
-        void CompleteScheme(Scheme nextBehaviourType, ISchemeModelMarkup nextModel);
+        void AddScheme(Scheme type);
+        void CompleteScheme(Scheme nextBehaviourType);
     }
 }

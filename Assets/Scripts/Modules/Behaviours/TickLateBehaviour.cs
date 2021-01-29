@@ -5,21 +5,31 @@ namespace Modules.Behaviours
 { 
     public abstract class TickLateBehaviour : BaseBehaviour, ITickLateUpdate
     {
+        public bool Enabled { get; set; }
+        
         protected override void OnInitialize(IActor owner)
         {
             StartTick();
         }
 
-        public abstract void Tick();
+        public void Tick()
+        {
+            if (Enabled)
+            {
+                OnTick();
+            }    
+        }
+        
+        protected abstract void OnTick();
 
         protected void StopTick()
         {
-            Owner.TickProcessor.RemoveTick(this);
+            Owner.TickManager.RemoveTick(this);
         }
 
         protected void StartTick()
         {
-            Owner.TickProcessor.AddTick(this);
+            Owner.TickManager.AddTick(Owner, this);
         }
     }
 }

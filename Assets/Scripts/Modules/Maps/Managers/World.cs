@@ -88,6 +88,9 @@ namespace Modules.Maps.Managers
             var enemy = enemyManager.SpawnEnemy();
             _map.AddPlayer(playerManager.PlayerActor);
             _map.AddEnemy(enemy);
+            
+            var tickManager = _worldManagers.Resolve<ITickManager>();
+            tickManager.CheckActorTicksState(true);
         }
 
         public void RestartWorld()
@@ -102,15 +105,12 @@ namespace Modules.Maps.Managers
             RunWorld();
             
             MapReset?.Invoke(this, EventArgs.Empty);
-
-            var tickManager = _worldManagers.Resolve<ITickManager>();
-            tickManager.StartUpdating();
         }
 
         public void Stop()
         {
             var tickManager = _worldManagers.Resolve<ITickManager>();
-            tickManager.StopUpdating();
+            tickManager.CheckActorTicksState(false);
         }
 
         public void Dispose()

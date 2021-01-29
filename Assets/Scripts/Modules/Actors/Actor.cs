@@ -4,6 +4,7 @@ using Generics;
 using Modules.Behaviours;
 using Modules.Datas;
 using Modules.Render.Actors;
+using Modules.Ticks.Managers;
 using Modules.Ticks.Processors;
 using UnityEngine;
 
@@ -20,7 +21,7 @@ namespace Modules.Actors
 
         public event EventHandler OnInitializeComplete;
         
-        public ITickProcessor TickProcessor { get; private set; }
+        public ITickManager TickManager { get; private set; }
         public Camera Camera { get; private set; }
         
         public Actor GetChild()
@@ -28,14 +29,14 @@ namespace Modules.Actors
             return _child;
         }
 
-        public void Init(ITickProcessor tickProcessor, CameraActor cameraActor)
+        public void Init(ITickManager tickManager, CameraActor cameraActor)
         {
-            InitInternal(tickProcessor, cameraActor.Component);
+            InitInternal(tickManager, cameraActor.Component);
         }
         
-        public void Init(ITickProcessor tickProcessor, Camera mainCamera)
+        public void Init(ITickManager tickManager, Camera mainCamera)
         {
-            InitInternal(tickProcessor, mainCamera);
+            InitInternal(tickManager, mainCamera);
         }
 
         /// <summary>
@@ -44,22 +45,22 @@ namespace Modules.Actors
         /// <exception cref="MissingMemberException"></exception>
         public void Init()
         {
-            if (TickProcessor == null || Camera == null)
+            if (TickManager == null || Camera == null)
             {
                 throw new MissingMemberException($"Can't initialize Actor while Tick processor and camera are null");
             }
-            InitInternal(TickProcessor, Camera);
+            InitInternal(TickManager, Camera);
         }
 
-        private void InitInternal(ITickProcessor tickProcessor, Camera mainCamera)
+        private void InitInternal(ITickManager tickManager, Camera mainCamera)
         {
             _actorDatas.Clear();
             _actorBehaviours.Clear();
             
-            TickProcessor = tickProcessor;
+            TickManager = tickManager;
             Camera = mainCamera;
             
-            if (_child) _child.Init(tickProcessor, mainCamera);
+            if (_child) _child.Init(tickManager, mainCamera);
             
             foreach (var data in _datas)
             {

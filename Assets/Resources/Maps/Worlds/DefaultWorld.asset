@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a918d2c0d684f2493fcd4bd9375147f, type: 3}
   m_Name: DefaultWorld
   m_EditorClassIdentifier: 
-  _withEnemies: 0
-  _availableEnemies: {fileID: 0}
+  _map: {fileID: 8937381705159396096, guid: bb7136b62498b7d42ad4e2a4ec15c8c6, type: 3}
+  _lightning: {fileID: 1252258142352263144, guid: 8c2c8ac1eda81794f9c0d06f89e17f93,
+    type: 3}
+  _playerConfig: {fileID: 11400000, guid: 057b45783462a9748a73cf055e9cf003, type: 2}
+  _withEnemies: 1
+  _availableEnemies: {fileID: 11400000, guid: 1ee6dedaf2bd0ee4f9a8cf47946a391d, type: 2}

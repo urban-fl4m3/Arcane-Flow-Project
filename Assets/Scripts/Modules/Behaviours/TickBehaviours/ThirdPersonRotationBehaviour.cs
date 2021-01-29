@@ -37,10 +37,10 @@ namespace Modules.Behaviours.TickBehaviours
 
         public void StopFollow()
         {
-            StopTick();
+            DisposeTick();
         }
 
-        public override void Tick()
+        protected override void OnTick()
         {
             if (_rotationData.CanRotate) ApplyRotation();
         }

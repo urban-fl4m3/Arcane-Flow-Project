@@ -1,6 +1,5 @@
 ﻿using UI.Helpers;
 using UI.Managers;
-using UI.Views.StartMenuWindow;
 using ILogger = Modules.Logger.ILogger;
 
 namespace Modules.Core.Initializers
@@ -18,7 +17,7 @@ namespace Modules.Core.Initializers
 
         public void Init()
         {
-            _schemeManager.AddScheme(Scheme.StartMenu, new StartMenuSchemeModel());
+            _schemeManager.AddScheme(Scheme.StartMenu);
         }
     }
 }

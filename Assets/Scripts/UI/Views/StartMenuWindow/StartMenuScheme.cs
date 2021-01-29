@@ -28,7 +28,7 @@ namespace UI.Views.StartMenuWindow
 
         public override Scheme SchemeType => Scheme.StartMenu;
         
-        protected override void Behave(ISchemeModelMarkup model)
+        protected override void Behave()
         {
             _viewManager.AddView(Window.StartMenu, new StartMenuModel(HandleStartButtonPressed));
         }
@@ -42,7 +42,7 @@ namespace UI.Views.StartMenuWindow
             world.LoadMap();
             world.RunWorld();
             
-            CompleteBehaviour(Scheme.GameHud, new GameHudSchemeModel());
+            CompleteBehaviour(Scheme.GameHud);
         }
     }
 }

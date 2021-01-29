@@ -31,7 +31,7 @@ namespace Modules.AI.Behaviours
             _navMeshAgent.updateRotation = true;
         }
 
-        public override void Tick()
+        protected override void OnTick()
         {
             _navMeshAgent.SetDestination(_followActor.GetData<TransformData>().GetTransform().position);
             _navMeshAgent.nextPosition = _transformData.GetTransform().position;
@@ -55,7 +55,7 @@ namespace Modules.AI.Behaviours
             }
             else
             {
-                StopTick();
+                DisposeTick();
             }
         }
     }

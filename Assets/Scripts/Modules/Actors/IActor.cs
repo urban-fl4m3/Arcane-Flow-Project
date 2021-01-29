@@ -2,6 +2,7 @@
 using Modules.Behaviours;
 using Modules.Datas;
 using Modules.Render.Actors;
+using Modules.Ticks.Managers;
 using Modules.Ticks.Processors;
 using UnityEngine;
 
@@ -11,11 +12,11 @@ namespace Modules.Actors
     {
         event EventHandler OnInitializeComplete;
 
-        ITickProcessor TickProcessor { get; }
+        ITickManager TickManager { get; }
         Camera Camera { get; }
         
-        void Init(ITickProcessor tickProcessor, CameraActor mainCamera);
-        void Init(ITickProcessor tickProcessor, Camera mainCamera);
+        void Init(ITickManager tickManager, CameraActor mainCamera);
+        void Init(ITickManager tickManager, Camera mainCamera);
         void Init();
         void DestroyActor();
         

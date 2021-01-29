@@ -26,7 +26,7 @@ namespace Modules.Behaviours.TickBehaviours
             base.OnInitialize(owner);
         }
 
-        public override void Tick()
+        protected override void OnTick()
         {
             _yRotation += Mathf.Asin(Mathf.Clamp(Input.GetAxis("Mouse X"), -1.0f, 1.0f)) * _mouseSpeed;
             _xRotation += Mathf.Asin(Mathf.Clamp(Input.GetAxis("Mouse Y"), -1.0f, 1.0f)) * _mouseSpeed;

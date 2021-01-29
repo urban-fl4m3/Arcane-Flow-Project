@@ -19,7 +19,7 @@ namespace UI.Managers
             _provider = schemeProvider;
         }
 
-        public void AddScheme(Scheme type, ISchemeModelMarkup model)
+        public void AddScheme(Scheme type)
         {
             var currentSchemeType = CurrentScheme?.SchemeType ?? Scheme.Unknown;
 			
@@ -34,17 +34,15 @@ namespace UI.Managers
             var newScheme = _provider.GetScheme(type);
             newScheme.Init(CompleteScheme);
             _activeSchemes.Push(newScheme);
-            CurrentScheme?.Execute(model, currentSchemeType);
+            CurrentScheme?.Execute(currentSchemeType);
         }
 
-        public void CompleteScheme(Scheme nextBehaviourType,
-            ISchemeModelMarkup nextModel)
+        public void CompleteScheme(Scheme nextBehaviourType)
         {
-            CompleteBehaviourInternal(nextBehaviourType, nextModel);
+            CompleteBehaviourInternal(nextBehaviourType);
         }
         
-        private void CompleteBehaviourInternal(Scheme nextSchemeType,
-            ISchemeModelMarkup nextModel)
+        private void CompleteBehaviourInternal(Scheme nextSchemeType)
         {
             var currentSchemeType = CurrentScheme.SchemeType;
 			
@@ -67,7 +65,7 @@ namespace UI.Managers
                     var nextBehaviour = _provider.GetScheme(nextSchemeType);
                     nextBehaviour.Init(CompleteScheme);
                     _activeSchemes.Push(nextBehaviour);
-                    CurrentScheme.Execute(nextModel, currentSchemeType);
+                    CurrentScheme.Execute(currentSchemeType);
 
                     return;
                 }

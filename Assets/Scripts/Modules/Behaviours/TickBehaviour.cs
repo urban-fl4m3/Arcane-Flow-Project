@@ -5,27 +5,37 @@ namespace Modules.Behaviours
 {
     public abstract class TickBehaviour : BaseBehaviour, ITickUpdate
     {
+        public bool Enabled { get; set; }
+        
         protected override void OnInitialize(IActor owner)
         {
             StartTick();
         }
 
-        public abstract void Tick();
-
-        protected void StopTick()
+        public void Tick()
         {
-            Owner.TickProcessor.RemoveTick(this);
+            if (Enabled)
+            {
+                OnTick();
+            }
+        }
+
+        protected abstract void OnTick();
+
+        protected void DisposeTick()
+        {
+            Owner.TickManager.RemoveTick(this);
         }
 
         protected void StartTick()
         {
-            Owner.TickProcessor.AddTick(this);
+            Owner.TickManager.AddTick(Owner, this);
         }
 
         public override void Dispose()
         {
             base.Dispose();
-            StopTick();
+            DisposeTick();
         }
     }
 }

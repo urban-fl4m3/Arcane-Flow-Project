@@ -34,7 +34,7 @@ namespace Modules.Render.Managers
 
         public void Init()
         {
-            _gameCamera.Init(_tickManager.Processor, _gameCamera);
+            _gameCamera.Init(_tickManager, _gameCamera);
         }
 
         public void InitThirdPersonBehaviours()

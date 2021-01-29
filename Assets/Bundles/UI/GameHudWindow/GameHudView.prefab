@@ -50,8 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _closeButtons: []
-  _deltaDelay: 0.1
-  _healthBar: {fileID: 6829338897007244123}
+  _bar: {fileID: 6788564981166813207}
   _restartPopupView: {fileID: 81737474112137246, guid: e7944d38c4576d749bad365530da887c,
     type: 3}
 --- !u!1 &5994325600562656079
@@ -65,6 +64,7 @@ GameObject:
   - component: {fileID: 3596307584441462422}
   - component: {fileID: 8841716274375383369}
   - component: {fileID: 6829338897007244123}
+  - component: {fileID: 6788564981166813207}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -128,3 +128,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6788564981166813207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5994325600562656079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f36158d94234f3d95ee96907228bab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _valueKey: _value
+  _deltaKey: _delta
+  _deltaDelay: 0.1
+  _healthBar: {fileID: 6829338897007244123}

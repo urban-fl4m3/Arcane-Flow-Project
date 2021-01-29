@@ -2,6 +2,7 @@
 {
     public interface ITick
     {
+        bool Enabled { get; set; }
         void Tick();
     }
     

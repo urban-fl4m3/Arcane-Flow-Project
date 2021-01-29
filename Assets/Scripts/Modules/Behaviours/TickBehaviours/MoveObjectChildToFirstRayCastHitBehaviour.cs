@@ -26,7 +26,7 @@ namespace Modules.Behaviours.TickBehaviours
             base.OnInitialize(owner);
         }
 
-        public override void Tick()
+        protected override void OnTick()
         {
             var offset = _defaultOffset;
             if (Physics.SphereCast(_rootTransform.position,

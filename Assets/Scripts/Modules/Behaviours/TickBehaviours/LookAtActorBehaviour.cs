@@ -22,7 +22,7 @@ namespace Modules.Behaviours.TickBehaviours
             StartTick();
         }
 
-        public override void Tick()
+        protected override void OnTick()
         {
             _lookTransform.LookAt(_ownerTransform);
         }

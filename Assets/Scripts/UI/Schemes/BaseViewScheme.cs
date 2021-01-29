@@ -6,7 +6,7 @@ namespace UI.Schemes
 {
     public abstract class BaseViewScheme : IViewScheme
     {
-        private Action<Scheme, ISchemeModelMarkup> _onBehaviourComplete;
+        private Action<Scheme> _onBehaviourComplete;
         
         public abstract Scheme SchemeType { get; }
 
@@ -18,26 +18,26 @@ namespace UI.Schemes
         }
         
 
-        public void Execute(ISchemeModelMarkup model, Scheme parentBehaviour)
+        public void Execute(Scheme parentBehaviour)
         {
-            Behave(model);
+            Behave();
         }
 
-        protected abstract void Behave(ISchemeModelMarkup model);
+        protected abstract void Behave();
         
         public virtual void Finish()
         {
             _onBehaviourComplete = null;
         }
 
-        public void Init(Action<Scheme, ISchemeModelMarkup> onBehaviourCompleteAction)
+        public void Init(Action<Scheme> onBehaviourCompleteAction)
         {
             _onBehaviourComplete = onBehaviourCompleteAction;
         }
 
-        protected void CompleteBehaviour(Scheme nextType, ISchemeModelMarkup model)
+        protected void CompleteBehaviour(Scheme nextType)
         {
-            _onBehaviourComplete?.Invoke(nextType, model);
+            _onBehaviourComplete?.Invoke(nextType);
         }
     }
 }
