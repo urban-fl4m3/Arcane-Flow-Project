@@ -70,7 +70,7 @@ namespace Modules.Maps.Managers
             return _worldManagers.Resolve<T>();
         }
 
-        private void LoadMap()
+        public void LoadMap()
         {
             _map = UnityEngine.Object.Instantiate(Settings.Map);
             var lightnings = UnityEngine.Object.Instantiate(Settings.Lightning);
@@ -80,7 +80,6 @@ namespace Modules.Maps.Managers
 
         public void RunWorld()
         {
-            LoadMap();
             var playerManager = _worldManagers.Resolve<PlayerManager>();
             var enemyManager = _worldManagers.Resolve<EnemyManager>();
             

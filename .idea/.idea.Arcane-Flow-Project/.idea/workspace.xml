@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d47f0dd-bb60-4430-9b51-7b998602c23d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Zenject.csproj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generics/BaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generics/BaseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generics/MemberContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generics/MemberContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/AI/Behaviours/AiNavigationBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/AI/Behaviours/AiNavigationBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Actor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Actor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/IActor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/IActor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Types/ActorBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Types/ActorBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/BaseBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/BaseBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/IBaseBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/IBaseBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/PlayerFollowerBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/PlayerFollowerBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickLateBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickLateBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Common/Components.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Managers/EnemyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Managers/EnemyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/GameCore.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Managers/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Managers/World.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/PlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/CameraManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Behaviours/CastBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Behaviours/CastBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Models.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/Managers/ITickManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/Managers/ITickManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/Managers/TickManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/Managers/TickManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Views/GameHudWindow/GameHudView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Views/GameHudWindow/GameHudView.cs" afterDir="false" />
-    </list>
+    <list default="true" id="5d47f0dd-bb60-4430-9b51-7b998602c23d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,6 +44,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Actors/MapActor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Providers/ComponentProviders/AddToGameObjectComponentProviders/AddToGameObjectComponentProviderBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MouseRotationBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuScheme.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Factory/EnemyFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ICaster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/Managers/ITickManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -96,10 +69,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/AI/Behaviours/AiNavigationBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Factory/EnemyFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Managers/EnemyManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Managers/World.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/PlayerFollowerBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/PlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickLateBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/PlayerFollowerBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuScheme.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Managers/World.cs" />
       </list>
     </option>
   </component>
@@ -148,7 +122,7 @@
       <option name="presentableId" value="Default" />
       <updated>1611952624262</updated>
       <workItem from="1611952630865" duration="584000" />
-      <workItem from="1611994510693" duration="4487000" />
+      <workItem from="1611994510693" duration="5271000" />
     </task>
     <servers />
   </component>
@@ -205,28 +179,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="246" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1611997611483" />
-    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1611999026916">
+    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1611999056091">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1611999026916" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Managers/World.cs</url>
-          <line>94</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Managers/World.cs" initialLine="94">
-            <startOffsets>
-              <option value="2916" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2965" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1611999056091" />
   </component>
 </project>
