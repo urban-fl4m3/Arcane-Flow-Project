@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using Modules.Actors;
 using Modules.Ticks.Processors;
 
 namespace Modules.Ticks.Managers
@@ -11,7 +9,11 @@ namespace Modules.Ticks.Managers
         private TickProcessor _processor;
 
         private readonly Dictionary<object, List<ITick>> _allTicks = new Dictionary<object, List<ITick>>();
-            
+
+        public void Init() { }
+        public void Stop() { }
+        public void Resume() { }
+        
         public void SetTickProcessor(TickProcessor tickProcessor)
         {
             if (_processor != null)

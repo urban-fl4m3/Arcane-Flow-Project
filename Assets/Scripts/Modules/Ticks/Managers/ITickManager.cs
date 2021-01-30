@@ -1,8 +1,9 @@
-﻿using Modules.Ticks.Processors;
+﻿using Modules.Core.Managers;
+using Modules.Ticks.Processors;
 
 namespace Modules.Ticks.Managers
 {
-    public interface ITickManager
+    public interface ITickManager : IManager
     {
         void SetTickProcessor(TickProcessor tickProcessor);
 

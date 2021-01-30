@@ -35,8 +35,6 @@ namespace UI.Views.StartMenuWindow
 
         private void HandleStartButtonPressed(object sender, EventArgs e)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-
             var worldSettings = Resources.Load<WorldSettings>("Maps/Worlds/DefaultWorld");
             var world = new World(_tickManager, _cameraManager, _spellManager, worldSettings);
             world.LoadMap();

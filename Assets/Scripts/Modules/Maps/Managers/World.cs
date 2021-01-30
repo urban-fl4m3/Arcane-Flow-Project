@@ -1,5 +1,6 @@
 ﻿using System;
 using Generics;
+using Modules.Core.Managers;
 using Modules.Enemies.Managers;
 using Modules.Maps.Actors;
 using Modules.Maps.Configs;
@@ -7,6 +8,7 @@ using Modules.Player.Managers;
 using Modules.Render.Managers;
 using Modules.SpellSystem.Managers;
 using Modules.Ticks.Managers;
+using UnityEngine;
 
 namespace Modules.Maps.Managers
 {
@@ -47,20 +49,20 @@ namespace Modules.Maps.Managers
             
             _worldManagers.Add<ITickManager>(tickManager);
             _worldManagers.Add<ISpellManager>(spellManager);
-            _worldManagers.Add<CameraManager>(cameraManager);
+            _worldManagers.Add<ICameraManager>(cameraManager);
 
             var playerManager = new PlayerManager();
-            _worldManagers.Add<PlayerManager>(playerManager);
+            _worldManagers.Add<IPlayerManager>(playerManager);
             
             if (Settings.WithEnemies)
             {
                 var enemyManager = new EnemyManager();
-                _worldManagers.Add<EnemyManager>(enemyManager);
+                _worldManagers.Add<IEnemyManager>(enemyManager);
             }
 
             foreach (var manager in _worldManagers.Map)
             {
-                var baseManager = manager.Value as BaseManager;
+                var baseManager = manager.Value as IManager;
                 baseManager?.Init();
             }
         }
@@ -73,33 +75,33 @@ namespace Modules.Maps.Managers
         public void LoadMap()
         {
             _map = UnityEngine.Object.Instantiate(Settings.Map);
-            var lightnings = UnityEngine.Object.Instantiate(Settings.Lightning);
+            UnityEngine.Object.Instantiate(Settings.Lightning);
             
-            _worldManagers.Resolve<CameraManager>().InitThirdPersonBehaviours();
+            _worldManagers.Resolve<ICameraManager>().InitThirdPersonBehaviours();
         }
 
         public void RunWorld()
         {
-            var playerManager = _worldManagers.Resolve<PlayerManager>();
-            var enemyManager = _worldManagers.Resolve<EnemyManager>();
+            Cursor.lockState = CursorLockMode.Locked;
+            
+            var playerManager = _worldManagers.Resolve<IPlayerManager>();
+            var enemyManager = _worldManagers.Resolve<IEnemyManager>();
             
             playerManager.SpawnPlayer();
             
             var enemy = enemyManager.SpawnEnemy();
             _map.AddPlayer(playerManager.PlayerActor);
             _map.AddEnemy(enemy);
-            
-            var tickManager = _worldManagers.Resolve<ITickManager>();
-            
-            if (Settings.WithEnemies) _worldManagers.Resolve<EnemyManager>().Resume();
-            _worldManagers.Resolve<PlayerManager>().Resume();
-            _worldManagers.Resolve<CameraManager>().Resume();
+
+            if (Settings.WithEnemies) _worldManagers.Resolve<IEnemyManager>().Resume();
+            _worldManagers.Resolve<IPlayerManager>().Resume();
+            _worldManagers.Resolve<ICameraManager>().Resume();
         }
 
         public void RestartWorld()
         {
-            var playerManager = _worldManagers.Resolve<PlayerManager>();
-            var enemyManager = _worldManagers.Resolve<EnemyManager>();
+            var playerManager = _worldManagers.Resolve<IPlayerManager>();
+            var enemyManager = _worldManagers.Resolve<IEnemyManager>();
             
             playerManager.RemovePlayer();
             enemyManager.ClearAllEnemies();
@@ -112,9 +114,9 @@ namespace Modules.Maps.Managers
 
         public void Stop()
         {
-            if (Settings.WithEnemies) _worldManagers.Resolve<EnemyManager>().Stop();
-            _worldManagers.Resolve<PlayerManager>().Stop();
-            _worldManagers.Resolve<CameraManager>().Stop();
+            if (Settings.WithEnemies) _worldManagers.Resolve<IEnemyManager>().Stop();
+            _worldManagers.Resolve<IPlayerManager>().Stop();
+            _worldManagers.Resolve<ICameraManager>().Stop();
 
         }
 

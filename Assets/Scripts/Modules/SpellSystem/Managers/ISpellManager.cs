@@ -1,6 +1,8 @@
-﻿namespace Modules.SpellSystem.Managers
+﻿using Modules.Core.Managers;
+
+namespace Modules.SpellSystem.Managers
 {
-    public interface ISpellManager
+    public interface ISpellManager : IManager
     {
         ISpell GetDefaultSpell();
     }

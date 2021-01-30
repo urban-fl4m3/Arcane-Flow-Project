@@ -1,5 +1,4 @@
-﻿using Generics;
-using Modules.Actors;
+﻿using Modules.Actors;
 using Modules.Render.Actors;
 using Modules.Render.Configs;
 using Modules.Ticks.Managers;
@@ -7,7 +6,7 @@ using Object = UnityEngine.Object;
 
 namespace Modules.Render.Managers
 {
-    public class CameraManager : BaseManager, ICameraManager
+    public class CameraManager : ICameraManager
     {
         private readonly ICameraConfig _cameraConfig;
         private readonly ITickManager _tickManager;
@@ -56,15 +55,13 @@ namespace Modules.Render.Managers
             _gameCamera = Object.Instantiate(_cameraConfig.MainCamera);
         }
 
-        public override void Stop()
+        public void Stop()
         {
-            base.Stop();
             GameCamera.Stop();
         }
 
-        public override void Resume()
+        public void Resume()
         {
-            base.Resume();
             GameCamera.Resume();
         }
     }

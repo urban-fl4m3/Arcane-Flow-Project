@@ -11,6 +11,10 @@ namespace Modules.SpellSystem.Managers
             _spellProvider = spellProvider;
         }
 
+        public void Init() { }
+        public void Stop() { }
+        public void Resume() { }
+
         public ISpell GetDefaultSpell()
         {
             return _spellProvider.CreateDebugSpell();

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Generics;
 using Modules.Actors;
 using Modules.Enemies.Factory;
 using Modules.Maps.Managers;
@@ -10,21 +9,19 @@ using Modules.Ticks.Managers;
 
 namespace Modules.Enemies.Managers
 {
-    public class EnemyManager : BaseManager
+    public class EnemyManager : IEnemyManager
     {
         private readonly IEnemyFactory _enemyFactory;
         private readonly ISpellManager _spellManager;
         
         private readonly List<IActor> _spawnedEnemies = new List<IActor>();
 
-        private readonly World _world;
-
         public EnemyManager()
         {
-            _world = World.CurrentInstance;
-            _spellManager = _world.ResolveManager<ISpellManager>();
-            _enemyFactory = new EnemyFactory(_world.ResolveManager<ITickManager>(),
-                _world.ResolveManager<CameraManager>(), _world.Settings.AvailableEnemies);
+            var world = World.CurrentInstance;
+            _spellManager = world.ResolveManager<ISpellManager>();
+            _enemyFactory = new EnemyFactory(world.ResolveManager<ITickManager>(),
+                world.ResolveManager<ICameraManager>(), world.Settings.AvailableEnemies);
         }
 
         public IActor SpawnEnemy()
@@ -46,18 +43,18 @@ namespace Modules.Enemies.Managers
             _spawnedEnemies.Clear();
         }
 
-        public override void Stop()
+        public void Init() { }
+        
+        public void Stop()
         {
-            base.Stop();
             foreach (var enemy in _spawnedEnemies)
             {
                 enemy.Stop();
             }
         }
 
-        public override void Resume()
+        public void Resume()
         {
-            base.Resume();
             foreach (var enemy in _spawnedEnemies)
             {
                 enemy.Resume();

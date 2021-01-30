@@ -1,7 +1,6 @@
 ﻿using System;
 using Modules.Common;
 using Modules.Datas.Attributes;
-using Modules.Enemies.Managers;
 using Modules.Maps.Managers;
 using Modules.Player.Managers;
 using UI.Views.RestartPopupWindow;
@@ -22,7 +21,7 @@ namespace UI.Views.GameHudWindow
         {
             _world = World.CurrentInstance;
             
-            var attributesData = _world.ResolveManager<PlayerManager>().PlayerActor.GetData<AttributesData>();
+            var attributesData = _world.ResolveManager<IPlayerManager>().PlayerActor.GetData<AttributesData>();
             _healthProperty = attributesData.Attributes[Attribute.Health];
             
             _healthProperty.PropertyChanged += HandleHealthChanged;
@@ -35,7 +34,6 @@ namespace UI.Views.GameHudWindow
         {
             if (value <= 0)
             {
-
                 Cursor.lockState = CursorLockMode.None;
                 _world.MapReset += HandleLevelRestart;
                 
@@ -50,7 +48,7 @@ namespace UI.Views.GameHudWindow
         {
             _world.MapReset -= HandleLevelRestart;
             
-            var attributesData = _world.ResolveManager<PlayerManager>().PlayerActor.GetData<AttributesData>();
+            var attributesData = _world.ResolveManager<IPlayerManager>().PlayerActor.GetData<AttributesData>();
             _healthProperty = attributesData.Attributes[Attribute.Health];
             _healthProperty.PropertyChanged += HandleHealthChanged;
 
