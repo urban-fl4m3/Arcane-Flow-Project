@@ -48,8 +48,8 @@ namespace Modules.Maps.Actors
             
                     _player.PropertyChanged += aiNavigationData.HandlePlayerChanged;
                 }
+                _enemyGroupNumber++;
             }
-            _enemyGroupNumber++;
         }
 
         public void Dispose()

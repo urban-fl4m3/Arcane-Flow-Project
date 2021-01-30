@@ -20,21 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d47f0dd-bb60-4430-9b51-7b998602c23d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/EnemyRoot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/EnemyRoot.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Bundles/Levels/Test Level/TestPolygon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Levels/Test Level/TestPolygon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/UI/Common/HealthBar/HealthBarMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/UI/Common/HealthBar/HealthBarMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/AvailableEnemies.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemies/AvailableEnemies.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Configs/AvailableEnemiesConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Configs/AvailableEnemiesConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Configs/IAvailableEnemiesConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Configs/IAvailableEnemiesConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Factory/EnemyFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Factory/EnemyFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Factory/IEnemyFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Factory/IEnemyFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Managers/EnemyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Managers/EnemyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Managers/IEnemyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Managers/IEnemyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Actors/IMapActor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Actors/IMapActor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Actors/MapActor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Actors/MapActor.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +46,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/PlayerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Types/ActorBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Datas/BaseData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/SpellActor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Main/IInstantiator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/EnemyRoot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Render/Actors/CameraActor.cs" root0="FORCE_HIGHLIGHTING" />
@@ -113,7 +101,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickLateBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/PlayerFollowerBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuScheme.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Managers/World.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/AnimationBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/AI/Behaviours/AiNavigationBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/EnemyRoot.cs" />
@@ -125,6 +112,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Configs/IAvailableEnemiesConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Factory/EnemyFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Configs/AvailableEnemiesConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Managers/World.cs" />
       </list>
     </option>
   </component>
@@ -177,7 +165,7 @@
       <updated>1611952624262</updated>
       <workItem from="1611952630865" duration="584000" />
       <workItem from="1611994510693" duration="5271000" />
-      <workItem from="1612043732183" duration="5333000" />
+      <workItem from="1612043732183" duration="6059000" />
     </task>
     <servers />
   </component>
@@ -245,9 +233,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="246" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1611997611483" />
-    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1612045396359">
+    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1612049428409">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612045396359" />
+    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612049428409" />
   </component>
 </project>
