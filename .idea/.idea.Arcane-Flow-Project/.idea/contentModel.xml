@@ -359,7 +359,6 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Generics" t="Include">
-            <e p="BaseManager.cs" t="Include" />
             <e p="MemberContainer.cs" t="Include" />
             <e p="TypeContainer.cs" t="Include" />
           </e>
@@ -391,6 +390,7 @@
               <e p="IAnimationEventHanler.cs" t="Include" />
             </e>
             <e p="Behaviours" t="Include">
+              <e p="AnimationBehaviour.cs" t="Include" />
               <e p="AttributeVisualizerBehaviour.cs" t="Include" />
               <e p="BaseBehaviour.cs" t="Include" />
               <e p="IBaseBehaviour.cs" t="Include" />
@@ -439,6 +439,9 @@
                 <e p="GameInstaller.cs" t="Include" />
                 <e p="ProjectSettingsInstaller.cs" t="Include" />
               </e>
+              <e p="Managers" t="Include">
+                <e p="IManager.cs" t="Include" />
+              </e>
             </e>
             <e p="Datas" t="Include">
               <e p="Animation" t="Include">
@@ -482,6 +485,7 @@
               </e>
               <e p="Managers" t="Include">
                 <e p="EnemyManager.cs" t="Include" />
+                <e p="IEnemyManager.cs" t="Include" />
               </e>
             </e>
             <e p="Logger" t="Include">
@@ -528,6 +532,7 @@
                 <e p="PlayerConfig.cs" t="Include" />
               </e>
               <e p="Managers" t="Include">
+                <e p="IPlayerManager.cs" t="Include" />
                 <e p="PlayerManager.cs" t="Include" />
               </e>
             </e>
