@@ -27,14 +27,14 @@ namespace UI.Views.GameHudWindow
             _healthProperty.PropertyChanged += HandleHealthChanged;
          
             _bar.Init(_healthProperty);
-            Model.TickManager.Processor.AddTick(_bar);
+            Model.TickManager.AddTick(this, _bar);
         }
 
         private void HandleHealthChanged(object sender, float value)
         {
             if (value <= 0)
             {
-                Model.TickManager.Processor.AddTick(_bar);
+                Model.TickManager.AddTick(this, _bar);
                 
                 Cursor.lockState = CursorLockMode.None;
                 _world.MapReset += HandleLevelRestart;
@@ -59,7 +59,7 @@ namespace UI.Views.GameHudWindow
         protected override void Clear()
         {
             _healthProperty.PropertyChanged -= HandleHealthChanged;
-            Model.TickManager.Processor.RemoveTick(_bar);
+            Model.TickManager.RemoveTick(_bar);
             base.Clear();
         }
     }

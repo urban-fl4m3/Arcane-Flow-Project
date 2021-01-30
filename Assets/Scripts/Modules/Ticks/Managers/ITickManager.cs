@@ -4,9 +4,7 @@ namespace Modules.Ticks.Managers
 {
     public interface ITickManager
     {
-        ITickProcessor Processor { get; }
-        
-        void SetTickProcessor(ITickProcessor tickProcessor);
+        void SetTickProcessor(TickProcessor tickProcessor);
 
         void AddTick(object owner, ITickUpdate tick);
         void AddTick(object owner, ITickLateUpdate tick);
