@@ -29,7 +29,7 @@ namespace Modules.Player.Managers
             
             _playerConfig = _world.Settings.PlayerConfig;
             _tickManager = _world.ResolveManager<ITickManager>();
-            _cameraManager = _world.ResolveManager<ICameraManager>();
+            _cameraManager = _world.ResolveManager<CameraManager>();
             _spellManager = _world.ResolveManager<ISpellManager>();
         }
 
@@ -46,6 +46,18 @@ namespace Modules.Player.Managers
             _cameraManager.GameCamera.StopFollowing();
             _playerActor.DestroyActor();
             _playerActor = null;
+        }
+
+        public override void Stop()
+        {
+            base.Stop();
+            _playerActor.Stop();
+        }
+
+        public override void Resume()
+        {
+            base.Resume();
+            _playerActor.Resume();
         }
     }
 }

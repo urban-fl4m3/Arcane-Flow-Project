@@ -11,6 +11,5 @@ namespace Modules.Ticks.Managers
         void RemoveTick(ITickUpdate tickUpdate);
         void RemoveTick(ITickLateUpdate tickUpdate);
 
-        void CheckActorTicksState(bool enabled);
     }
 }

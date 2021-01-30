@@ -24,6 +24,9 @@ namespace Modules.Actors
 
         Actor GetChild();
 
+        void Stop();
+        void Resume();
+
         TBehaviour GetBehaviour<TBehaviour>() where TBehaviour : class, IBaseBehaviour;
         TData GetData<TData>() where TData : class, IBaseData;
     }

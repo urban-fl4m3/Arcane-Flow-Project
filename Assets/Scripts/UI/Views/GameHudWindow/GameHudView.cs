@@ -1,6 +1,7 @@
 ﻿using System;
 using Modules.Common;
 using Modules.Datas.Attributes;
+using Modules.Enemies.Managers;
 using Modules.Maps.Managers;
 using Modules.Player.Managers;
 using UI.Views.RestartPopupWindow;
@@ -34,13 +35,13 @@ namespace UI.Views.GameHudWindow
         {
             if (value <= 0)
             {
-                Model.TickManager.AddTick(this, _bar);
-                
+
                 Cursor.lockState = CursorLockMode.None;
                 _world.MapReset += HandleLevelRestart;
                 
                 AddNestedView(_restartPopupView, new RestartPopupModel());
                 _world.Stop();
+
                 _healthProperty.PropertyChanged -= HandleHealthChanged;
             }
         }

@@ -31,5 +31,17 @@ namespace Modules.Behaviours
         {
             Owner.TickManager.AddTick(Owner, this);
         }
+        
+        public override void Stop()
+        {
+            base.Stop();
+            Enabled = false;
+        }
+
+        public override void Resume()
+        {
+            base.Resume();
+            Enabled = true;
+        }
     }
 }

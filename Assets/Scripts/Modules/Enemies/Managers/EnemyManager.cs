@@ -24,7 +24,7 @@ namespace Modules.Enemies.Managers
             _world = World.CurrentInstance;
             _spellManager = _world.ResolveManager<ISpellManager>();
             _enemyFactory = new EnemyFactory(_world.ResolveManager<ITickManager>(),
-                _world.ResolveManager<ICameraManager>(), _world.Settings.AvailableEnemies);
+                _world.ResolveManager<CameraManager>(), _world.Settings.AvailableEnemies);
         }
 
         public IActor SpawnEnemy()
@@ -44,6 +44,24 @@ namespace Modules.Enemies.Managers
             }
             
             _spawnedEnemies.Clear();
+        }
+
+        public override void Stop()
+        {
+            base.Stop();
+            foreach (var enemy in _spawnedEnemies)
+            {
+                enemy.Stop();
+            }
+        }
+
+        public override void Resume()
+        {
+            base.Resume();
+            foreach (var enemy in _spawnedEnemies)
+            {
+                enemy.Resume();
+            }
         }
     }
 }

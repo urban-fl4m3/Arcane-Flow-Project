@@ -128,6 +128,22 @@ namespace Modules.Actors
             Destroy(gameObject);
         }
 
+        public virtual void Stop()
+        {
+            foreach (var behaviour in _actorBehaviours.Components)
+            {
+                behaviour.Value.Stop();
+            }
+        }
+
+        public virtual void Resume()
+        {
+            foreach (var behaviour in _actorBehaviours.Components)
+            {
+                behaviour.Value.Resume();
+            }
+        }
+
         protected abstract void OnAwake();
     }
 }

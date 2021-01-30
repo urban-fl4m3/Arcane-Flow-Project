@@ -11,7 +11,7 @@ namespace Modules.Behaviours.TickBehaviours
         private Transform _ownerActorTransform;
 
         protected override void OnInitialize(IActor owner)
-        {  
+        {
             ITransformData ownerTransformData = Owner.GetData<TransformData>();
             _ownerActorTransform = ownerTransformData.GetTransform();
         }

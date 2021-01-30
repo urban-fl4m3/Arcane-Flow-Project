@@ -36,5 +36,6 @@ namespace Modules.SpellSystem.Behaviours
             var activeSpell = _spellData.Spells[_caster.Id];
             activeSpell.Cast(_caster.SpawnPoint, _ownerTransformData.GetTransform().forward);
         }
+        
     }
 }

@@ -21,5 +21,15 @@ namespace Modules.Behaviours
         {
             
         }
+
+        public virtual void Stop()
+        {
+            
+        }
+
+        public virtual void Resume()
+        {
+            
+        }
     }
 }

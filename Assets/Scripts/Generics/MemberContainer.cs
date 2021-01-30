@@ -8,6 +8,8 @@ namespace Generics
 {
     public class MemberContainer<TComponent> where TComponent : class, IActorMember
     {
+        public Dictionary<Type, TComponent> Components => _components;
+
         private readonly Dictionary<Type, TComponent> _components = new Dictionary<Type, TComponent>();
 
         public T GetComponent<T>() where T : TComponent, IActorMember

@@ -25,14 +25,6 @@ namespace Modules.Ticks.Managers
             _processor = tickProcessor;
         }
 
-        public void CheckActorTicksState(bool enabled)
-        {
-            foreach (var tick in _allTicks.Where(pair => pair.Key is IActor).SelectMany(pair => pair.Value))
-            {
-                tick.Enabled = enabled;
-            }
-        }
-        
         public void AddTick(object owner, ITickUpdate tick)
         {
             AddTickInternal(owner, tick);

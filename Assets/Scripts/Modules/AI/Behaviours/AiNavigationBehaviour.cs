@@ -58,5 +58,19 @@ namespace Modules.AI.Behaviours
                 DisposeTick();
             }
         }
+
+        public override void Stop()
+        {
+            base.Stop();
+
+            _animationData.GetAnimator().enabled = false;
+
+        }
+
+        public override void Resume()
+        {
+            base.Resume();
+            _animationData.GetAnimator().enabled = true;
+        }
     }
 }

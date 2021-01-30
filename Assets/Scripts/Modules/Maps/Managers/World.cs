@@ -47,7 +47,7 @@ namespace Modules.Maps.Managers
             
             _worldManagers.Add<ITickManager>(tickManager);
             _worldManagers.Add<ISpellManager>(spellManager);
-            _worldManagers.Add<ICameraManager>(cameraManager);
+            _worldManagers.Add<CameraManager>(cameraManager);
 
             var playerManager = new PlayerManager();
             _worldManagers.Add<PlayerManager>(playerManager);
@@ -70,16 +70,17 @@ namespace Modules.Maps.Managers
             return _worldManagers.Resolve<T>();
         }
 
-        public void LoadMap()
+        private void LoadMap()
         {
             _map = UnityEngine.Object.Instantiate(Settings.Map);
             var lightnings = UnityEngine.Object.Instantiate(Settings.Lightning);
             
-            _worldManagers.Resolve<ICameraManager>().InitThirdPersonBehaviours();
+            _worldManagers.Resolve<CameraManager>().InitThirdPersonBehaviours();
         }
 
         public void RunWorld()
         {
+            LoadMap();
             var playerManager = _worldManagers.Resolve<PlayerManager>();
             var enemyManager = _worldManagers.Resolve<EnemyManager>();
             
@@ -90,7 +91,10 @@ namespace Modules.Maps.Managers
             _map.AddEnemy(enemy);
             
             var tickManager = _worldManagers.Resolve<ITickManager>();
-            tickManager.CheckActorTicksState(true);
+            
+            if (Settings.WithEnemies) _worldManagers.Resolve<EnemyManager>().Resume();
+            _worldManagers.Resolve<PlayerManager>().Resume();
+            _worldManagers.Resolve<CameraManager>().Resume();
         }
 
         public void RestartWorld()
@@ -109,13 +113,16 @@ namespace Modules.Maps.Managers
 
         public void Stop()
         {
-            var tickManager = _worldManagers.Resolve<ITickManager>();
-            tickManager.CheckActorTicksState(false);
+            if (Settings.WithEnemies) _worldManagers.Resolve<EnemyManager>().Stop();
+            _worldManagers.Resolve<PlayerManager>().Stop();
+            _worldManagers.Resolve<CameraManager>().Stop();
+
         }
 
         public void Dispose()
         {
             
         }
+        
     }
 }
