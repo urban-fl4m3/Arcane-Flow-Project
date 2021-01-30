@@ -1,8 +1,11 @@
-﻿using Modules.Actors;
+﻿using System;
+using System.Collections.Generic;
+using Modules.Actors;
 using Modules.Enemies.Configs;
 using Modules.Render.Managers;
 using Modules.Ticks.Managers;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Modules.Enemies.Factory
 {
@@ -20,12 +23,22 @@ namespace Modules.Enemies.Factory
             _enemiesConfig = enemiesConfig;
         }
 
-        public IActor CreateEnemy()
+        public List<EnemyRoot> CreateEnemy()
         {
-            var enemyActor = Object.Instantiate(_enemiesConfig.GetAvailableEnemy());
-            enemyActor.Init(_tickManager, _cameraManager.GameCamera);
+            var enemyRoots = _enemiesConfig.GetAvailableEnemy();
+            var instantiatedEnemyRoots = new List<EnemyRoot>();
 
-            return enemyActor;
+            foreach (var enemyRoot in enemyRoots._enemyBunchRoots)
+            {
+                EnemyRoot newEnemy = Object.Instantiate(enemyRoot);
+                foreach (var enemy in newEnemy.EnemyActors)
+                {
+                    enemy.Init(_tickManager, _cameraManager.GameCamera);
+                }
+                instantiatedEnemyRoots.Add(newEnemy);
+            }
+
+            return instantiatedEnemyRoots;
         }
     }
 }

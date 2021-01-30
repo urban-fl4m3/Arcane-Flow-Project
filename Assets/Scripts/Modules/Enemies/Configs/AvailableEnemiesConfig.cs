@@ -1,16 +1,24 @@
-﻿using Modules.Actors.Types;
+﻿using System.Collections.Generic;
+using Modules.Actors.Types;
 using UnityEngine;
 
 namespace Modules.Enemies.Configs
 {
+    [System.Serializable]
+    public class EnemyWave
+    {
+        public List<EnemyRoot> _enemyBunchRoots;
+    }
+    
     [CreateAssetMenu(fileName = "AvailableEnemies", menuName = "Enemies/Available enemies config")]
     public class AvailableEnemiesConfig : ScriptableObject, IAvailableEnemiesConfig
     {
-        [SerializeField] private ActorBase _dummy;
+        [SerializeField] private List<EnemyWave> _waves;
+        private int _waveNumber = 0;
 
-        public ActorBase GetAvailableEnemy()
+        public EnemyWave GetAvailableEnemy()
         {
-            return _dummy;
+            return _waves[_waveNumber];
         }
     }
 }

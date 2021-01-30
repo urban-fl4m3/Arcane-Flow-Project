@@ -479,6 +479,7 @@
                 <e p="AvailableEnemiesConfig.cs" t="Include" />
                 <e p="IAvailableEnemiesConfig.cs" t="Include" />
               </e>
+              <e p="EnemyRoot.cs" t="Include" />
               <e p="Factory" t="Include">
                 <e p="EnemyFactory.cs" t="Include" />
                 <e p="IEnemyFactory.cs" t="Include" />

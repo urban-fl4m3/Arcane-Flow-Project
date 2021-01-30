@@ -24,13 +24,19 @@ namespace Modules.Enemies.Managers
                 world.ResolveManager<ICameraManager>(), world.Settings.AvailableEnemies);
         }
 
-        public IActor SpawnEnemy()
+        public List<EnemyRoot> SpawnEnemy()
         {
-            var spawnedEnemy = _enemyFactory.CreateEnemy();
-            _spawnedEnemies.Add(spawnedEnemy);
-            spawnedEnemy.GetData<SpellData>().Add(_spellManager.GetDefaultSpell());
+            var enemyRoots = _enemyFactory.CreateEnemy();
+            foreach (var enemyRoot in enemyRoots)
+            {
+                foreach (var enemyActor in enemyRoot.EnemyActors)
+                {
+                    _spawnedEnemies.Add(enemyActor);
+                    enemyActor.GetData<SpellData>().Add(_spellManager.GetDefaultSpell());
+                }
+            }
 
-            return spawnedEnemy;
+            return enemyRoots;
         }
 
         public void ClearAllEnemies()

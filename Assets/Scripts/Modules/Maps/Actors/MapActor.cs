@@ -5,6 +5,7 @@ using Modules.Actors.Types;
 using Modules.AI.Data;
 using Modules.Common;
 using Modules.Datas.Transforms;
+using Modules.Enemies;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -17,13 +18,14 @@ namespace Modules.Maps.Actors
 
         private readonly DynamicActor _player = new DynamicActor();
         private NavMeshDataInstance _navMeshDataInstance;
+        private int _enemyGroupNumber = 0;
 
         private readonly List<AiNavigationData> _aiNavigationData = new List<AiNavigationData>();
         
         protected override void OnAwake()
         {
             _navMeshDataInstance = NavMesh.AddNavMeshData(_navMeshData);
-            
+            _enemyGroupNumber = 0;
             base.OnAwake();
         }
 
@@ -32,14 +34,22 @@ namespace Modules.Maps.Actors
             _player.Value = player;
         }
 
-        public void AddEnemy(IActor enemy)
+        public void AddEnemy(List<EnemyRoot> enemyRoots)
         {
-            enemy.GetData<TransformData>().GetTransform().position = _spawnPoints[0].position;
-            var aiNavigationData = enemy.GetData<AiNavigationData>();
-            aiNavigationData.Player.Value = _player.Value;
-            _aiNavigationData.Add(aiNavigationData);
+            foreach (var enemyRoot in enemyRoots)
+            {
+                enemyRoot.GetComponent<Transform>().position = _spawnPoints[_enemyGroupNumber % _spawnPoints.Count].position;
+
+                foreach (var enemy in enemyRoot.EnemyActors)
+                {
+                    var aiNavigationData = enemy.GetData<AiNavigationData>();
+                    aiNavigationData.Player.Value = _player.Value;
+                    _aiNavigationData.Add(aiNavigationData);
             
-            _player.PropertyChanged += aiNavigationData.HandlePlayerChanged;
+                    _player.PropertyChanged += aiNavigationData.HandlePlayerChanged;
+                }
+            }
+            _enemyGroupNumber++;
         }
 
         public void Dispose()
@@ -48,7 +58,8 @@ namespace Modules.Maps.Actors
             {
                 _player.PropertyChanged -= aiNavigationData.HandlePlayerChanged;
             }
-            
+
+            _enemyGroupNumber = 0;
             _aiNavigationData.Clear();
         }
 

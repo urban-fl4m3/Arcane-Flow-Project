@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6448255e30d47f9a2eb13f0abbe13f3, type: 3}
   m_Name: AvailableEnemies
   m_EditorClassIdentifier: 
-  _dummy: {fileID: 6933161781141700092, guid: be7388b753ccd8740be65d61527e861a, type: 3}
+  _waves:
+  - _enemyBunchRoots:
+    - {fileID: 8816635833343277151, guid: 149545b4d00134e4daa8f6dd006bce05, type: 3}
