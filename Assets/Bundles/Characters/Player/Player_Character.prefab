@@ -96,23 +96,32 @@ PrefabInstance:
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: _components._exposedBehaviours.Array.size
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: _components._exposedBehaviours.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: a07a0e96ce347464299e34e1ef84a67f,
+        type: 2}
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: _components._exposedBehaviours.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 6282deb1ae5f85e429010e4f30295ae7,
+        type: 2}
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: _components._exposedBehaviours.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: e030aa2d1a5178e4cb8a9f6484ee4df9,
+        type: 2}
+    - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: _components._exposedBehaviours.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 142a950067bce72428b2831250443198,
+        type: 2}
     - target: {fileID: 7684249342670189319, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: m_IsActive

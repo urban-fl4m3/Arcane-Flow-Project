@@ -37,7 +37,7 @@ namespace Modules.Actors.Editor
 
             if (EditorGUI.EndChangeCheck())
             {
-                
+                Debug.Log("AAA");
             }
             
             EditorGUI.indentLevel = indent;

@@ -1,7 +1,6 @@
 ﻿using Modules.Actors;
 using Modules.Datas.Movement;
 using Modules.Datas.Transforms;
-using Modules.Render.Managers;
 using UnityEngine;
 
 namespace Modules.Behaviours.TickBehaviours
@@ -9,7 +8,6 @@ namespace Modules.Behaviours.TickBehaviours
     [CreateAssetMenu(fileName = "New Third Person Rotation Behaviour", menuName = "Behaviours/Third Person Rotation Behaviour")]
     public class ThirdPersonRotationBehaviour : TickBehaviour
     {
-        [SerializeField] private float _turnTime = 1.0f;
         private float _rotationInMovementDirection;
         private float _velocity;
         

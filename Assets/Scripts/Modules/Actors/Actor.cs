@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Modules.Behaviours;
 using Modules.Datas;
 using Modules.Render.Actors;
@@ -11,9 +10,6 @@ namespace Modules.Actors
     public abstract class Actor : MonoBehaviour, IActor
     {
         [SerializeField] private Actor _child;
-        [SerializeField] private List<BaseBehaviour> _behaviours = new List<BaseBehaviour>();
-        [SerializeField] private List<BaseData> _datas = new List<BaseData>();
-
         [SerializeField] private ActorComponents _components;
 
         public event EventHandler OnInitializeComplete;

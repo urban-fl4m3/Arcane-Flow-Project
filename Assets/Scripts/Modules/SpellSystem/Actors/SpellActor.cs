@@ -10,7 +10,9 @@ namespace Modules.SpellSystem.Actors
 {
     public class SpellActor : ActorBase
     {
+#pragma warning disable 67
         public event EventHandler OnCastEventHandler;
+#pragma warning restore 67
         public event EventHandler<Collision> OnHitEventHandler;
         
         private Tag[] _tags;

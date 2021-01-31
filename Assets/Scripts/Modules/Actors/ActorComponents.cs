@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Generics;
 using Modules.Behaviours;
 using Modules.Datas;
@@ -25,6 +26,14 @@ namespace Modules.Actors
         
         public void AddExposedData()
         {
+            foreach (var data in from behaviour in _exposedBehaviours 
+                from data in behaviour.Data
+                where !_data.Components.ContainsKey(data.GetType())
+                select data)
+            {
+                _data.SetAndInitialize(_owner, Object.Instantiate(data));
+            }
+
             foreach (var behaviour in _exposedBehaviours)
             {
                 _behaviours.SetAndInitialize(_owner, Object.Instantiate(behaviour));
