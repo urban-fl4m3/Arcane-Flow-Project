@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Generics;
 using Modules.Behaviours;
 using Modules.Datas;
 using Modules.Render.Actors;
 using Modules.Ticks.Managers;
-using Modules.Ticks.Processors;
 using UnityEngine;
 
 namespace Modules.Actors
@@ -16,8 +14,7 @@ namespace Modules.Actors
         [SerializeField] private List<BaseBehaviour> _behaviours = new List<BaseBehaviour>();
         [SerializeField] private List<BaseData> _datas = new List<BaseData>();
 
-        private readonly MemberContainer<IBaseBehaviour> _actorBehaviours = new MemberContainer<IBaseBehaviour>();
-        private readonly MemberContainer<IBaseData> _actorDatas = new MemberContainer<IBaseData>();
+        [SerializeField] private ActorComponents _components;
 
         public event EventHandler OnInitializeComplete;
         
@@ -54,23 +51,15 @@ namespace Modules.Actors
 
         private void InitInternal(ITickManager tickManager, Camera mainCamera)
         {
-            _actorDatas.Clear();
-            _actorBehaviours.Clear();
+            _components.Clear();
             
             TickManager = tickManager;
             Camera = mainCamera;
             
             if (_child) _child.Init(tickManager, mainCamera);
             
-            foreach (var data in _datas)
-            {
-                _actorDatas.SetAndInitialize(this, Instantiate(data));
-            }
-            
-            foreach (var behaviour in _behaviours)
-            {
-                _actorBehaviours.SetAndInitialize(this, Instantiate(behaviour));
-            }
+            _components.SetOwner(this);
+            _components.AddExposedData();
 
             OnInitializeComplete?.Invoke(this, null);
             OnInitializeComplete = null;
@@ -86,12 +75,12 @@ namespace Modules.Actors
 
         public T GetBehaviour<T>() where T : class, IBaseBehaviour
         {
-            return _actorBehaviours.GetComponent<T>();
+            return _components.GetBehaviour<T>();
         }
 
         public T GetData<T>() where T : class, IBaseData
         {
-            return _actorDatas.GetComponent<T>();
+            return _components.GetData<T>();
         }
 
         public bool TryGetData<T>(out T data) where T : class, IBaseData
@@ -110,27 +99,19 @@ namespace Modules.Actors
         
         public void AddBehaviour<T>(T newBehaviour) where T : BaseBehaviour
         {
-            _behaviours.Add(newBehaviour);
-            _actorBehaviours.SetAndInitialize(this, newBehaviour);
+            _components.AddBehaviour(newBehaviour);
         }
-
-        public void AddData<T>(T newData) where T : BaseData
-        {
-            _datas.Add(newData);
-            _actorDatas.SetAndInitialize(this, newData);
-        }
-
+        
         public void DestroyActor()
         {
-            _actorBehaviours.Clear();
-            _actorDatas.Clear();
+            _components.Clear();
             
             Destroy(gameObject);
         }
 
         public virtual void Stop()
         {
-            foreach (var behaviour in _actorBehaviours.Components)
+            foreach (var behaviour in _components.GetAllBehaviours())
             {
                 behaviour.Value.Stop();
             }
@@ -138,7 +119,7 @@ namespace Modules.Actors
 
         public virtual void Resume()
         {
-            foreach (var behaviour in _actorBehaviours.Components)
+            foreach (var behaviour in _components.GetAllBehaviours())
             {
                 behaviour.Value.Resume();
             }

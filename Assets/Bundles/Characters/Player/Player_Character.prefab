@@ -93,6 +93,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 85787e1135733244cb08c8d04ddfcd3f,
         type: 2}
+    - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: _components._exposedBehaviours.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: _components._exposedBehaviours.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: _components._exposedBehaviours.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: _components._exposedBehaviours.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7684249342670189319, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: m_IsActive

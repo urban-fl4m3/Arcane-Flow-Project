@@ -6,6 +6,7 @@ using Object = UnityEngine.Object;
 
 namespace Generics
 {
+    [Serializable]
     public class MemberContainer<TComponent> where TComponent : class, IActorMember
     {
         public Dictionary<Type, TComponent> Components => _components;
