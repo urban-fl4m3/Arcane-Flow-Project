@@ -93,6 +93,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 85787e1135733244cb08c8d04ddfcd3f,
         type: 2}
+    - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: _defaultSpellsByID.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: _defaultSpellsByID.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7684249342670189319, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: m_IsActive

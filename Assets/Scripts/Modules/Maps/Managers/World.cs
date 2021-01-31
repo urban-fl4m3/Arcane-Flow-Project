@@ -6,7 +6,6 @@ using Modules.Maps.Actors;
 using Modules.Maps.Configs;
 using Modules.Player.Managers;
 using Modules.Render.Managers;
-using Modules.SpellSystem.Managers;
 using Modules.Ticks.Managers;
 using UnityEngine;
 
@@ -40,15 +39,13 @@ namespace Modules.Maps.Managers
 
         private MapActor _map;
         
-        public World(ITickManager tickManager, ICameraManager cameraManager, ISpellManager spellManager,
-            WorldSettings settings)
+        public World(ITickManager tickManager, ICameraManager cameraManager, WorldSettings settings)
         {
             CurrentInstance = this;
          
             Settings = settings;
             
             _worldManagers.Add<ITickManager>(tickManager);
-            _worldManagers.Add<ISpellManager>(spellManager);
             _worldManagers.Add<ICameraManager>(cameraManager);
 
             var playerManager = new PlayerManager();

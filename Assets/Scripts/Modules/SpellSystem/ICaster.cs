@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Modules.SpellSystem
 {
     public interface ICaster
     {
-        string Id { get; }
+        List<string> ListOfSpellsID { get; }
+        int activeSpell { get;  }
         Transform SpawnPoint { get; }
     }
 }

@@ -7,22 +7,23 @@ using UnityEngine;
 
 namespace Modules.SpellSystem.Providers
 {
-    public class SpellProvider : ISpellProvider
+    public static class SpellProvider
     {
-        private readonly Dictionary<SpellType, ISpellPreset> _presetsDictionary = new Dictionary<SpellType, ISpellPreset>();
+        private static readonly Dictionary<string, ISpellPreset> _presetsDictionary = new Dictionary<string, ISpellPreset>();
 
-        public SpellProvider(IEnumerable<SpellPreset> presets)
+        static SpellProvider()
         {
+            List<SpellPreset> presets = Resources.LoadAll<SpellPreset>("Spells").ToList();
             foreach (var preset in presets)
             {
-                _presetsDictionary.Add(preset.Type, preset);
+                _presetsDictionary.Add(preset.Id, preset);
             }
         }
 
-        public ISpell CreateSpell(SpellType type)
-        {
-            
-            var preset = _presetsDictionary[type];
+        public static ISpell CreateSpell(string ID)
+        {    
+            Debug.Log(ID);
+            var preset = _presetsDictionary[ID];
             
             var spell = new Spell(
                 preset.Id,
@@ -31,11 +32,6 @@ namespace Modules.SpellSystem.Providers
                 preset.Tags
             );
             return spell;
-        }
-
-        public ISpell CreateDebugSpell()
-        {
-            return CreateSpell(_presetsDictionary.ElementAt(0).Value.Type);
         }
     }
 }

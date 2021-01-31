@@ -2,12 +2,10 @@
 using Modules.Maps.Configs;
 using Modules.Maps.Managers;
 using Modules.Render.Managers;
-using Modules.SpellSystem.Managers;
 using Modules.Ticks.Managers;
 using UI.Helpers;
 using UI.Managers;
 using UI.Schemes;
-using UI.Views.GameHudWindow;
 using UnityEngine;
 
 namespace UI.Views.StartMenuWindow
@@ -15,14 +13,11 @@ namespace UI.Views.StartMenuWindow
     public class StartMenuScheme : BaseViewScheme
     {
         private readonly ITickManager _tickManager;
-        private readonly ISpellManager _spellManager;
         private readonly ICameraManager _cameraManager;
 
-        public StartMenuScheme(IViewManager viewManager, ITickManager tickManager,
-            ISpellManager spellManager, ICameraManager cameraManager) : base(viewManager)
+        public StartMenuScheme(IViewManager viewManager, ITickManager tickManager, ICameraManager cameraManager) : base(viewManager)
         {
             _tickManager = tickManager;
-            _spellManager = spellManager;
             _cameraManager = cameraManager;
         }
 
@@ -36,7 +31,7 @@ namespace UI.Views.StartMenuWindow
         private void HandleStartButtonPressed(object sender, EventArgs e)
         {
             var worldSettings = Resources.Load<WorldSettings>("Maps/Worlds/DefaultWorld");
-            var world = new World(_tickManager, _cameraManager, _spellManager, worldSettings);
+            var world = new World(_tickManager, _cameraManager, worldSettings);
             world.LoadMap();
             world.RunWorld();
 

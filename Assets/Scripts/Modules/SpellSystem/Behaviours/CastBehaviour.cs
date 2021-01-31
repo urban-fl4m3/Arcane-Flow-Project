@@ -33,7 +33,7 @@ namespace Modules.SpellSystem.Behaviours
      
         private void Cast(object sender, EventArgs e)
         {
-            var activeSpell = _spellData.Spells[_caster.Id];
+            var activeSpell = _spellData.Spells[_caster.ListOfSpellsID[_caster.activeSpell]];
             activeSpell.Cast(_caster.SpawnPoint, _ownerTransformData.GetTransform().forward);
         }
         

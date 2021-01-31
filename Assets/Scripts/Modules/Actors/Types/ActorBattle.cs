@@ -1,4 +1,6 @@
-﻿using Modules.SpellSystem;
+﻿using System;
+using System.Collections.Generic;
+using Modules.SpellSystem;
 using UnityEngine;
 
 namespace Modules.Actors.Types
@@ -6,10 +8,13 @@ namespace Modules.Actors.Types
     public class ActorBattle : ActorBase, IActorBattle, ICaster
     {
         [SerializeField] public Transform _spawnPoint;
-
-        public string Id => "0";
+        [SerializeField] public List<string> _defaultSpellsByID;
+        [SerializeField] public int _activeSkill;
+        public List<string> ListOfSpellsID => _defaultSpellsByID;
         public Transform SpawnPoint => _spawnPoint;
-        
+
+        public int activeSpell => _activeSkill;
+
         protected override void OnAwake()
         {
             

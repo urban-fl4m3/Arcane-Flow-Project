@@ -3,7 +3,6 @@ using Modules.Maps.Managers;
 using Modules.Player.Configs;
 using Modules.Render.Managers;
 using Modules.SpellSystem.Data;
-using Modules.SpellSystem.Managers;
 using Modules.Ticks.Managers;
 using Object = UnityEngine.Object;
 
@@ -14,7 +13,6 @@ namespace Modules.Player.Managers
         private readonly IPlayerConfig _playerConfig;
         private readonly ITickManager _tickManager;
         private readonly ICameraManager _cameraManager;
-        private readonly ISpellManager _spellManager;
 
         private Actor _playerActor;
 
@@ -27,7 +25,6 @@ namespace Modules.Player.Managers
             _playerConfig = world.Settings.PlayerConfig;
             _tickManager = world.ResolveManager<ITickManager>();
             _cameraManager = world.ResolveManager<ICameraManager>();
-            _spellManager = world.ResolveManager<ISpellManager>();
         }
 
         public void Init() { }
@@ -46,7 +43,6 @@ namespace Modules.Player.Managers
         {
             _playerActor = Object.Instantiate(_playerConfig.GetActor());
             _playerActor.Init(_tickManager, _cameraManager.GameCamera);
-            _playerActor.GetData<SpellData>().Add(_spellManager.GetDefaultSpell());
             _cameraManager.SetCameraTarget(_playerActor);
         }
 

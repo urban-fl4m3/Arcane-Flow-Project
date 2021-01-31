@@ -583,12 +583,7 @@
               </e>
               <e p="ICaster.cs" t="Include" />
               <e p="ISpell.cs" t="Include" />
-              <e p="Managers" t="Include">
-                <e p="ISpellManager.cs" t="Include" />
-                <e p="SpellManager.cs" t="Include" />
-              </e>
               <e p="Providers" t="Include">
-                <e p="ISpellProvider.cs" t="Include" />
                 <e p="SpellProvider.cs" t="Include" />
               </e>
               <e p="Spell.cs" t="Include" />
