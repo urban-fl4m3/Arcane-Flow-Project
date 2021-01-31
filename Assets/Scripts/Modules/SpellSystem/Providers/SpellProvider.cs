@@ -9,9 +9,9 @@ namespace Modules.SpellSystem.Providers
 {
     public class SpellProvider : ISpellProvider
     {
-        private Dictionary<SpellType, ISpellPreset> _presetsDictionary = new Dictionary<SpellType, ISpellPreset>();
+        private readonly Dictionary<SpellType, ISpellPreset> _presetsDictionary = new Dictionary<SpellType, ISpellPreset>();
 
-        public SpellProvider(List<SpellPreset> presets)
+        public SpellProvider(IEnumerable<SpellPreset> presets)
         {
             foreach (var preset in presets)
             {
