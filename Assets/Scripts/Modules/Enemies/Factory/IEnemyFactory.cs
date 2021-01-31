@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using Modules.Actors;
-using UnityEngine;
+﻿using Modules.Enemies.Wave;
 
 namespace Modules.Enemies.Factory
 {
     public interface IEnemyFactory
     {
-        List<EnemyRoot> CreateEnemy();
+        EnemyWave CreateWaveByIndex(int index);
     }
 }

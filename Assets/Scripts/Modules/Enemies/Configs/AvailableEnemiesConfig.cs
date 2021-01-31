@@ -1,24 +1,24 @@
 ﻿using System.Collections.Generic;
-using Modules.Actors.Types;
+using Modules.Enemies.Wave;
 using UnityEngine;
 
 namespace Modules.Enemies.Configs
 {
-    [System.Serializable]
-    public class EnemyWave
-    {
-        public List<EnemyRoot> _enemyBunchRoots;
-    }
-    
     [CreateAssetMenu(fileName = "AvailableEnemies", menuName = "Enemies/Available enemies config")]
     public class AvailableEnemiesConfig : ScriptableObject, IAvailableEnemiesConfig
     {
         [SerializeField] private List<EnemyWave> _waves;
-        private int _waveNumber = 0;
 
-        public EnemyWave GetAvailableEnemy()
+        public bool TryGetWave(int waveIndex, out EnemyWave wave)
         {
-            return _waves[_waveNumber];
+            wave = null;
+            if (waveIndex < 0 || waveIndex >= _waves.Count)
+            {
+                return false;
+            }
+
+            wave = _waves[waveIndex];
+            return true;
         }
     }
 }

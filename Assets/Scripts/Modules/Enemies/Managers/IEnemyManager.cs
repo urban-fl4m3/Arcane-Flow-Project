@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
-using Modules.Actors;
-using Modules.Core.Managers;
+﻿using Modules.Core.Managers;
+using Modules.Enemies.Wave;
 
 namespace Modules.Enemies.Managers
 {
     public interface IEnemyManager : IManager
     {
-        List<EnemyRoot> SpawnEnemy();
+        EnemyWave SpawnEnemyWave();
         void ClearAllEnemies();
     }
 }

@@ -89,9 +89,13 @@ namespace Modules.Maps.Managers
             
             playerManager.SpawnPlayer();
             
-            var enemy = enemyManager.SpawnEnemy();
             _map.AddPlayer(playerManager.PlayerActor);
-            _map.AddEnemy(enemy);
+            
+            var enemyWave = enemyManager.SpawnEnemyWave();
+            if (enemyWave != null)
+            {
+                _map.AddWave(enemyWave);
+            }
 
             if (Settings.WithEnemies) _worldManagers.Resolve<IEnemyManager>().Resume();
             _worldManagers.Resolve<IPlayerManager>().Resume();

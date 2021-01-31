@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Modules.Actors;
 using Modules.Actors.Types;
 using Modules.AI.Data;
 using Modules.Common;
-using Modules.Datas.Transforms;
-using Modules.Enemies;
+using Modules.Enemies.Wave;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -18,7 +16,7 @@ namespace Modules.Maps.Actors
 
         private readonly DynamicActor _player = new DynamicActor();
         private NavMeshDataInstance _navMeshDataInstance;
-        private int _enemyGroupNumber = 0;
+        private int _enemyGroupNumber;
 
         private readonly List<AiNavigationData> _aiNavigationData = new List<AiNavigationData>();
         
@@ -34,13 +32,13 @@ namespace Modules.Maps.Actors
             _player.Value = player;
         }
 
-        public void AddEnemy(List<EnemyRoot> enemyRoots)
+        public void AddWave(EnemyWave wave)
         {
-            foreach (var enemyRoot in enemyRoots)
+            foreach (var enemyRoot in wave.EnemyWaveGroups)
             {
                 enemyRoot.GetComponent<Transform>().position = _spawnPoints[_enemyGroupNumber % _spawnPoints.Count].position;
 
-                foreach (var enemy in enemyRoot.EnemyActors)
+                foreach (var enemy in enemyRoot.Actors)
                 {
                     var aiNavigationData = enemy.GetData<AiNavigationData>();
                     aiNavigationData.Player.Value = _player.Value;
@@ -48,6 +46,7 @@ namespace Modules.Maps.Actors
             
                     _player.PropertyChanged += aiNavigationData.HandlePlayerChanged;
                 }
+                
                 _enemyGroupNumber++;
             }
         }

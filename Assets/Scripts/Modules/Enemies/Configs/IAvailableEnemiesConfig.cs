@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using Modules.Actors.Types;
-using UnityEngine;
+﻿using Modules.Enemies.Wave;
 
 namespace Modules.Enemies.Configs
 {
     public interface IAvailableEnemiesConfig
     {
-        EnemyWave GetAvailableEnemy();
+        bool TryGetWave(int waveIndex, out EnemyWave wave);
     }
 }

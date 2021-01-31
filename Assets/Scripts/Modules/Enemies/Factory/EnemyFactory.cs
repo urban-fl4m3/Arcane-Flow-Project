@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using Modules.Actors;
+﻿using System.Linq;
 using Modules.Enemies.Configs;
+using Modules.Enemies.Wave;
 using Modules.Render.Managers;
 using Modules.Ticks.Managers;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace Modules.Enemies.Factory
 {
@@ -23,22 +21,27 @@ namespace Modules.Enemies.Factory
             _enemiesConfig = enemiesConfig;
         }
 
-        public List<EnemyRoot> CreateEnemy()
+        public EnemyWave CreateWaveByIndex(int index)
         {
-            var enemyRoots = _enemiesConfig.GetAvailableEnemy();
-            var instantiatedEnemyRoots = new List<EnemyRoot>();
+            var isExists = _enemiesConfig.TryGetWave(index, out var wave);
+            return isExists ? CreateEnemyWave(wave) : null;
+        }
 
-            foreach (var enemyRoot in enemyRoots._enemyBunchRoots)
+        private EnemyWave CreateEnemyWave(EnemyWave fromWave)
+        {
+            var enemyWave = new EnemyWave();
+
+            foreach (var enemyGroup in fromWave.EnemyWaveGroups.Select(Object.Instantiate))
             {
-                EnemyRoot newEnemy = Object.Instantiate(enemyRoot);
-                foreach (var enemy in newEnemy.EnemyActors)
+                foreach (var enemy in enemyGroup.Actors)
                 {
                     enemy.Init(_tickManager, _cameraManager.GameCamera);
                 }
-                instantiatedEnemyRoots.Add(newEnemy);
+                
+                enemyWave.Add(enemyGroup);
             }
 
-            return instantiatedEnemyRoots;
+            return enemyWave;
         }
     }
 }

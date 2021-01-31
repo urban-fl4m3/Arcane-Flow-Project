@@ -1,13 +1,12 @@
-﻿using System.Collections.Generic;
-using Modules.Actors;
-using Modules.Enemies;
+﻿using Modules.Actors;
+using Modules.Enemies.Wave;
 
 namespace Modules.Maps.Actors
 {
     public interface IMapActor
     {
         void AddPlayer(IActor player);
-        void AddEnemy(List<EnemyRoot> enemyRoots);
+        void AddWave(EnemyWave enemyRoots);
         void Dispose();
     }
 }
