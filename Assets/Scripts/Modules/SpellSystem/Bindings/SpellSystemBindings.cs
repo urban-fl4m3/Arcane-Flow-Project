@@ -9,8 +9,8 @@ namespace Modules.SpellSystem.Bindings
     {
         public static void Bind(DiContainer container)
         {
-            container.Bind<ISpellContainer>().To<SpellContainer>()
-                .FromScriptableObjectResource("Spells/SpellContainer").AsSingle();
+            container.Bind<SpellPreset>()
+                .FromScriptableObjectResource("Spells").AsTransient();
 
             container.Bind<ISpellProvider>().To<SpellProvider>().AsSingle();
             container.Bind<ISpellManager>().To<SpellManager>().AsSingle();

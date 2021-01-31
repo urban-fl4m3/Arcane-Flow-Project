@@ -415,6 +415,7 @@
               <e p="ICommandQueue.cs" t="Include" />
             </e>
             <e p="Common" t="Include">
+              <e p="ActorGroupComponent.cs" t="Include" />
               <e p="Attribute.cs" t="Include" />
               <e p="DynamicActor.cs" t="Include" />
               <e p="DynamicFloat.cs" t="Include" />
@@ -479,7 +480,6 @@
                 <e p="AvailableEnemiesConfig.cs" t="Include" />
                 <e p="IAvailableEnemiesConfig.cs" t="Include" />
               </e>
-              <e p="EnemyRoot.cs" t="Include" />
               <e p="Factory" t="Include">
                 <e p="EnemyFactory.cs" t="Include" />
                 <e p="IEnemyFactory.cs" t="Include" />
@@ -487,6 +487,9 @@
               <e p="Managers" t="Include">
                 <e p="EnemyManager.cs" t="Include" />
                 <e p="IEnemyManager.cs" t="Include" />
+              </e>
+              <e p="Wave" t="Include">
+                <e p="EnemyWave.cs" t="Include" />
               </e>
             </e>
             <e p="Logger" t="Include">
@@ -567,9 +570,7 @@
                 <e p="SpellSystemBindings.cs" t="Include" />
               </e>
               <e p="Configs" t="Include">
-                <e p="ISpellContainer.cs" t="Include" />
                 <e p="ISpellPreset.cs" t="Include" />
-                <e p="SpellContainer.cs" t="Include" />
                 <e p="SpellPreset.cs" t="Include" />
               </e>
               <e p="Data" t="Include">
