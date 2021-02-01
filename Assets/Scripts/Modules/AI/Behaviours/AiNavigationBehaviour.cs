@@ -12,6 +12,7 @@ namespace Modules.AI.Behaviours
     public class AiNavigationBehaviour : TickBehaviour
     {
         private ITransformData _transformData;
+        private ITransformData _followingTransformData;
         private IAnimationData _animationData;
         private AiNavigationData _aiNavigationData;
         
@@ -33,7 +34,7 @@ namespace Modules.AI.Behaviours
 
         protected override void OnTick()
         {
-            _navMeshAgent.SetDestination(_followActor.GetData<TransformData>().GetTransform().position);
+            _navMeshAgent.SetDestination(_followingTransformData.GetTransform().position);
             _navMeshAgent.nextPosition = _transformData.GetTransform().position;
 
             var reachedTarget = _navMeshAgent.remainingDistance < _aiNavigationData.ReachDistance;
@@ -51,6 +52,7 @@ namespace Modules.AI.Behaviours
 
             if (actor != null)
             {
+                _followingTransformData = actor.GetData<TransformData>();
                 StartTick();
             }
             else

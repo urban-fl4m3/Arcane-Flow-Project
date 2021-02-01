@@ -26,50 +26,48 @@ namespace Modules.Actors
         
         public void AddExposedData()
         {
-            foreach (var data in from behaviour in _exposedBehaviours 
-                from data in behaviour.Data
-                where !_data.Components.ContainsKey(data.GetType())
-                select data)
+            foreach (var behaviour in _exposedBehaviours)
             {
-                _data.SetAndInitialize(_owner, Object.Instantiate(data));
+                InitializeBehaviourData(behaviour.Data);
             }
 
             foreach (var behaviour in _exposedBehaviours)
             {
-                _behaviours.SetAndInitialize(_owner, Object.Instantiate(behaviour));
+                _behaviours.AddComponent(_owner, Object.Instantiate(behaviour));
             }
         }
         
         public void AddBehaviour<T>(T newBehaviour) where T : BaseBehaviour
         {
-            foreach (var data in newBehaviour.Data)
-            {
-                if (_data.Components.ContainsKey(data.GetType()))
-                {
-                    continue;
-                }
-
-                _data.SetAndInitialize(_owner, Object.Instantiate(data));
-            }
+            InitializeBehaviourData(newBehaviour.Data);
 
             _exposedBehaviours.Add(newBehaviour);
-            _behaviours.SetAndInitialize(_owner, newBehaviour);
+            _behaviours.AddComponent(_owner, newBehaviour);
+        }
+
+        private void InitializeBehaviourData(IEnumerable<BaseData> dataCollection)
+        {
+            foreach (var data in dataCollection)
+            {
+                _data.AddComponent(_owner, Object.Instantiate(data));
+            }
         }
 
         public void RemoveBehaviour(Type behaviourType)
         {
-            foreach (var behaviour in _exposedBehaviours)
-            {
-                if (behaviour.GetType() == behaviourType)
-                {
-                    _exposedBehaviours.Remove(behaviour);
-                    break;
-                }
-            }
+            var succeed = _behaviours.RemoveComponent(behaviourType);
 
-            var behaviourInstance = _behaviours.Components[behaviourType];
-            behaviourInstance.Dispose();
-            _behaviours.Components.Remove(behaviourType);
+            if (!succeed) return;
+            foreach (var behaviour in _exposedBehaviours.Where(behaviour => behaviour.GetType() == behaviourType))
+            {
+                foreach (var data in behaviour.Data)
+                {
+                    _data.RemoveComponent(data.GetType());
+                }
+                
+                _exposedBehaviours.Remove(behaviour);
+                break;
+            }
         }
 
         public T GetBehaviour<T>() where T : class, IBaseBehaviour
