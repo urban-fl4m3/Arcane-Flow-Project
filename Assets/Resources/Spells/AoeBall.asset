@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079eed1ec5a840c0a4be42ff58324506, type: 3}
   m_Name: AoeBall
   m_EditorClassIdentifier: 
-  _id: 
-  _type: 0
-  _tags: 
-  _actor: {fileID: 0}
+  _id: 2
+  _type: 2
+  _tags: 02000000
+  _actor: {fileID: 2963518513460446211, guid: 51042558d25400e40b11bf307954579b, type: 3}

@@ -26,7 +26,7 @@ namespace Modules.SpellSystem.Providers
             switch (preset.Type)
             {
                 case SpellType.Projectile:
-                    return new Spell(
+                    return new ProjectileSpell(
                         preset.Id,
                         preset.Type,
                         preset.Actor,

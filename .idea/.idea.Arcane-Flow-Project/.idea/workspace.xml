@@ -20,18 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d47f0dd-bb60-4430-9b51-7b998602c23d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Dummy/GroupOfDummys.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Dummy/GroupOfDummys.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Data/PlayerAttributesData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Data/PlayerAttributesData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Spells/Fireball/AoeBall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Spells/Fireball/AoeBall.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Bundles/UI/Common/HealthBar/HealthBarMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/UI/Common/HealthBar/HealthBarMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/SpellActor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/ProjectileActor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/SpellActor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/projectileActor.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/ISpellPreset.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/ISpellPreset.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/SpellPreset.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/SpellPreset.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Enum/SpellType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Enum/SpellType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Spells/AoeBall.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Spells/AoeBall.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Spells/HugeBall.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Spells/HugeBall.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Providers/SpellProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Providers/SpellProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Spell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Spell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Spell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ProjectileSpell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Spell.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ProjectileSpell.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +92,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MouseRotationBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Actors/IMapActor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/AoeActor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Spell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ProjectileSpell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ICaster.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -135,7 +131,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Managers/EnemyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Managers/World.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuScheme.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Data/SpellData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Bindings/SpellSystemBindings.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/projectileActor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/aoeActor.cs" />
@@ -147,6 +142,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/ProjectileActor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Providers/SpellProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/AoeActor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Data/SpellData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ProjectileSpell.cs" />
       </list>
     </option>
   </component>
@@ -200,7 +197,8 @@
       <workItem from="1611952630865" duration="584000" />
       <workItem from="1611994510693" duration="5271000" />
       <workItem from="1612043732183" duration="6059000" />
-      <workItem from="1612140862613" duration="2973000" />
+      <workItem from="1612140862613" duration="3670000" />
+      <workItem from="1612155601426" duration="648000" />
     </task>
     <servers />
   </component>
@@ -269,9 +267,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="246" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612143570389" />
-    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1612141648278">
+    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1612143959070">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612141648278" />
+    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612143959070" />
   </component>
 </project>

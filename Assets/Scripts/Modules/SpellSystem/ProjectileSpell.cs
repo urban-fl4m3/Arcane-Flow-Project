@@ -6,14 +6,14 @@ using UnityEngine;
 
 namespace Modules.SpellSystem
 {
-    public class Spell : ISpell
+    public class ProjectileSpell : ISpell
     {
         private readonly string _id;
         private readonly SpellType _type;
         private readonly ActorBase _actor;
         private readonly IEnumerable<Tag> _tags;
 
-        public Spell(string id, SpellType type, ActorBase actor, IEnumerable<Tag> tags)
+        public ProjectileSpell(string id, SpellType type, ActorBase actor, IEnumerable<Tag> tags)
         {
             _id = id;
             _type = type;

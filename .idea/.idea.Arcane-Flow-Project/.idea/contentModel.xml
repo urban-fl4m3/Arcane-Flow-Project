@@ -585,10 +585,10 @@
               </e>
               <e p="ICaster.cs" t="Include" />
               <e p="ISpell.cs" t="Include" />
+              <e p="ProjectileSpell.cs" t="Include" />
               <e p="Providers" t="Include">
                 <e p="SpellProvider.cs" t="Include" />
               </e>
-              <e p="Spell.cs" t="Include" />
             </e>
             <e p="Ticks" t="Include">
               <e p="Bindings" t="Include">
