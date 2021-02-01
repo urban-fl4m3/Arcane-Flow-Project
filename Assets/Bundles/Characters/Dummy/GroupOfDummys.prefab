@@ -181,13 +181,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6933161781141700092, guid: be7388b753ccd8740be65d61527e861a,
         type: 3}
+      propertyPath: _activeSkill
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6933161781141700092, guid: be7388b753ccd8740be65d61527e861a,
+        type: 3}
       propertyPath: _defaultSpellsByID.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6933161781141700092, guid: be7388b753ccd8740be65d61527e861a,
         type: 3}
       propertyPath: _defaultSpellsByID.Array.data[0]
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6933161781141891196, guid: be7388b753ccd8740be65d61527e861a,
         type: 3}

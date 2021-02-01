@@ -16,5 +16,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4f44711229825ce4a8810dc1cdf7ea9a, type: 2}
   - {fileID: 11400000, guid: cd0fc3a1538334c4c88e4e63e5ef193b, type: 2}
   _attribute: 0
-  _height: 1
+  _height: 2
   _bar: {fileID: 3782479173998310800, guid: 9e89a7fe1ef0d0744b0cb81780a93829, type: 3}
