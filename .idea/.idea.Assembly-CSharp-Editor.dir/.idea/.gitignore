@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/modules.xml
+/.idea.Assembly-CSharp-Editor.iml
+/contentModel.xml
+# Datasource local storage ignored files
+/../../../../../../:\Git Projects\Arcane Flow\.idea\.idea.Assembly-CSharp-Editor.dir\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

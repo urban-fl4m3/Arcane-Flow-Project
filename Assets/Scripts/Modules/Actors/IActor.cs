@@ -12,6 +12,7 @@ namespace Modules.Actors
     {
         event EventHandler OnInitializeComplete;
 
+        bool Enabled { get; }
         ITickManager TickManager { get; }
         Camera Camera { get; }
         

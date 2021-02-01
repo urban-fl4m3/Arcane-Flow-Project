@@ -6,6 +6,7 @@ using Object = UnityEngine.Object;
 
 namespace Generics
 {
+    [Serializable]
     public class MemberContainer<TComponent> where TComponent : class, IActorMember
     {
         public Dictionary<Type, TComponent> Components => _components;
@@ -34,7 +35,6 @@ namespace Generics
             foreach (var component in _components)
             {
                 component.Value.Dispose();
-                Object.Destroy(component.Value.Instance);
             }
             
             _components.Clear();

@@ -11,6 +11,7 @@ namespace Modules.SpellSystem.Data
     {
         private readonly Dictionary<string, ISpell> _spells = new Dictionary<string, ISpell>();
         private ICaster _caster;
+        
         protected override void OnInitialize(IActor owner)
         {
             if (owner is ICaster caster)

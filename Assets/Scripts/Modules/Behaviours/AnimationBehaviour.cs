@@ -7,7 +7,6 @@ namespace Modules.Behaviours
     [CreateAssetMenu(fileName = "New Animation Behaviour", menuName = "Behaviours/AnimationController")]
     public class AnimationBehaviour : BaseBehaviour
     {
-        
         private AnimationData _animationData;
         protected override void OnInitialize(IActor owner)
         {

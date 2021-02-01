@@ -36,6 +36,11 @@ namespace Modules.SpellSystem.Behaviours
             var activeSpell = _spellData.Spells[_caster.ListOfSpellsID[_caster.activeSpell]];
             activeSpell.Cast(_caster.SpawnPoint, _ownerTransformData.GetTransform().forward);
         }
-        
+
+        public override void Dispose()
+        {
+            _animationEventHandlerData.EventHandler.Unsubscribe("Cast");
+            base.Dispose();
+        }
     }
 }
