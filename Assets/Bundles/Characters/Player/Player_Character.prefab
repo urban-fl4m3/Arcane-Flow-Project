@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5377965124898615488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952465992853856929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 199ef917a3f34ec28b897021ee819df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8195281839665414260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11,6 +23,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player_Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684249342670152408, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: m_Height
+      value: 1.0079129
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684249342670152408, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.19380166
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684249342670152408, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.005279973
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684249342670152408, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1.2608898
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684249342670152408, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.005997777
       objectReference: {fileID: 0}
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
@@ -89,8 +126,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
+      propertyPath: _defaultSpellsByID.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: _defaultSpellsByID.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
       propertyPath: _components._exposedBehaviours.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
@@ -118,13 +165,14 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
-      propertyPath: _defaultSpellsByID.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
+      propertyPath: _components._exposedBehaviours.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 12299c6c8c4114e48a54bdf2dd478582,
+        type: 2}
+    - target: {fileID: 7684249342670152411, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
-      propertyPath: _defaultSpellsByID.Array.data[0]
-      value: 0
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7684249342670189319, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
@@ -193,6 +241,12 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: de33303faeb97d14ab8c0c124ea0d613, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69358da03c19a3944a9fb33579235009, type: 3}
+--- !u!1 &1952465992853856929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7684249342670152405, guid: 69358da03c19a3944a9fb33579235009,
+    type: 3}
+  m_PrefabInstance: {fileID: 8195281839665414260}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1952465992853531107 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7684249342670481815, guid: 69358da03c19a3944a9fb33579235009,
