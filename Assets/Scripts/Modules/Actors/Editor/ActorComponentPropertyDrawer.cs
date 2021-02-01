@@ -1,4 +1,5 @@
-﻿using Modules.Behaviours;
+﻿using Editor;
+using Modules.Behaviours;
 using UnityEditor;
 using UnityEngine;
 
@@ -25,22 +26,20 @@ namespace Modules.Actors.Editor
             for (var i = 0; i < behavioursArr.arraySize; i++)
             {
                 var arrayProperty = behavioursArr.GetArrayElementAtIndex(i);
-
                 DrawBehaviourArrayProperty(arrayProperty, behavioursArr, i, ref position);
             }
             
             position.y += _addButtonHeight;
             DropAreGui(ref position, behavioursArr, property);
-            
-            
+
             EditorGUI.indentLevel = indent;
-            
         }
 
         private void DropAreGui(ref Rect position, SerializedProperty behavioursArr, SerializedProperty property)
         {
             var ev = Event.current;
-            var dropRect = GetAddBehaviourButtonRect(position);
+            var dropRect = position.GetCopy(_arrayPropertyHeight);
+            
             GUI.Box(dropRect, "Add behaviour");
 
             switch (ev.type)
@@ -71,7 +70,7 @@ namespace Modules.Actors.Editor
                                 if (Application.isPlaying)
                                 {
                                     var target = property.serializedObject.targetObject as Actor;
-                                    target.AddBehaviour(draggedObject as BaseBehaviour);
+                                    target?.AddBehaviour(draggedObject as BaseBehaviour);
                                 }
                                 else
                                 {
@@ -80,6 +79,8 @@ namespace Modules.Actors.Editor
                                         = draggedObject;
                                 }
                             }
+                            
+                            EditorUtility.SetDirty(Selection.activeObject);
                         }
                     }
                     break;
@@ -98,13 +99,14 @@ namespace Modules.Actors.Editor
                 : property.objectReferenceValue.GetType().Name;
 
             GUI.enabled = false;
-            EditorGUI.PropertyField(GetArrayPropertyRect(position, widthMultiplier), property,
-                new GUIContent(propertyName));
+            var arrayPropertyRect = position.GetCopy(_arrayPropertyHeight, widthMultiplier);
+            EditorGUI.PropertyField(arrayPropertyRect, property, new GUIContent(propertyName));
             GUI.enabled = true;
             
-            var xOffset = position.x + position.width * widthMultiplier;
+            var offset = position.x + position.width * widthMultiplier;
+            var removeButtonHeight = position.GetCopy(_arrayPropertyHeight, xOffset: offset);
             
-            if (GUI.Button(GetRemoveBehaviourButtonRect(position, xOffset), "-"))
+            if (GUI.Button(removeButtonHeight, "-"))
             {
                 if (Application.isPlaying)
                 {
@@ -117,22 +119,9 @@ namespace Modules.Actors.Editor
                     property.objectReferenceValue = null;
                     parent.DeleteArrayElementAtIndex(index);
                 }
+                
+                EditorUtility.SetDirty(Selection.activeObject);
             }
-        }
-
-        private static Rect GetAddBehaviourButtonRect(Rect position)
-        {
-            return new Rect(position.x, position.y, position.width, _addButtonHeight);
-        }
-
-        private static Rect GetArrayPropertyRect(Rect position, float widthMultiplier)
-        {
-            return new Rect(position.x, position.y, position.width * widthMultiplier, _arrayPropertyHeight);
-        }
-
-        private static Rect GetRemoveBehaviourButtonRect(Rect position, float xOffset)
-        {
-            return new Rect(position.x + xOffset, position.y, position.width - xOffset, _arrayPropertyHeight);
         }
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
