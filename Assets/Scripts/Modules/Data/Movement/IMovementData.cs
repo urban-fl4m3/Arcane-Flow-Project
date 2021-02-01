@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Modules.Datas.Movement
+namespace Modules.Data.Movement
 {
     public interface IMovementData
     {

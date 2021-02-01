@@ -6,7 +6,7 @@ using Modules.Common;
 using UnityEngine;
 using Attribute = Modules.Common.Attribute;
 
-namespace Modules.Datas.Attributes
+namespace Modules.Data.Attributes
 {
     [CreateAssetMenu(fileName = "HealthData", menuName = "Attributes Data/Health")]
     public class AttributesData : BaseData, IAttributesData

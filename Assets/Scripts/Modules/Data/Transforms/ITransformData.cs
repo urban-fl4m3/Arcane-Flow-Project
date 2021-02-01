@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-namespace Modules.Datas.Transforms
+namespace Modules.Data.Transforms
 {
     public interface ITransformData
     {
-        Transform GetTransform();
+        Transform Component { get; }
     }
 }

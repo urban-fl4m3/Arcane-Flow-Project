@@ -1,7 +1,7 @@
 ﻿using Modules.Actors;
 using Modules.Common;
-using Modules.Datas.Attributes;
-using Modules.Datas.Transforms;
+using Modules.Data.Attributes;
+using Modules.Data.Transforms;
 using UnityEngine;
 using Attribute = Modules.Common.Attribute;
 
@@ -34,7 +34,7 @@ namespace Modules.Behaviours
             _attributeFloat = property;
             _camera = owner.Camera;
             
-            var ownerTransform = owner.GetData<TransformData>().GetTransform();
+            var ownerTransform = owner.GetData<TransformData>().Component;
             _bar = Instantiate(_bar, new Vector3(0, _height, 0), Quaternion.identity);
             _barTransform = _bar.transform;
             _barTransform.SetParent(ownerTransform, false);

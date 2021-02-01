@@ -1,7 +1,7 @@
 ﻿using Modules.Actors;
 using UnityEngine;
 
-namespace Modules.Datas.Movement
+namespace Modules.Data.Movement
 {
     [CreateAssetMenu(fileName = "New Movement Data", menuName = "Data/Movement")]
     public class MovementData : BaseData, IMovementData

@@ -1,7 +1,7 @@
 ﻿using Modules.Actors;
-using Modules.Datas.Animation;
-using Modules.Datas.KeyBindings;
-using Modules.Datas.Movement;
+using Modules.Data.Animation;
+using Modules.Data.KeyBindings;
+using Modules.Data.Movement;
 using UnityEngine;
 
 namespace Modules.Behaviours.TickBehaviours
@@ -23,7 +23,7 @@ namespace Modules.Behaviours.TickBehaviours
             base.OnInitialize(owner);
             
             _animationData = Owner.GetData<AnimationData>();
-            _animator = _animationData.GetAnimator();
+            _animator = _animationData.Component;
             _movementData = Owner.GetData<MovementData>();
             _bindingData = Owner.GetData<KeyBindingsData>();
 

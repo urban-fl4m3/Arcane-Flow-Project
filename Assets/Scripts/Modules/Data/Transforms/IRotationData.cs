@@ -1,4 +1,4 @@
-﻿namespace Modules.Datas.Transforms
+﻿namespace Modules.Data.Transforms
 {
     public interface IRotationData
     {

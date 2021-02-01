@@ -1,7 +1,7 @@
 ﻿using Modules.Actors;
 using UnityEngine;
 
-namespace Modules.Datas
+namespace Modules.Data
 {
     public abstract class BaseData : ScriptableObject, IBaseData
     {

@@ -1,6 +1,6 @@
 ﻿using Modules.Actors;
 using Modules.Common;
-using Modules.Datas;
+using Modules.Data;
 using UnityEngine;
 using UnityEngine.AI;
 

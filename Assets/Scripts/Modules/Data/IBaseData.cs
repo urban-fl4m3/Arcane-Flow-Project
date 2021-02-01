@@ -1,6 +1,6 @@
 ﻿using Modules.Actors;
 
-namespace Modules.Datas
+namespace Modules.Data
 {
     public interface IBaseData : IActorMember
     {

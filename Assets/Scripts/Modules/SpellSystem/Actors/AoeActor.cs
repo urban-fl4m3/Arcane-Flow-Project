@@ -1,7 +1,7 @@
 ﻿using System;
 using Modules.Actors;
 using Modules.Actors.Types;
-using Modules.Datas.Attributes;
+using Modules.Data.Attributes;
 using Modules.SpellSystem.Enum;
 using UnityEngine;
 using Attribute = Modules.Common.Attribute;

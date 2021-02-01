@@ -1,6 +1,5 @@
 ﻿using Modules.Actors;
-using Modules.Datas.Movement;
-using Modules.Datas.Transforms;
+using Modules.Data.Transforms;
 using UnityEngine;
 
 namespace Modules.Behaviours.TickBehaviours
@@ -13,22 +12,20 @@ namespace Modules.Behaviours.TickBehaviours
         
         private Transform _actorTransform;
         
-        private IMovementData _movementData;
         private ITransformData _transformData;
         private IRotationData _rotationData;
         private Transform _cameraTransform;
         
         protected override void OnInitialize(IActor owner)
         {
-            _cameraTransform = owner.GetData<TransformData>().GetTransform();
+            _cameraTransform = owner.GetData<TransformData>().Component;
         }
         
         public void SetActorToFollow(IActor actor)
         {
-            _movementData = actor.GetData<MovementData>();
             _transformData = actor.GetData<TransformData>();
             _rotationData = actor.GetData<RotationData>();
-            _actorTransform = _transformData.GetTransform();
+            _actorTransform = _transformData.Component;
             
             StartTick();
         }

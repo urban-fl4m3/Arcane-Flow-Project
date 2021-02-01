@@ -1,8 +1,8 @@
 ﻿using Modules.Actors;
 using Modules.AI.Data;
 using Modules.Behaviours;
-using Modules.Datas.Animation;
-using Modules.Datas.Transforms;
+using Modules.Data.Animation;
+using Modules.Data.Transforms;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -17,7 +17,6 @@ namespace Modules.AI.Behaviours
         private AiNavigationData _aiNavigationData;
         
         private NavMeshAgent _navMeshAgent;
-        private IActor _followActor;
 
         protected override void OnInitialize(IActor owner)
         {
@@ -34,22 +33,20 @@ namespace Modules.AI.Behaviours
 
         protected override void OnTick()
         {
-            _navMeshAgent.SetDestination(_followingTransformData.GetTransform().position);
-            _navMeshAgent.nextPosition = _transformData.GetTransform().position;
+            _navMeshAgent.SetDestination(_followingTransformData.Component.position);
+            _navMeshAgent.nextPosition = _transformData.Component.position;
 
             var reachedTarget = _navMeshAgent.remainingDistance < _aiNavigationData.ReachDistance;
-            _animationData.GetAnimator().SetBool(_animationData.MovingAnimationKey, !reachedTarget);
+            _animationData.Component.SetBool(_animationData.MovingAnimationKey, !reachedTarget);
 
             if (reachedTarget)
             {
-                _animationData.GetAnimator().SetTrigger(_animationData.AttackAnimationKey);
+                _animationData.Component.SetTrigger(_animationData.AttackAnimationKey);
             }
         }
 
         private void HandleFollowingActorChanged(object sender, IActor actor)
         {
-            _followActor = actor;
-
             if (actor != null)
             {
                 _followingTransformData = actor.GetData<TransformData>();

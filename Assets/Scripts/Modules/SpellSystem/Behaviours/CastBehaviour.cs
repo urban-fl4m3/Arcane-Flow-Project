@@ -2,7 +2,7 @@
 using Modules.Actors;
 using Modules.Animations.Data;
 using Modules.Behaviours;
-using Modules.Datas.Transforms;
+using Modules.Data.Transforms;
 using Modules.SpellSystem.Data;
 using UnityEngine;
 
@@ -34,7 +34,7 @@ namespace Modules.SpellSystem.Behaviours
         private void Cast(object sender, EventArgs e)
         {
             var activeSpell = _spellData.Spells[_caster.ListOfSpellsID[_caster.activeSpell]];
-            activeSpell.Cast(_caster.SpawnPoint, _ownerTransformData.GetTransform().forward);
+            activeSpell.Cast(_caster.SpawnPoint, _ownerTransformData.Component.forward);
         }
 
         public override void Dispose()

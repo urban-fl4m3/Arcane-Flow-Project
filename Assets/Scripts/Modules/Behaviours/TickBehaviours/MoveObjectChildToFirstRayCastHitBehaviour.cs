@@ -1,5 +1,5 @@
 ﻿using Modules.Actors;
-using Modules.Datas.Transforms;
+using Modules.Data.Transforms;
 using UnityEngine;
 
 namespace Modules.Behaviours.TickBehaviours
@@ -16,8 +16,8 @@ namespace Modules.Behaviours.TickBehaviours
         
         protected override void OnInitialize(IActor owner)
         {
-            _childTransform = Owner.GetChild().GetData<TransformData>().GetTransform();
-            _rootTransform = Owner.GetData<TransformData>().GetTransform();
+            _childTransform = Owner.GetChild().GetData<TransformData>().Component;
+            _rootTransform = Owner.GetData<TransformData>().Component;
             
             var localPosition = _childTransform.localPosition;
             _defaultLocalPosition = localPosition;

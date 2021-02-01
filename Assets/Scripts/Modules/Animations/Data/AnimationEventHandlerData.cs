@@ -1,5 +1,5 @@
 ﻿using Modules.Actors;
-using Modules.Datas;
+using Modules.Data;
 using UnityEngine;
 
 namespace Modules.Animations.Data

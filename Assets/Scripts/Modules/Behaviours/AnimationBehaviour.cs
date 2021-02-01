@@ -1,5 +1,5 @@
 using Modules.Actors;
-using Modules.Datas.Animation;
+using Modules.Data.Animation;
 using UnityEngine;
 
 namespace Modules.Behaviours
@@ -16,13 +16,13 @@ namespace Modules.Behaviours
         public override void Stop()
         {
             base.Stop();
-            _animationData.GetAnimator().enabled = false;
+            _animationData.Component.enabled = false;
         }
 
         public override void Resume()
         {
             base.Resume();
-            _animationData.GetAnimator().enabled = true;
+            _animationData.Component.enabled = true;
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Modules.Actors;
-using Modules.Datas.Transforms;
+using Modules.Data.Transforms;
 using UnityEngine;
 
 namespace Modules.Behaviours.TickBehaviours
@@ -12,13 +12,13 @@ namespace Modules.Behaviours.TickBehaviours
         protected override void OnInitialize(IActor owner)
         {
             var transformData = Owner.GetData<TransformData>();
-            _ownerTransform = transformData.GetTransform();
+            _ownerTransform = transformData.Component;
         }
 
         public void SetActor(IActor actor)
         {
             var transformData = actor.GetData<TransformData>();
-            _lookTransform = transformData.GetTransform();
+            _lookTransform = transformData.Component;
             StartTick();
         }
 

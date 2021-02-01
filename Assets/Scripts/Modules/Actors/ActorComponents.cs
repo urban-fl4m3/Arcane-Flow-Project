@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Generics;
 using Modules.Behaviours;
-using Modules.Datas;
+using Modules.Data;
 using UnityEngine;
 using Object = UnityEngine.Object;
 

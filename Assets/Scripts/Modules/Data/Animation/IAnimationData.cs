@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-namespace Modules.Datas.Animation
+namespace Modules.Data.Animation
 {
     public interface IAnimationData
     {
-        Animator GetAnimator();
+        Animator Component { get; }
         string MovingAnimationKey { get; }
         string AttackAnimationKey { get; }
     }

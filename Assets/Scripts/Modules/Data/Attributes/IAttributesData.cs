@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Modules.Common;
 
-namespace Modules.Datas.Attributes
+namespace Modules.Data.Attributes
 {
     public interface IAttributesData
     {

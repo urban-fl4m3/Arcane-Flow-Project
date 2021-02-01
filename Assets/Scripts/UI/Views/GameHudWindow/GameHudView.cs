@@ -1,6 +1,6 @@
 ﻿using System;
 using Modules.Common;
-using Modules.Datas.Attributes;
+using Modules.Data.Attributes;
 using Modules.Maps.Managers;
 using Modules.Player.Managers;
 using UI.Views.RestartPopupWindow;

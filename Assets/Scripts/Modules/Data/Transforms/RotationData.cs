@@ -1,7 +1,7 @@
 ﻿using Modules.Actors;
 using UnityEngine;
 
-namespace Modules.Datas.Transforms
+namespace Modules.Data.Transforms
 {
     [CreateAssetMenu(fileName = "New Rotation Data", menuName = "Data/Rotation")]
     public class RotationData : BaseData, IRotationData

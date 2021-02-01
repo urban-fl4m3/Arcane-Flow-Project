@@ -1,6 +1,6 @@
 ﻿using System;
 using Modules.Behaviours;
-using Modules.Datas;
+using Modules.Data;
 using Modules.Render.Actors;
 using Modules.Ticks.Managers;
 using UnityEngine;

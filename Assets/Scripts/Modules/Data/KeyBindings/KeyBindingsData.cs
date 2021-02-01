@@ -1,7 +1,7 @@
 ﻿using Modules.Actors;
 using UnityEngine;
 
-namespace Modules.Datas.KeyBindings
+namespace Modules.Data.KeyBindings
 {
     [CreateAssetMenu(fileName = "New Binding Data", menuName = "Data/Key bindings")]
     public class KeyBindingsData : BaseData, IKeyBindingsData    

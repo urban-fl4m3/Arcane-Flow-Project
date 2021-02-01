@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Modules.Datas.KeyBindings
+namespace Modules.Data.KeyBindings
 {
     public interface IKeyBindingsData
     {
