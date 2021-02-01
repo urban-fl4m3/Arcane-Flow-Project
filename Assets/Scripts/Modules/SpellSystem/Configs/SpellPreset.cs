@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Modules.Actors.Types;
 using Modules.SpellSystem.Actors;
 using Modules.SpellSystem.Enum;
 using UnityEngine;
@@ -11,11 +12,11 @@ namespace Modules.SpellSystem.Configs
         [SerializeField] private string _id;
         [SerializeField] private SpellType _type;
         [SerializeField] private Tag[] _tags;
-        [SerializeField] private SpellActor _actor;
+        [SerializeField] private ActorBase _actor;
 
         public string Id => _id;
         public SpellType Type => _type;
         public IEnumerable<Tag> Tags => _tags;
-        public SpellActor Actor => _actor;
+        public ActorBase Actor => _actor;
     }
 }

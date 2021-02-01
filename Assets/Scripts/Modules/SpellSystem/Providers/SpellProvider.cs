@@ -21,17 +21,28 @@ namespace Modules.SpellSystem.Providers
         }
 
         public static ISpell CreateSpell(string ID)
-        {    
-            Debug.Log(ID);
+        {
             var preset = _presetsDictionary[ID];
-            
-            var spell = new Spell(
-                preset.Id,
-                preset.Type,
-                preset.Actor,
-                preset.Tags
-            );
-            return spell;
+            switch (preset.Type)
+            {
+                case SpellType.Projectile:
+                    return new Spell(
+                        preset.Id,
+                        preset.Type,
+                        preset.Actor,
+                        preset.Tags
+                    );
+                case SpellType.AOE:
+                    return new AoeSpell(
+                        preset.Id,
+                        preset.Type,
+                        preset.Actor,
+                        preset.Tags
+                        );
+
+            }
+
+            return null;
         }
     }
 }

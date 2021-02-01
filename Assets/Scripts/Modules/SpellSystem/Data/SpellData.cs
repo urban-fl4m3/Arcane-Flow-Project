@@ -20,7 +20,6 @@ namespace Modules.SpellSystem.Data
 
             foreach (var spellID in _caster.ListOfSpellsID)
             {
-                Debug.Log(spellID + " ");
                 _spells.Add(spellID, SpellProvider.CreateSpell(spellID));
             }
         }

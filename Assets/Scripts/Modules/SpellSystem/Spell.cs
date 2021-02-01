@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Modules.Actors.Types;
 using Modules.SpellSystem.Actors;
 using Modules.SpellSystem.Enum;
 using UnityEngine;
@@ -9,10 +10,10 @@ namespace Modules.SpellSystem
     {
         private readonly string _id;
         private readonly SpellType _type;
-        private readonly SpellActor _actor;
+        private readonly ActorBase _actor;
         private readonly IEnumerable<Tag> _tags;
 
-        public Spell(string id, SpellType type, SpellActor actor, IEnumerable<Tag> tags)
+        public Spell(string id, SpellType type, ActorBase actor, IEnumerable<Tag> tags)
         {
             _id = id;
             _type = type;
@@ -24,7 +25,7 @@ namespace Modules.SpellSystem
         
         public void Cast(Transform spawnPoint, Vector3 direction)
         {
-            var spellInstance = Object.Instantiate(_actor, spawnPoint.position, Quaternion.identity);
+            var spellInstance = Object.Instantiate(_actor, spawnPoint.position, Quaternion.identity) as ProjectileActor;
             spellInstance.Direction = direction;
         }
     }

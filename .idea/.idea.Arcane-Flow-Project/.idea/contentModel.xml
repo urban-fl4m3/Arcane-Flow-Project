@@ -561,8 +561,10 @@
             </e>
             <e p="SpellSystem" t="Include">
               <e p="Actors" t="Include">
-                <e p="SpellActor.cs" t="Include" />
+                <e p="aoeActor.cs" t="Include" />
+                <e p="projectileActor.cs" t="Include" />
               </e>
+              <e p="AoeSpell.cs" t="Include" />
               <e p="Behaviours" t="Include">
                 <e p="CastBehaviour.cs" t="Include" />
               </e>

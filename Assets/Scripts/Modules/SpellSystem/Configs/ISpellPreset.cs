@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Modules.Actors.Types;
 using Modules.SpellSystem.Actors;
 using Modules.SpellSystem.Enum;
 
@@ -9,6 +10,6 @@ namespace Modules.SpellSystem.Configs
         string Id { get; }
         SpellType Type { get; }
         IEnumerable<Tag> Tags { get; }
-        SpellActor Actor { get; }
+        ActorBase Actor { get; }
     }
 }

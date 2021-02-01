@@ -8,7 +8,7 @@ using Attribute = Modules.Common.Attribute;
 
 namespace Modules.SpellSystem.Actors
 {
-    public class SpellActor : ActorBase
+    public class ProjectileActor : ActorBase
     {
         public event EventHandler OnCastEventHandler;
         public event EventHandler<Collision> OnHitEventHandler;
