@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using Modules.Behaviours;
+using UnityEditor;
 using UnityEngine;
 
 namespace Modules.Actors.Editor
@@ -9,13 +10,14 @@ namespace Modules.Actors.Editor
         private const float _addButtonHeight = 20;
         private const float _arrayPropertyHeight = 20;
 
+        private SerializedProperty _cachedArray;
+        
         public override void OnGUI(Rect position, SerializedProperty property,
             GUIContent label)
         {
             EditorGUI.BeginProperty(position, label, property);
             
             var indent = EditorGUI.indentLevel;
-
             var behavioursArr = property.FindPropertyRelative("_exposedBehaviours");
 
             EditorGUI.BeginChangeCheck();
@@ -28,20 +30,61 @@ namespace Modules.Actors.Editor
             }
             
             position.y += _addButtonHeight;
+            DropAreGui(ref position, behavioursArr, property);
             
-            if (GUI.Button(GetAddBehaviourButtonRect(position), "Add Behaviour"))
-            {
-                behavioursArr.InsertArrayElementAtIndex(behavioursArr.arraySize);
-                behavioursArr.GetArrayElementAtIndex(behavioursArr.arraySize - 1).objectReferenceValue = null;
-            }
-
-            if (EditorGUI.EndChangeCheck())
-            {
-                Debug.Log("AAA");
-            }
             
             EditorGUI.indentLevel = indent;
             
+        }
+
+        private void DropAreGui(ref Rect position, SerializedProperty behavioursArr, SerializedProperty property)
+        {
+            var ev = Event.current;
+            var dropRect = GetAddBehaviourButtonRect(position);
+            GUI.Box(dropRect, "Add behaviour");
+
+            switch (ev.type)
+            {
+                case EventType.DragUpdated:
+                {
+                    DragAndDrop.visualMode = DragAndDropVisualMode.Copy;
+                    Event.current.Use();
+                    break;
+                }
+                case EventType.DragPerform:
+                {
+                    if (!dropRect.Contains(ev.mousePosition))
+                    {
+                        return;
+                    }
+
+                    DragAndDrop.visualMode = DragAndDropVisualMode.Copy;
+                    
+                    if (ev.type == EventType.DragPerform)
+                    {
+                        DragAndDrop.AcceptDrag ();
+             
+                        foreach (var draggedObject in DragAndDrop.objectReferences) 
+                        {
+                            if (draggedObject is IBaseBehaviour)
+                            {
+                                if (Application.isPlaying)
+                                {
+                                    var target = property.serializedObject.targetObject as Actor;
+                                    target.AddBehaviour(draggedObject as BaseBehaviour);
+                                }
+                                else
+                                {
+                                    behavioursArr.InsertArrayElementAtIndex(behavioursArr.arraySize);
+                                    behavioursArr.GetArrayElementAtIndex(behavioursArr.arraySize - 1).objectReferenceValue
+                                        = draggedObject;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                }
+            }
         }
 
         private void DrawBehaviourArrayProperty(SerializedProperty property, SerializedProperty parent, int index,
@@ -53,16 +96,27 @@ namespace Modules.Actors.Editor
             var propertyName = property.objectReferenceValue == null
                 ? $"{index + 1}"
                 : property.objectReferenceValue.GetType().Name;
-            
+
+            GUI.enabled = false;
             EditorGUI.PropertyField(GetArrayPropertyRect(position, widthMultiplier), property,
                 new GUIContent(propertyName));
-
+            GUI.enabled = true;
+            
             var xOffset = position.x + position.width * widthMultiplier;
             
             if (GUI.Button(GetRemoveBehaviourButtonRect(position, xOffset), "-"))
             {
-                property.objectReferenceValue = null;
-                parent.DeleteArrayElementAtIndex(index);
+                if (Application.isPlaying)
+                {
+                    var target = property.serializedObject.targetObject as Actor;
+                    var removedObject = property.objectReferenceValue as BaseBehaviour;
+                    target.RemoveBehaviour(removedObject.GetType());
+                }
+                else
+                {
+                    property.objectReferenceValue = null;
+                    parent.DeleteArrayElementAtIndex(index);
+                }
             }
         }
 

@@ -42,8 +42,34 @@ namespace Modules.Actors
         
         public void AddBehaviour<T>(T newBehaviour) where T : BaseBehaviour
         {
+            foreach (var data in newBehaviour.Data)
+            {
+                if (_data.Components.ContainsKey(data.GetType()))
+                {
+                    continue;
+                }
+
+                _data.SetAndInitialize(_owner, Object.Instantiate(data));
+            }
+
             _exposedBehaviours.Add(newBehaviour);
             _behaviours.SetAndInitialize(_owner, newBehaviour);
+        }
+
+        public void RemoveBehaviour(Type behaviourType)
+        {
+            foreach (var behaviour in _exposedBehaviours)
+            {
+                if (behaviour.GetType() == behaviourType)
+                {
+                    _exposedBehaviours.Remove(behaviour);
+                    break;
+                }
+            }
+
+            var behaviourInstance = _behaviours.Components[behaviourType];
+            behaviourInstance.Dispose();
+            _behaviours.Components.Remove(behaviourType);
         }
         
         public T GetBehaviour<T>() where T : class, IBaseBehaviour

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47c3d66a58b84acd9a879c40930efc10, type: 3}
   m_Name: CameraThirdPersonRotationBehaviour
   m_EditorClassIdentifier: 
-  _behaviourData: []
-  _turnTime: 1
+  _behaviourData:
+  - {fileID: 11400000, guid: 92fea5bfd19768a44a7b3536a7aacd42, type: 2}

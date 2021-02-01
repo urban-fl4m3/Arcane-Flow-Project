@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724c5c643ce14595820413508b0971e5, type: 3}
   m_Name: CameraMouseRotationBehaviour
   m_EditorClassIdentifier: 
-  _behaviourData: []
+  _behaviourData:
+  - {fileID: 11400000, guid: 92fea5bfd19768a44a7b3536a7aacd42, type: 2}
   _verticalRotationEdges: {x: -90, y: 90}

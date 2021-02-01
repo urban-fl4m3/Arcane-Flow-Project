@@ -35,7 +35,6 @@ namespace Generics
             foreach (var component in _components)
             {
                 component.Value.Dispose();
-                Object.Destroy(component.Value.Instance);
             }
             
             _components.Clear();

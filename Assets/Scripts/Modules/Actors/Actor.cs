@@ -14,6 +14,8 @@ namespace Modules.Actors
 
         public event EventHandler OnInitializeComplete;
         
+        public bool Enabled { get; private set; }
+        
         public ITickManager TickManager { get; private set; }
         public Camera Camera { get; private set; }
         
@@ -95,7 +97,12 @@ namespace Modules.Actors
         
         public void AddBehaviour<T>(T newBehaviour) where T : BaseBehaviour
         {
-            _components.AddBehaviour(newBehaviour);
+            _components.AddBehaviour(Instantiate(newBehaviour));
+        }
+
+        public void RemoveBehaviour(Type behaviourType)
+        {
+            _components.RemoveBehaviour(behaviourType);
         }
         
         public void DestroyActor()
@@ -107,6 +114,7 @@ namespace Modules.Actors
 
         public virtual void Stop()
         {
+            Enabled = false;
             foreach (var behaviour in _components.GetAllBehaviours())
             {
                 behaviour.Value.Stop();
@@ -115,6 +123,7 @@ namespace Modules.Actors
 
         public virtual void Resume()
         {
+            Enabled = true;
             foreach (var behaviour in _components.GetAllBehaviours())
             {
                 behaviour.Value.Resume();

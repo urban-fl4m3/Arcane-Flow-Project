@@ -15,6 +15,11 @@ namespace Modules.Behaviours
 
         public void Initialize(IActor owner)
         {
+            if (owner.Enabled)
+            {
+                Resume();
+            }
+            
             Owner = owner;
             OnInitialize(owner);
         }
@@ -23,7 +28,7 @@ namespace Modules.Behaviours
         
         public virtual void Dispose()
         {
-            
+            Destroy(this);
         }
 
         public virtual void Stop()

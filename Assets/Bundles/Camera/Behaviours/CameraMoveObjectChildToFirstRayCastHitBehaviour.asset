@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f566661c24eb480582f41b2ce459dfc4, type: 3}
   m_Name: CameraMoveObjectChildToFirstRayCastHitBehaviour
   m_EditorClassIdentifier: 
-  _behaviourData: []
+  _behaviourData:
+  - {fileID: 11400000, guid: 92fea5bfd19768a44a7b3536a7aacd42, type: 2}
