@@ -80,8 +80,8 @@ namespace Modules.Behaviours.TickBehaviours
             b.y = middle + _ikData.PelvisOffset;
             animator.bodyPosition = b;
             
-            animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, 0.5f);
-            animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, 0.5f);
+            animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, 1);
+            animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, 1);
             animator.SetIKPosition(AvatarIKGoal.LeftFoot, leftLegPosition);
             animator.SetIKPosition(AvatarIKGoal.RightFoot, rightLegPosition);
         }
