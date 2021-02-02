@@ -39,116 +39,51 @@ namespace Modules.Behaviours.TickBehaviours
 
         protected override void OnTick()
         {
-            AdjustFeetTarget(ref _rightFootPosition, HumanBodyBones.RightFoot);
-            AdjustFeetTarget(ref _leftFootPosition, HumanBodyBones.LeftFoot);
-            
-            FeetPositionSolver(_rightFootPosition, ref _rightFootIkPosition, ref _rightFootIkRotation);
-            FeetPositionSolver(_leftFootPosition, ref _leftFootIkPosition, ref _leftFootIkRotation);
         }
 
         private void HandleAnimatorIKTick(object sender, int layerIndex)
         {
-            MovePelvisHeight();
             var animator = _animationData.Component;
+            var leftLegPosition = _animationData.Component.GetBoneTransform(HumanBodyBones.LeftFoot).position;
+
+            var rayDown = new Ray(leftLegPosition + new Vector3(0, 1, 0), Vector3.down);
+            var height = _transformData.Component.position.y;
+            var middle = 0.0f;
             
-            animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, 1);
-            
-            if (false)
+            RaycastHit hit;
+            if (Physics.Raycast(rayDown, out hit, _ikData.RayCastDownDistance + 1.0f, _ikData.EnvironmentLayer))
             {
-                animator.SetIKRotationWeight(AvatarIKGoal.RightFoot, 
-                    animator.GetFloat(_ikData.RightFootAnimVariableName));
+                height = Mathf.Max(height, hit.point.y);
+                middle += height;
+                
+                leftLegPosition.y = hit.point.y;
             }
-            
-            MoveFeetToIkPoint(AvatarIKGoal.RightFoot, _rightFootIkPosition, _rightFootIkRotation, 
-                ref _lastRightFootPositionY);
+
+            var rightLegPosition = _animationData.Component.GetBoneTransform(HumanBodyBones.RightFoot).position;
+
+            rayDown = new Ray(rightLegPosition + new Vector3(0, 1, 0), Vector3.down);
+
+            if (Physics.Raycast(rayDown, out hit, _ikData.RayCastDownDistance + 1.0f, _ikData.EnvironmentLayer))
+            {
+                height = Mathf.Max(height, hit.point.y);
+                middle += height;
+                
+                rightLegPosition.y = hit.point.y;
+            }
+
+            var a = _transformData.Component.position;
+            a.y = height;
+            _transformData.Component.position = a;
+
+            middle /= 2;
+            var b = animator.bodyPosition;
+            b.y = middle + _ikData.PelvisOffset;
+            animator.bodyPosition = b;
             
             animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, 1);
-            
-            if (false)
-            {
-                animator.SetIKRotationWeight(AvatarIKGoal.LeftFoot, 
-                    animator.GetFloat(_ikData.LeftFootAnimVariableName));
-            }
-            
-            MoveFeetToIkPoint(AvatarIKGoal.LeftFoot, _leftFootIkPosition, _leftFootIkRotation, 
-                ref _lastLeftFootPositionY);
-        }
-
-        private void MoveFeetToIkPoint(AvatarIKGoal foot, Vector3 positionIkHolder, Quaternion rotationIkHolder,
-            ref float lastFootPositionY)
-        {
-            var targetIkPosition = _animationData.Component.GetIKPosition(foot);
-
-            if (positionIkHolder != Vector3.zero)
-            {
-                targetIkPosition = _transformData.Component.InverseTransformPoint(targetIkPosition);
-                positionIkHolder = _transformData.Component.InverseTransformPoint(positionIkHolder);
-
-                var yVariable = Mathf.Lerp(lastFootPositionY, positionIkHolder.y, _ikData.FeetToIkPositionSpeed);
-                targetIkPosition.y += yVariable;
-
-                lastFootPositionY = yVariable;
-                targetIkPosition = _transformData.Component.TransformPoint(targetIkPosition);
-                
-                 _animationData.Component.SetIKRotation(foot, rotationIkHolder);
-            }
-            
-            _animationData.Component.SetIKPosition(foot, targetIkPosition);
-        }
-
-        private void MovePelvisHeight()
-        {
-            if (_rightFootIkPosition == Vector3.zero ||
-                _leftFootIkPosition == Vector3.zero ||
-                _lastPelvisPositionY == 0.0f)
-            {
-                _lastPelvisPositionY = _animationData.Component.bodyPosition.y;
-                return;
-            }
-
-            var position = _transformData.Component.position;
-            
-            var lOffsetPosition = _leftFootIkPosition.y - position.y;
-            var rOffsetPosition = _rightFootIkPosition.y - position.y;
-
-            var totalOffset = Mathf.Min(lOffsetPosition, rOffsetPosition);
-            var newPelvisPosition = _animationData.Component.bodyPosition + Vector3.up * totalOffset;
-
-            newPelvisPosition.y = Mathf.Lerp(_lastPelvisPositionY, newPelvisPosition.y, _ikData.PelvisUpAndDownSpeed);
-            _animationData.Component.bodyPosition = newPelvisPosition;
-            _lastPelvisPositionY = _animationData.Component.bodyPosition.y;
-        }
-
-        private void FeetPositionSolver(Vector3 fromPosition, ref Vector3 feetIkPositions,
-            ref Quaternion feetIkRotations)
-        {
-            RaycastHit feetOutHit;
-
-            var raycastLength = _ikData.RayCastDownDistance + _ikData.HeightFromGroundRaycast;
-            
-            if (_ikData.ShowSolverDebug)
-            {
-                Debug.DrawLine(fromPosition, fromPosition + Vector3.down * raycastLength, Color.yellow);
-            }
-
-            if (Physics.Raycast(fromPosition, Vector3.down, out feetOutHit, raycastLength,
-                _ikData.EnvironmentLayer))
-            {
-                feetIkPositions = fromPosition;
-                feetIkPositions.y = feetOutHit.point.y + _ikData.PelvisOffset;
-                feetIkRotations = Quaternion.FromToRotation(Vector3.up, feetOutHit.normal) *
-                                  _transformData.Component.rotation;
-                
-                return;
-            }
-
-            feetIkPositions = Vector3.zero;
-        }
-
-        private void AdjustFeetTarget(ref Vector3 feetPositions, HumanBodyBones foot)
-        {
-            feetPositions = _animationData.Component.GetBoneTransform(foot).position;
-            feetPositions.y = _transformData.Component.position.y + _ikData.HeightFromGroundRaycast;
+            animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, 1);
+            animator.SetIKPosition(AvatarIKGoal.LeftFoot, leftLegPosition);
+            animator.SetIKPosition(AvatarIKGoal.RightFoot, rightLegPosition);
         }
     }
 }
