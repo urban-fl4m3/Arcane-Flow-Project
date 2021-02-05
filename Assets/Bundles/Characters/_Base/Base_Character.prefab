@@ -1655,6 +1655,7 @@ GameObject:
   - component: {fileID: 7684249342670152408}
   - component: {fileID: 7684249342670152411}
   - component: {fileID: 7684249342670152410}
+  - component: {fileID: 8790846533138900289}
   m_Layer: 9
   m_Name: Base_Character
   m_TagString: Untagged
@@ -1725,9 +1726,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _child: {fileID: 0}
-  _behaviours: []
-  _datas: []
+  _components:
+    _exposedBehaviours: []
   _spawnPoint: {fileID: 0}
+  _defaultSpellsByID: []
+  _activeSkill: 0
 --- !u!136 &7684249342670152408
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1739,9 +1742,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.2576423
-  m_Height: 1.767029
+  m_Height: 1.3870463
   m_Direction: 1
-  m_Center: {x: 0.002445847, y: 0.8813317, z: -0.005997777}
+  m_Center: {x: 0.0024458468, y: 1.071323, z: -0.005997777}
 --- !u!54 &7684249342670152411
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1770,6 +1773,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce3b3f2255e448cb82bbbcd526e066a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &8790846533138900289
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7684249342670152405}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.28542137
+  m_Center: {x: 0, y: 0.2861042, z: 0.013411164}
 --- !u!1 &7684249342670153379
 GameObject:
   m_ObjectHideFlags: 0
