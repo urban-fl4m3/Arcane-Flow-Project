@@ -177,7 +177,7 @@ PrefabInstance:
     - target: {fileID: 7684249342670152408, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: m_Radius
-      value: 0.19380166
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7684249342670152408, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
@@ -199,6 +199,11 @@ PrefabInstance:
       propertyPath: _spawnPoint
       value: 
       objectReference: {fileID: 1952465992853531107}
+    - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: _activeSkill
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: _datas.Array.size
@@ -272,12 +277,22 @@ PrefabInstance:
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: _defaultSpellsByID.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: _defaultSpellsByID.Array.data[0]
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: _defaultSpellsByID.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: _defaultSpellsByID.Array.data[2]
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}

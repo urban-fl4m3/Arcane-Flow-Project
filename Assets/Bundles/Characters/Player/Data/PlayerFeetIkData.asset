@@ -15,11 +15,11 @@ MonoBehaviour:
   _rightFootAnimVariableName: LeftFootCurve
   _leftFootAnimVariableName: RightFootCurve
   _heightFromGroundRaycast: 1
-  _rayCastDownDistance: 1
+  _rayCastDownDistance: 1.5
   _environmentLayer:
     serializedVersion: 2
     m_Bits: 1
-  _pelvisOffset: 0.83
+  _pelvisOffset: 0.7
   _pelvisUpAndDownSpeed: 0.303
   _feetToIkPositionSpeed: 0.297
   _showSolverDebug: 1
