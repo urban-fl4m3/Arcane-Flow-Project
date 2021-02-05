@@ -23,9 +23,6 @@ namespace Modules.Render.Actors
 
             var playerFollowerBehavior = GetBehaviour<PlayerFollowerBehavior>();
             playerFollowerBehavior.SetActorToFollow(_followingActor);
-            
-            var thirdPersonRotationBehaviour = GetBehaviour<ThirdPersonRotationBehaviour>();
-            thirdPersonRotationBehaviour.SetActorToFollow(_followingActor);
         }
 
         public void StopFollowing()

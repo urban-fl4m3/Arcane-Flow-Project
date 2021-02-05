@@ -79,8 +79,6 @@ namespace Modules.Maps.Managers
 
         public void RunWorld()
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            
             var playerManager = _worldManagers.Resolve<IPlayerManager>();
             var enemyManager = _worldManagers.Resolve<IEnemyManager>();
             

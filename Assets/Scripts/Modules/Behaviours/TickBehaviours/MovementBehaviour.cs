@@ -41,7 +41,6 @@ namespace Modules.Behaviours.TickBehaviours
             var horizontalMovement = Input.GetAxis(_horizontalKeyAxis);
             var verticalMovement = Input.GetAxis(_verticalKeyAxis);
 
-            
             var isMoving = !Mathf.Approximately(horizontalMovement, 0) 
                            || !Mathf.Approximately(verticalMovement, 0);
             

@@ -89,8 +89,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
+      propertyPath: _defaultSpellsByID.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: _defaultSpellsByID.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
       propertyPath: _components._exposedBehaviours.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
@@ -118,14 +128,10 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
-      propertyPath: _defaultSpellsByID.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
-        type: 3}
-      propertyPath: _defaultSpellsByID.Array.data[0]
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: _components._exposedBehaviours.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 22dee8ee8f197d54e97c41d8cbd19f69,
+        type: 2}
     - target: {fileID: 7684249342670189319, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: m_IsActive
