@@ -1,4 +1,5 @@
-﻿using Modules.Actors;
+﻿using System;
+using Modules.Actors;
 using Modules.Data.Animation;
 using Modules.Data.IK;
 using Modules.Data.Transforms;
@@ -25,6 +26,12 @@ namespace Modules.Behaviours.TickBehaviours
         private float _lastRightFootPositionY;
         private float _lastLeftFootPositionY;
 
+        private float rightFootWeightGoal = 0.0f;
+        private float rightFootWeightValue = 0.0f;
+        
+        private float leftFootWeightGoal = 0.0f;
+        private float leftFootWeightValue = 0.0f;
+
 
         protected override void OnInitialize(IActor owner)
         {
@@ -39,7 +46,8 @@ namespace Modules.Behaviours.TickBehaviours
 
         protected override void OnTick()
         {
-            
+            rightFootWeightValue = Mathf.Lerp(rightFootWeightValue, rightFootWeightGoal, 0.05f);
+            leftFootWeightValue = Mathf.Lerp(leftFootWeightValue, leftFootWeightGoal, 0.05f);
         }
 
         private void HandleAnimatorIKTick(object sender, int layerIndex)
@@ -48,20 +56,15 @@ namespace Modules.Behaviours.TickBehaviours
 
             var leftLegPosition = _animationData.Component.GetIKPosition(AvatarIKGoal.LeftFoot);
             var rayStart = leftLegPosition + Vector3.up * 0.3f;
-            Debug.DrawLine(rayStart, rayStart + Vector3.down * 0.4f);
-            
-            var rayDown = new Ray(leftLegPosition + Vector3.up * 0.3f, Vector3.down);
-            var height = _transformData.Component.position.y;
-            var middle = 0.0f;
 
-            float FootPlaceStateLeft = 0.0f;
+            var rayDown = new Ray(leftLegPosition + Vector3.up * 0.3f, Vector3.down);
+
+            float FootPlaceStateLeft0 = 0.0f;
             
             RaycastHit hit;
             if (Physics.Raycast(rayDown, out hit, 0.45f, _ikData.EnvironmentLayer))
             {
-                FootPlaceStateLeft = 1.0f;
-                height = Mathf.Max(height, hit.point.y);
-                middle += height;
+                FootPlaceStateLeft0 = 1.0f;
 
                 leftLegPosition = hit.point + Vector3.up * 0.06f;
             }
@@ -69,41 +72,73 @@ namespace Modules.Behaviours.TickBehaviours
             var rightLegPosition = _animationData.Component.GetIKPosition(AvatarIKGoal.RightFoot);
 
             rayDown = new Ray(rightLegPosition + Vector3.up * 0.3f, Vector3.down);
-            float FootPlaceStateRight = 0.0f;
+            float FootPlaceStateRight0 = 0.0f;
             if (Physics.Raycast(rayDown, out hit, 0.45f, _ikData.EnvironmentLayer))
             {
-                FootPlaceStateRight = 1.0f;
-                height = Mathf.Max(height, hit.point.y);
-                middle += height;
-                
+                FootPlaceStateRight0 = 1.0f; ;
+
                 rightLegPosition = hit.point + Vector3.up * 0.06f;
             }
-            // middle = leftLegPosition.y + rightLegPosition.y;
-            // middle /= 2.0f;
-            // var a = _transformData.Component.position;
-            // a.y = middle;
-            //
-            // _transformData.Component.position = a;
 
-            // var b = animator.bodyPosition;
-            // b.y = middle + _ikData.PelvisOffset;
-            // animator.bodyPosition = b;
-
-            animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, FootPlaceStateLeft);
-            animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, FootPlaceStateRight);
+            leftFootWeightGoal = FootPlaceStateLeft0;
+            rightFootWeightGoal = FootPlaceStateRight0;
+            animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, leftFootWeightValue);
+            animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, rightFootWeightValue);
             animator.SetIKPosition(AvatarIKGoal.LeftFoot, leftLegPosition);
             animator.SetIKPosition(AvatarIKGoal.RightFoot, rightLegPosition);
-            
-            middle = animator.GetBoneTransform(HumanBodyBones.LeftFoot).position.y + animator.GetBoneTransform(HumanBodyBones.RightFoot).position.y;
-            middle /= 2.0f;
-            // var a = _transformData.Component.position;
-            // a.y = middle;
-            //
-            // _transformData.Component.position = a;
-
             var b = animator.bodyPosition;
-            b.y = (_transformData.Component.position.y + _ikData.PelvisOffset);
+            var minimumLegPosition = _transformData.Component.position.y;
+            // Debug
+            b.y = (minimumLegPosition + _ikData.PelvisOffset);
             animator.bodyPosition = b;
+
+            if (layerIndex == 1)
+            {
+                leftLegPosition = _animationData.Component.GetBoneTransform(HumanBodyBones.LeftFoot).position;
+                // rayStart = leftLegPosition + Vector3.up * 0.3f;
+                // Debug.DrawLine(rayStart, rayStart + Vector3.down * 0.4f);
+            
+                rayDown = new Ray(leftLegPosition + Vector3.up * 0.3f, Vector3.down);
+
+                float FootPlaceStateLeft1 = 0.0f;
+                
+                if (Physics.Raycast(rayDown, out hit, 0.45f, _ikData.EnvironmentLayer))
+                {
+                    FootPlaceStateLeft1 = 1.0f;
+
+                    leftLegPosition = hit.point + Vector3.up * 0.06f;
+                }
+
+                rightLegPosition = _animationData.Component.GetBoneTransform(HumanBodyBones.RightFoot).position;
+
+                rayDown = new Ray(rightLegPosition + Vector3.up * 0.3f, Vector3.down);
+                float FootPlaceStateRight1 = 0.0f;
+                if (Physics.Raycast(rayDown, out hit, 0.45f, _ikData.EnvironmentLayer))
+                {
+                    FootPlaceStateRight1 = 1.0f; ;
+
+                    rightLegPosition = hit.point + Vector3.up * 0.06f;
+                }
+
+                if (FootPlaceStateLeft0 == 0.0f && FootPlaceStateLeft1 == 1.0f)
+                {
+                    animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, FootPlaceStateRight1);
+                    animator.SetIKPosition(AvatarIKGoal.LeftFoot, leftLegPosition);
+                }
+
+                if (FootPlaceStateRight0 == 0.0f && FootPlaceStateRight1 == 1.0f)
+                {
+                    animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, FootPlaceStateLeft1);
+                    animator.SetIKPosition(AvatarIKGoal.RightFoot, rightLegPosition);
+                }
+                
+                // b = animator.bodyPosition;
+                // minimumLegPosition =
+                //     Mathf.Min(leftLegPosition,
+                //         _animationData.Component.GetBoneTransform(HumanBodyBones.RightFoot).position.y);
+                // b.y = (minimumLegPosition + _ikData.PelvisOffset);
+                // animator.bodyPosition = b;
+            }
         }
         
     }

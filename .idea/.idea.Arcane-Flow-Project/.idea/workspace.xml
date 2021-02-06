@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d47f0dd-bb60-4430-9b51-7b998602c23d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Data/PlayerFeetIkData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Data/PlayerFeetIkData.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" afterDir="false" />
@@ -195,7 +194,8 @@
       <workItem from="1612043732183" duration="6059000" />
       <workItem from="1612140862613" duration="3670000" />
       <workItem from="1612155601426" duration="648000" />
-      <workItem from="1612581991782" duration="270000" />
+      <workItem from="1612581991782" duration="866000" />
+      <workItem from="1612613275703" duration="1684000" />
     </task>
     <servers />
   </component>
