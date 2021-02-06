@@ -43,7 +43,6 @@ namespace Modules.Behaviours.TickBehaviours
         {
             if (Input.GetKeyDown(_bindingData.AttackKey))
             {
-                Debug.Log("A");
                 _animationData.Component.SetTrigger(_animationData.AttackAnimationKey);
             }
 
