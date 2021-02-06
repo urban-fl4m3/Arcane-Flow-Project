@@ -8,9 +8,11 @@ namespace Modules.Ticks.Managers
         void SetTickProcessor(TickProcessor tickProcessor);
 
         void AddTick(object owner, ITickUpdate tick);
+        void AddTick(object owner, ITickFixedUpdate tick);
         void AddTick(object owner, ITickLateUpdate tick);
-        void RemoveTick(ITickUpdate tickUpdate);
-        void RemoveTick(ITickLateUpdate tickUpdate);
+        void RemoveTick(ITickUpdate tick);
+        void RemoveTick(ITickFixedUpdate tick);
+        void RemoveTick(ITickLateUpdate tick);
 
     }
 }

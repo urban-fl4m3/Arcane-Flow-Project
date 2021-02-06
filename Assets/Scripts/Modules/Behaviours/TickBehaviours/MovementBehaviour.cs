@@ -2,53 +2,49 @@
 using Modules.Data.Animation;
 using Modules.Data.KeyBindings;
 using Modules.Data.Movement;
+using Modules.Data.Physics;
 using Modules.Data.Transforms;
 using UnityEngine;
 
 namespace Modules.Behaviours.TickBehaviours
 {
+    internal delegate float InputAxis(string key);
+    internal delegate void MovementAction(float speed);
+    
     [CreateAssetMenu(fileName = "New Movement Behaviour", menuName = "Behaviours/Movement")]
     public class MovementBehaviour: TickBehaviour
     {
-        private Animator _animator;
-
         private AnimationData _animationData;
-        private MovementData _movementData;
-        private KeyBindingsData _bindingData;
-        private RotationData _rotationData;
         private TransformData _transformData;
-        
-        private string _horizontalKeyAxis;
-        private string _verticalKeyAxis;
+        private RigidbodyData _rigidbodyData;
+        private KeyBindingsData _bindingData;
+        private MovementData _movementData;
+        private RotationData _rotationData;
 
-        private delegate float InputAxis(string key);
         private InputAxis _inputAxisDelegate;
+        private MovementAction _movementActionDelegate;
 
         protected override void OnInitialize(IActor owner)
         {
             base.OnInitialize(owner);
             
             _animationData = Owner.GetData<AnimationData>();
-            _movementData = Owner.GetData<MovementData>();
             _bindingData = Owner.GetData<KeyBindingsData>();
             _transformData = Owner.GetData<TransformData>();
+            _rigidbodyData = owner.GetData<RigidbodyData>();
+            _movementData = Owner.GetData<MovementData>();
             _rotationData = Owner.GetData<RotationData>();
-            
-            _animator = _animationData.Component;
-
-            _horizontalKeyAxis = _bindingData.HorizontalKeyAxis();
-            _verticalKeyAxis = _bindingData.VerticalKeyAxis();
 
             _inputAxisDelegate = _movementData.SmoothInput ? (InputAxis) Input.GetAxis : Input.GetAxisRaw;
-
-            _movementData.CanMove = true;
+            _movementActionDelegate = _movementData.MoveWithPhysics ? (MovementAction) MoveRigidbody : MoveTransform;
         }
         
         protected override void OnTick()
         {
-            if (Input.GetKeyDown(_bindingData.GetAttackKey()))
+            if (Input.GetKeyDown(_bindingData.AttackKey))
             {
-                _animator.SetTrigger(_animationData.AttackAnimationKey);
+                Debug.Log("A");
+                _animationData.Component.SetTrigger(_animationData.AttackAnimationKey);
             }
 
             if (_movementData.CanMove)
@@ -59,21 +55,25 @@ namespace Modules.Behaviours.TickBehaviours
 
         private void Move()
         {
-            var horizontalMovement = _inputAxisDelegate(_horizontalKeyAxis);
-            var verticalMovement = _inputAxisDelegate(_verticalKeyAxis);
+            var horizontalMovement = _inputAxisDelegate(_bindingData.HorizontalKeyAxis);
+            var verticalMovement = _inputAxisDelegate(_bindingData.VerticalKeyAxis);
 
             var isMoving = !Mathf.Approximately(horizontalMovement, 0)
                            || !Mathf.Approximately(verticalMovement, 0);
 
-            _animator.SetBool(_animationData.MovingAnimationKey, isMoving);
+            _animationData.Component.SetBool(_animationData.MovingAnimationKey, isMoving);
 
             if (!isMoving)
             {
-                horizontalMovement = _animator.GetFloat(_horizontalKeyAxis);
-                horizontalMovement = Mathf.Lerp(horizontalMovement, 0, 0.01f);
+                var fade = _movementData.MovementFade;
+                horizontalMovement = FadeAxisValue(_bindingData.HorizontalKeyAxis, fade);
+                verticalMovement = FadeAxisValue(_bindingData.VerticalKeyAxis, fade);
 
-                verticalMovement = _animator.GetFloat(_verticalKeyAxis);
-                verticalMovement = Mathf.Lerp(verticalMovement, 0, 0.01f);
+                if (_movementData.MoveWithPhysics)
+                {
+                    _rigidbodyData.Component.velocity = Vector3.Lerp(_rigidbodyData.Component.velocity, 
+                        Vector3.zero, 0.9f);
+                }
             }
             else
             {
@@ -84,21 +84,40 @@ namespace Modules.Behaviours.TickBehaviours
 
                 if (!_animationData.ApplyRootMotion)
                 {
-                    _transformData.Component.position += _transformData.Component.forward * (2 * Time.deltaTime);
+                    _movementActionDelegate(_movementData.MovementSpeed);
                 }
             }
 
             var movement = Mathf.Abs(horizontalMovement) + Mathf.Abs(verticalMovement);
-            _animator.SetFloat(_horizontalKeyAxis, movement);
+            _animationData.Component.SetFloat(_bindingData.HorizontalKeyAxis, movement);
         }
 
         private void Rotate(float horizontal, float vertical)
         {
+            const float halfRound = 180;
             var atanAngle = Mathf.Atan2(horizontal, vertical);
-            var angle = atanAngle / Mathf.PI * 180;
+            var angle = atanAngle / Mathf.PI * halfRound;
             var rotation = Quaternion.AngleAxis(angle, Vector3.up);
-            rotation = Quaternion.Slerp(_transformData.Component.rotation, rotation, 0.1f);
+            rotation = Quaternion.Slerp(_transformData.Component.rotation, rotation, _rotationData.RotationFade);
             _transformData.Component.rotation = rotation;
+        }
+
+        private float FadeAxisValue(string key, float t)
+        {
+            var value = _animationData.Component.GetFloat(key);
+            return Mathf.Lerp(value, 0, t);
+        }
+
+        private void MoveTransform(float speed)
+        {
+            _transformData.Component.position += _transformData.Component.forward
+                                                 * (_movementData.MovementSpeed * Time.deltaTime);
+        }
+
+        private void MoveRigidbody(float speed)
+        {
+            _rigidbodyData.Component.velocity = _transformData.Component.forward
+                                                * (speed * Time.fixedDeltaTime);
         }
     }
 }

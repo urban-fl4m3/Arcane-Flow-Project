@@ -33,20 +33,31 @@ namespace Modules.Ticks.Managers
             _processor.TickUpdates.Add(tick);
         }
 
+        public void AddTick(object owner, ITickFixedUpdate tick)
+        {
+            AddTickInternal(owner, tick);
+            _processor.TickFixedUpdates.Add(tick);
+        }
+
         public void AddTick(object owner, ITickLateUpdate tick)
         {
             AddTickInternal(owner, tick);
             _processor.TickLateUpdates.Add(tick);
         }
 
-        public void RemoveTick(ITickUpdate tickUpdate)
+        public void RemoveTick(ITickUpdate tick)
         {
-            _processor.TickUpdates.Remove(tickUpdate);
+            _processor.TickUpdates.Remove(tick);
         }
 
-        public void RemoveTick(ITickLateUpdate tickUpdate)
+        public void RemoveTick(ITickFixedUpdate tick)
         {
-            _processor.TickLateUpdates.Remove(tickUpdate);
+            _processor.TickFixedUpdates.Remove(tick);
+        }
+
+        public void RemoveTick(ITickLateUpdate tick)
+        {
+            _processor.TickLateUpdates.Remove(tick);
         }
         
         private void AddTickInternal(object owner, ITick tick)

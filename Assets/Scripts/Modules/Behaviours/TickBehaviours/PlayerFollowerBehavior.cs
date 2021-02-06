@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Modules.Behaviours.TickBehaviours
 {
     [CreateAssetMenu(fileName = "New Player Follow Behaviour", menuName = "Behaviours/PlayerFollower")]
-    public class PlayerFollowerBehavior : TickBehaviour
+    public class PlayerFollowerBehavior : TickLateBehaviour
     {
         private Transform _followingActorTransform;
         private Transform _ownerActorTransform;

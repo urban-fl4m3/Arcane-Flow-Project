@@ -8,13 +8,11 @@ namespace Modules.Data.KeyBindings
     {
         [SerializeField] private string _horizontalKeyAxis;
         [SerializeField] private string _verticalKeyAxis;
-        [SerializeField] private KeyCode _dodge;
         [SerializeField] private KeyCode _attack;
 
-        public string HorizontalKeyAxis() => _horizontalKeyAxis;
-        public string VerticalKeyAxis() => _verticalKeyAxis;
-        public KeyCode GetDodgeKey() => _dodge;
-        public KeyCode GetAttackKey() => _attack;
+        public string HorizontalKeyAxis => _horizontalKeyAxis;
+        public string VerticalKeyAxis => _verticalKeyAxis;
+        public KeyCode AttackKey => _attack;
 
         protected override void OnInitialize(IActor owner)
         {

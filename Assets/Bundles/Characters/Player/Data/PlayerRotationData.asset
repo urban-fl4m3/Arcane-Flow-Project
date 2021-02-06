@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b5b360adc84a55a412f0f75a29465e, type: 3}
   m_Name: PlayerRotationData
   m_EditorClassIdentifier: 
+  _rotationFade: 0.1
+  _applyMovementRotation: 1

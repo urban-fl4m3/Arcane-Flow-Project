@@ -3,7 +3,7 @@ using Modules.Ticks;
 
 namespace Modules.Behaviours
 { 
-    public abstract class TickLateBehaviour : BaseBehaviour, ITickLateUpdate
+    public abstract class TickFixedBehaviour : BaseBehaviour, ITickFixedUpdate
     {
         public bool Enabled { get; set; }
         
@@ -17,12 +17,12 @@ namespace Modules.Behaviours
             if (Enabled)
             {
                 OnTick();
-            }
+            }    
         }
-
+        
         protected abstract void OnTick();
 
-        protected void DisposeTick()
+        protected void StopTick()
         {
             Owner.TickManager.RemoveTick(this);
         }
@@ -31,13 +31,7 @@ namespace Modules.Behaviours
         {
             Owner.TickManager.AddTick(Owner, this);
         }
-
-        public override void Dispose()
-        {
-            base.Dispose();
-            DisposeTick();
-        }
-
+        
         public override void Stop()
         {
             base.Stop();
