@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Modules.Data.KeyBindings
 {
     [CreateAssetMenu(fileName = "New Binding Data", menuName = "Data/Key bindings")]
-    public class KeyBindingsData : BaseData, IKeyBindingsData    
+    public class KeyBindingsData : BaseData    
     {
         [SerializeField] private string _horizontalKeyAxis;
         [SerializeField] private string _verticalKeyAxis;

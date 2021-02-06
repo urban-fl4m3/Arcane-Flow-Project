@@ -9,7 +9,7 @@ using Attribute = Modules.Common.Attribute;
 namespace Modules.Data.Attributes
 {
     [CreateAssetMenu(fileName = "HealthData", menuName = "Attributes Data/Health")]
-    public class AttributesData : BaseData, IAttributesData
+    public class AttributesData : BaseData
     {
         private Dictionary<Attribute, DynamicFloat> _attributesMap 
             = new Dictionary<Attribute, DynamicFloat>();

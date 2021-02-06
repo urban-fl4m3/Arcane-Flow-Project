@@ -12,7 +12,7 @@ namespace Modules.Behaviours.TickBehaviours
         [SerializeField] private Vector2 _verticalRotationEdges = new Vector2(-90.0f, 90.0f);
         private const float _mouseSpeed = 0.1f;
         
-        private ITransformData _transformData;
+        private TransformData _transformData;
 
 
         private Transform _rootTransform;

@@ -4,13 +4,15 @@ using UnityEngine;
 namespace Modules.Data.Movement
 {
     [CreateAssetMenu(fileName = "New Movement Data", menuName = "Data/Movement")]
-    public class MovementData : BaseData, IMovementData
+    public class MovementData : BaseData
     {
-        public bool IsMoving { get; set; }
+        [SerializeField] private bool _smoothInput;
 
         protected override void OnInitialize(IActor owner)
         {
             
         }
+
+        public bool SmoothInput => _smoothInput;
     }
 }

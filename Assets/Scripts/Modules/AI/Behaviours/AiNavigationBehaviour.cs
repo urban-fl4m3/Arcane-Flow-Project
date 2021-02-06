@@ -11,9 +11,9 @@ namespace Modules.AI.Behaviours
     [CreateAssetMenu(fileName = "Ai Navigation Behaviour", menuName = "Behaviours/Ai Navgation")]
     public class AiNavigationBehaviour : TickBehaviour
     {
-        private ITransformData _transformData;
-        private ITransformData _followingTransformData;
-        private IAnimationData _animationData;
+        private TransformData _transformData;
+        private TransformData _followingTransformData;
+        private AnimationData _animationData;
         private AiNavigationData _aiNavigationData;
         
         private NavMeshAgent _navMeshAgent;

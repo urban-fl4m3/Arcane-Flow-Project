@@ -12,8 +12,8 @@ namespace Modules.Behaviours.TickBehaviours
         
         private Transform _actorTransform;
         
-        private ITransformData _transformData;
-        private IRotationData _rotationData;
+        private TransformData _transformData;
+        private RotationData _rotationData;
         private Transform _cameraTransform;
         
         protected override void OnInitialize(IActor owner)

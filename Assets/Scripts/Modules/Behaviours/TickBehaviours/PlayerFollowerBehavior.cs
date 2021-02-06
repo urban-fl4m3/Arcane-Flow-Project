@@ -12,13 +12,13 @@ namespace Modules.Behaviours.TickBehaviours
 
         protected override void OnInitialize(IActor owner)
         {
-            ITransformData ownerTransformData = Owner.GetData<TransformData>();
+            var ownerTransformData = Owner.GetData<TransformData>();
             _ownerActorTransform = ownerTransformData.Component;
         }
 
         public void SetActorToFollow(IActor actor)
         {
-            ITransformData actorTransformData = actor.GetData<TransformData>();
+            var actorTransformData = actor.GetData<TransformData>();
             _followingActorTransform = actorTransformData.Component;
             
             StartTick();

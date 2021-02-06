@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8aae38ea4849e2a03b8068eb33cf4c, type: 3}
   m_Name: PlayerMovementData
   m_EditorClassIdentifier: 
+  _smoothInput: 1

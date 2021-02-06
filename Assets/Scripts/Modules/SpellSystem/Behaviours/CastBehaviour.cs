@@ -11,8 +11,8 @@ namespace Modules.SpellSystem.Behaviours
     [CreateAssetMenu(fileName = "New Cast Behaviour", menuName = "Behaviours/Cast")]
     public class CastBehaviour : BaseBehaviour
     {
-        private ISpellData _spellData;
-        private ITransformData _ownerTransformData;
+        private SpellData _spellData;
+        private TransformData _ownerTransformData;
         private AnimationEventHandlerData _animationEventHandlerData;
 
         private ICaster _caster;

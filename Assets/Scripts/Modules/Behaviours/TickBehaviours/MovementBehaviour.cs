@@ -11,12 +11,15 @@ namespace Modules.Behaviours.TickBehaviours
     {
         private Animator _animator;
 
-        private IAnimationData _animationData;
-        private IMovementData _movementData;
-        private IKeyBindingsData _bindingData;
+        private AnimationData _animationData;
+        private MovementData _movementData;
+        private KeyBindingsData _bindingData;
 
         private string _horizontalKeyAxis;
         private string _verticalKeyAxis;
+
+        private delegate float InputAxis(string key);
+        private InputAxis _inputAxisDelegate;
         
         protected override void OnInitialize(IActor owner)
         {
@@ -29,6 +32,8 @@ namespace Modules.Behaviours.TickBehaviours
 
             _horizontalKeyAxis = _bindingData.HorizontalKeyAxis();
             _verticalKeyAxis = _bindingData.VerticalKeyAxis();
+
+            _inputAxisDelegate = _movementData.SmoothInput ? (InputAxis) Input.GetAxis : Input.GetAxisRaw;
         }
         
         protected override void OnTick()
@@ -38,17 +43,26 @@ namespace Modules.Behaviours.TickBehaviours
                 _animator.SetTrigger(_animationData.AttackAnimationKey);
             }
             
-            var horizontalMovement = Input.GetAxis(_horizontalKeyAxis);
-            var verticalMovement = Input.GetAxis(_verticalKeyAxis);
+            var horizontalMovement = _inputAxisDelegate(_horizontalKeyAxis);
+            var verticalMovement = _inputAxisDelegate(_verticalKeyAxis);
 
             var isMoving = !Mathf.Approximately(horizontalMovement, 0) 
                            || !Mathf.Approximately(verticalMovement, 0);
-            
-            _movementData.IsMoving = isMoving;
-            
+
+
             _animator.SetBool(_animationData.MovingAnimationKey, isMoving);
-            _animator.SetFloat(_horizontalKeyAxis, horizontalMovement);
-            _animator.SetFloat(_verticalKeyAxis, verticalMovement);
+
+            if (!isMoving)
+            {
+                horizontalMovement = _animator.GetFloat(_horizontalKeyAxis);
+                horizontalMovement = Mathf.Lerp(horizontalMovement, 0, 0.01f);
+                
+                verticalMovement = _animator.GetFloat(_verticalKeyAxis);
+                verticalMovement = Mathf.Lerp(verticalMovement, 0, 0.01f);
+            }
+            
+            var movement = Mathf.Abs(horizontalMovement) + Mathf.Abs(verticalMovement);
+            _animator.SetFloat(_horizontalKeyAxis, movement);
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Modules.Data.Transforms
 {
     [CreateAssetMenu(fileName = "New Rotation Data", menuName = "Data/Rotation")]
-    public class RotationData : BaseData, IRotationData
+    public class RotationData : BaseData
     {
         public bool CanRotate { get; set; }
 

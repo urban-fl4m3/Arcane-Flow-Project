@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Modules.SpellSystem.Data
 {
     [CreateAssetMenu(fileName = "Spell Data", menuName = "Data/Spells")]
-    public class SpellData : BaseData, ISpellData
+    public class SpellData : BaseData
     {
         private readonly Dictionary<string, ISpell> _spells = new Dictionary<string, ISpell>();
         private ICaster _caster;
