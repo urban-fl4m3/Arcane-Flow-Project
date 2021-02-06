@@ -57,7 +57,7 @@ namespace Modules.Behaviours.TickBehaviours
             float FootPlaceStateLeft = 0.0f;
             
             RaycastHit hit;
-            if (Physics.Raycast(rayDown, out hit, 0.5f, _ikData.EnvironmentLayer))
+            if (Physics.Raycast(rayDown, out hit, 0.45f, _ikData.EnvironmentLayer))
             {
                 FootPlaceStateLeft = 1.0f;
                 height = Mathf.Max(height, hit.point.y);
@@ -70,7 +70,7 @@ namespace Modules.Behaviours.TickBehaviours
 
             rayDown = new Ray(rightLegPosition + Vector3.up * 0.3f, Vector3.down);
             float FootPlaceStateRight = 0.0f;
-            if (Physics.Raycast(rayDown, out hit, 0.5f, _ikData.EnvironmentLayer))
+            if (Physics.Raycast(rayDown, out hit, 0.45f, _ikData.EnvironmentLayer))
             {
                 FootPlaceStateRight = 1.0f;
                 height = Mathf.Max(height, hit.point.y);
@@ -102,7 +102,7 @@ namespace Modules.Behaviours.TickBehaviours
             // _transformData.Component.position = a;
 
             var b = animator.bodyPosition;
-            b.y = (middle + _ikData.PelvisOffset);
+            b.y = (_transformData.Component.position.y + _ikData.PelvisOffset);
             animator.bodyPosition = b;
         }
         
