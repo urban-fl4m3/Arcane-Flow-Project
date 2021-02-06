@@ -14,5 +14,6 @@ namespace Modules.Data.Movement
         }
 
         public bool SmoothInput => _smoothInput;
+        public bool CanMove { get; set; }
     }
 }

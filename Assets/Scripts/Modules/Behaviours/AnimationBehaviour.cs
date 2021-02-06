@@ -11,7 +11,7 @@ namespace Modules.Behaviours
         protected override void OnInitialize(IActor owner)
         {
             _animationData = owner.GetData<AnimationData>();
-            _animationData.Component.applyRootMotion = _animationData.UseRootMotion;
+            _animationData.Component.applyRootMotion = _animationData.ApplyRootMotion;
         }
 
         public override void Stop()

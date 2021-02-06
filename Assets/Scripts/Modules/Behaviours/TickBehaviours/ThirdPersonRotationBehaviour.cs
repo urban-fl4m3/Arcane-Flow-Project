@@ -37,7 +37,7 @@ namespace Modules.Behaviours.TickBehaviours
 
         protected override void OnTick()
         {
-            if (_rotationData.CanRotate) ApplyRotation();
+            if (_rotationData.ApplyMovementRotation) ApplyRotation();
         }
 
         private void ApplyRotation()

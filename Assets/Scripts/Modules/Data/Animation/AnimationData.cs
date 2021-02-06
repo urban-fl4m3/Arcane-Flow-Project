@@ -8,12 +8,12 @@ namespace Modules.Data.Animation
     {
         [SerializeField] private string _movingAnimationKey;
         [SerializeField] private string _attackAnimationKey;
-        [SerializeField] private bool _useRootMotion;
+        [SerializeField] private bool applyRootMotion;
 
         public Animator Component { get; private set; }
         public string MovingAnimationKey => _movingAnimationKey;
         public string AttackAnimationKey => _attackAnimationKey;
-        public bool UseRootMotion => _useRootMotion;
+        public bool ApplyRootMotion => applyRootMotion;
 
         protected override void OnInitialize(IActor owner)
         {
