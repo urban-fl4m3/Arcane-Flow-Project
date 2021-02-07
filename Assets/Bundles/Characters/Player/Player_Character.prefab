@@ -12,6 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199ef917a3f34ec28b897021ee819df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &7466013157475221521
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952465992853856929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &8195281839665414260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -172,27 +185,32 @@ PrefabInstance:
     - target: {fileID: 7684249342670152408, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: m_Height
-      value: 1.7685819
+      value: 1.0783114
       objectReference: {fileID: 0}
     - target: {fileID: 7684249342670152408, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: m_Radius
-      value: 0.4
+      value: 0.14891236
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684249342670152408, guid: 69358da03c19a3944a9fb33579235009,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7684249342670152408, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: m_Center.x
-      value: -0.005279973
+      value: -0.007436499
       objectReference: {fileID: 0}
     - target: {fileID: 7684249342670152408, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: m_Center.y
-      value: 0.8805553
+      value: 1.2256906
       objectReference: {fileID: 0}
     - target: {fileID: 7684249342670152408, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: m_Center.z
-      value: -0.005997777
+      value: -0.0051472634
       objectReference: {fileID: 0}
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}

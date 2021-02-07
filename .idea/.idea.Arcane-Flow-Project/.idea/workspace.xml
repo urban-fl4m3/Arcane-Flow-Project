@@ -21,7 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5d47f0dd-bb60-4430-9b51-7b998602c23d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Animations/RockGolemAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Animations/RockGolemAnimator.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Data/PlayerFeetIkData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Data/PlayerFeetIkData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Player_Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Player_Character.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/_Base/Animations/Mixamo_POLYGON_Guy_Naked@Running.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/_Base/Animations/Mixamo_POLYGON_Guy_Naked@Running.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -195,7 +198,9 @@
       <workItem from="1612140862613" duration="3670000" />
       <workItem from="1612155601426" duration="648000" />
       <workItem from="1612581991782" duration="866000" />
-      <workItem from="1612613275703" duration="1684000" />
+      <workItem from="1612613275703" duration="2156000" />
+      <workItem from="1612690462113" duration="1321000" />
+      <workItem from="1612694011974" duration="13033000" />
     </task>
     <servers />
   </component>
