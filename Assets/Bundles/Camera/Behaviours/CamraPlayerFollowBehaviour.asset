@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _behaviourData:
   - {fileID: 11400000, guid: 92fea5bfd19768a44a7b3536a7aacd42, type: 2}
+  _offset: 0.01

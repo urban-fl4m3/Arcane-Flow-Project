@@ -1,12 +1,15 @@
 ﻿using Modules.Actors;
+using Modules.Behaviours.AbstractTicks;
 using Modules.Data.Transforms;
 using UnityEngine;
 
 namespace Modules.Behaviours.TickBehaviours
 {
     [CreateAssetMenu(fileName = "New Player Follow Behaviour", menuName = "Behaviours/PlayerFollower")]
-    public class PlayerFollowerBehavior : TickLateBehaviour
+    public class PlayerFollowerBehavior : TickBehaviour
     {
+        [SerializeField] private float _offset;
+        
         private Transform _followingActorTransform;
         private Transform _ownerActorTransform;
 
@@ -31,7 +34,10 @@ namespace Modules.Behaviours.TickBehaviours
         
         protected override void OnTick()
         {
-            _ownerActorTransform.position = _followingActorTransform.position;
+            _ownerActorTransform.position = Vector3.Slerp(
+                _ownerActorTransform.position,
+                _followingActorTransform.position,
+                _offset);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Modules.Actors;
 using Modules.Ticks;
 
-namespace Modules.Behaviours
+namespace Modules.Behaviours.AbstractTicks
 { 
     public abstract class TickLateBehaviour : BaseBehaviour, ITickLateUpdate
     {

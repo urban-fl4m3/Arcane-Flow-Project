@@ -2,6 +2,7 @@
 using Modules.Actors;
 using Modules.Animations.Data;
 using Modules.Behaviours;
+using Modules.Behaviours.AbstractTicks;
 using Modules.Data.Transforms;
 using Modules.SpellSystem.Data;
 using UnityEngine;
@@ -9,7 +10,7 @@ using UnityEngine;
 namespace Modules.SpellSystem.Behaviours
 {
     [CreateAssetMenu(fileName = "New Cast Behaviour", menuName = "Behaviours/Cast")]
-    public class CastBehaviour : BaseBehaviour
+    public class CastBehaviour : TickBehaviour
     {
         private SpellData _spellData;
         private TransformData _ownerTransformData;
@@ -30,7 +31,12 @@ namespace Modules.SpellSystem.Behaviours
 
             _animationEventHandlerData.EventHandler.Subscribe("Cast", Cast);
         }
-     
+
+        protected override void OnTick()
+        {
+            
+        }
+
         private void Cast(object sender, EventArgs e)
         {
             var activeSpell = _spellData.Spells[_caster.ListOfSpellsID[_caster.activeSpell]];

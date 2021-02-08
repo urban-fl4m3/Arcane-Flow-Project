@@ -70737,9 +70737,23 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0
+    functionName: RaiseEvent
+    data: StartAttackAnimation
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.5833333
     functionName: RaiseEvent
     data: Cast
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.1
+    functionName: RaiseEvent
+    data: EndAttackAnimation
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

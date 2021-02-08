@@ -1,6 +1,7 @@
 ﻿using Modules.Actors;
 using Modules.AI.Data;
 using Modules.Behaviours;
+using Modules.Behaviours.AbstractTicks;
 using Modules.Data.Animation;
 using Modules.Data.Transforms;
 using UnityEngine;

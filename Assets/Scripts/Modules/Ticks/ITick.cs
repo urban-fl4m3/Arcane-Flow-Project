@@ -3,21 +3,20 @@
     public interface ITick
     {
         bool Enabled { get; set; }
-        void Tick();
     }
     
     public interface ITickFixedUpdate : ITick
     {
-        
+        void Tick();
     }
     
     public interface ITickLateUpdate : ITick
     {
-        
+        void Tick();
     }
     
     public interface ITickUpdate : ITick
     {
-        
+        void Tick();
     }
 }
