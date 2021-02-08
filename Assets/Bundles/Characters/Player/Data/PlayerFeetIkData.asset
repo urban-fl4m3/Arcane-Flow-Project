@@ -19,7 +19,7 @@ MonoBehaviour:
   _environmentLayer:
     serializedVersion: 2
     m_Bits: 1
-  _pelvisOffset: 0.82
+  _pelvisOffset: 0.85
   _pelvisUpAndDownSpeed: 1
   _feetToIkPositionSpeed: 1
   _showSolverDebug: 1
