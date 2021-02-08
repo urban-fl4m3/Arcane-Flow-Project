@@ -17,7 +17,12 @@ namespace Modules.Data.Movement
             
         }
 
-        public float MovementSpeed => _movementSpeed;
+        public float MovementSpeed
+        {
+            get => _movementSpeed;
+            set => _movementSpeed = value;
+        }
+        
         public float MovementFade => _movementFade;
         public bool MoveWithPhysics => _moveWithPhysics;
         public bool SmoothInput => _smoothInput;
