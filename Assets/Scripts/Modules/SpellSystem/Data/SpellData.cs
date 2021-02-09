@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Modules.Actors;
 using Modules.Data;
+using Modules.SpellSystem.Base;
 using Modules.SpellSystem.Providers;
 using UnityEngine;
 

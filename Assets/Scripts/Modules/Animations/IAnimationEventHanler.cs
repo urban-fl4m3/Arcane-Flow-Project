@@ -5,6 +5,6 @@ namespace Modules.Animations
     public interface IAnimationEventHandler
     {
         void Subscribe(string key, EventHandler handler);
-        void Unsubscribe(string key);
+        void Unsubscribe(string key, EventHandler handler);
     }
 }

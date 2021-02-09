@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Modules.Actors.Types;
-using Modules.SpellSystem.Actors;
 using Modules.SpellSystem.Enum;
+using Modules.SpellSystem.Models;
 
 namespace Modules.SpellSystem.Configs
 {
@@ -11,5 +11,7 @@ namespace Modules.SpellSystem.Configs
         SpellType Type { get; }
         IEnumerable<Tag> Tags { get; }
         ActorBase Actor { get; }
+        
+        AnimationContext AnimationContext { get; }
     }
 }

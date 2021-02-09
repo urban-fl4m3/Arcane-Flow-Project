@@ -16,3 +16,5 @@ MonoBehaviour:
   _type: 1
   _tags: 030000000100000002000000
   _actor: {fileID: 5930907770827348194, guid: 4ab1a60d9ac8cb24fa48e34c6de37af9, type: 3}
+  _animationContext:
+    _applyRootMotion: 0

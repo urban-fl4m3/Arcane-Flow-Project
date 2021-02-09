@@ -33,9 +33,15 @@ namespace Modules.Animations
             _eventsDictionary[key] += handler;
         }
 
-        public void Unsubscribe(string key)
+        public void Unsubscribe(string key, EventHandler handler)
         {
-            _eventsDictionary.Remove(key);
+            if (!_eventsDictionary.ContainsKey(key))
+            {
+                Debug.LogError($"Animation event handler of {gameObject.name} doesn't have {key} key");
+                return;
+            }
+            
+            _eventsDictionary[key] -= handler;
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Modules.SpellSystem
     public interface ICaster
     {
         List<string> ListOfSpellsID { get; }
-        int activeSpell { get;  }
+        int ActiveSpell { get;  }
         Transform SpawnPoint { get; }
     }
 }

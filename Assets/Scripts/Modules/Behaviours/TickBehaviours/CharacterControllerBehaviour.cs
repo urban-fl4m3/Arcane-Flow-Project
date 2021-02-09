@@ -62,7 +62,6 @@ namespace Modules.Behaviours.TickBehaviours
             _movement.SlowDown(_movementData.MovementFade);
             _rotationData.ApplyMovementRotation = false;
             _rotationData.LookAtMouseCursor.Value = true;
-            _animationData.ApplyRootMotion.Value = false;
         }
 
         private void AttackAnimationEnd(object sender, EventArgs e)
@@ -70,14 +69,13 @@ namespace Modules.Behaviours.TickBehaviours
             _movement.SpeedUp(_movementData.MovementFade);
             _rotationData.ApplyMovementRotation = true;
             _rotationData.LookAtMouseCursor.Value = false;
-            _animationData.ApplyRootMotion.ToDefault();
         }
         
         
         public override void Dispose()
         {
-            _animationEventHandlerData.EventHandler.Unsubscribe("StartAttackAnimation");
-            _animationEventHandlerData.EventHandler.Unsubscribe("EndAttackAnimation");
+            _animationEventHandlerData.EventHandler.Unsubscribe("StartAttackAnimation", AttackAnimationStart);
+            _animationEventHandlerData.EventHandler.Unsubscribe("EndAttackAnimation", AttackAnimationEnd);
             base.Dispose();
         }
     }

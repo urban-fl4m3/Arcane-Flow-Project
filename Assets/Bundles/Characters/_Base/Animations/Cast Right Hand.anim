@@ -70751,7 +70751,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.1
+  - time: 1.15
     functionName: RaiseEvent
     data: EndAttackAnimation
     objectReferenceParameter: {fileID: 0}

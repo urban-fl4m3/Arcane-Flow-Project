@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Modules.SpellSystem.Base;
 using Modules.SpellSystem.Configs;
 using Modules.SpellSystem.Enum;
-using NUnit.Framework;
 using UnityEngine;
 
 namespace Modules.SpellSystem.Providers
@@ -13,7 +13,7 @@ namespace Modules.SpellSystem.Providers
 
         static SpellProvider()
         {
-            List<SpellPreset> presets = Resources.LoadAll<SpellPreset>("Spells").ToList();
+            var presets = Resources.LoadAll<SpellPreset>("Spells").ToList();
             foreach (var preset in presets)
             {
                 _presetsDictionary.Add(preset.Id, preset);
@@ -23,23 +23,13 @@ namespace Modules.SpellSystem.Providers
         public static ISpell CreateSpell(string ID)
         {
             var preset = _presetsDictionary[ID];
+            
             switch (preset.Type)
             {
                 case SpellType.Projectile:
-                    return new ProjectileSpell(
-                        preset.Id,
-                        preset.Type,
-                        preset.Actor,
-                        preset.Tags
-                    );
+                    return new ProjectileSpell(preset);
                 case SpellType.AOE:
-                    return new AoeSpell(
-                        preset.Id,
-                        preset.Type,
-                        preset.Actor,
-                        preset.Tags
-                        );
-
+                    return new AoeSpell(preset);
             }
 
             return null;

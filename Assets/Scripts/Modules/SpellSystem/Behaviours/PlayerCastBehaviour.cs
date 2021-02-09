@@ -1,5 +1,4 @@
 ﻿using Modules.Actors;
-using Modules.Data.Animation;
 using Modules.Data.KeyBindings;
 using UnityEngine;
 
@@ -9,14 +8,12 @@ namespace Modules.SpellSystem.Behaviours
     public class PlayerCastBehaviour : CastBehaviour
     {
         private KeyBindingsData _bindingsData;
-        private AnimationData _animationData;
         
         protected override void OnInitialize(IActor owner)
         {
             base.OnInitialize(owner);
 
             _bindingsData = Owner.GetData<KeyBindingsData>();
-            _animationData = Owner.GetData<AnimationData>();
             
             StartTick();
         }
