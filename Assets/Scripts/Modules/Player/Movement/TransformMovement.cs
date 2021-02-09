@@ -14,10 +14,9 @@ namespace Modules.Player.Movement
         {
         }
 
-        protected override void MovementCalculation(float speed)
+        protected override void MovementCalculation(Vector3 direction, float speed)
         {
-            _transformData.Component.position += _transformData.Component.forward
-                                                 * (speed * Time.deltaTime);
+            _transformData.Component.position += direction * (speed * Time.deltaTime);
         }
 
         public override void TryMove()

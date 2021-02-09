@@ -18,16 +18,15 @@ namespace Modules.Player.Movement
             _rigidbodyData = rigidbodyData;
         }
 
-        protected override void MovementCalculation(float speed)
+        protected override void MovementCalculation(Vector3 direction, float speed)
         {
-            _rigidbodyData.Component.velocity = _transformData.Component.forward
-                                                * (speed * Time.fixedDeltaTime);
+            _rigidbodyData.Component.velocity = direction * (speed * Time.fixedDeltaTime);
         }
 
         protected override void PostFade()
         {   
             _rigidbodyData.Component.velocity = Vector3.Lerp(_rigidbodyData.Component.velocity, 
-                Vector3.zero, 0.9f);
+                Vector3.zero, _rotationData.RotationFade);
         }
 
         public override void TryFixedMove()

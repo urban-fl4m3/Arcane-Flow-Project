@@ -8,7 +8,9 @@ using Attribute = Modules.Common.Attribute;
 
 public class AoeActor : ActorBase
 {
+#pragma warning disable 67
     public event EventHandler OnCastEventHandler;
+#pragma warning restore 67
     public event EventHandler<Collision> OnHitEventHandler;
 
     public Vector2 minMaxSize;

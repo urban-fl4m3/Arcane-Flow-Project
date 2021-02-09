@@ -25,7 +25,6 @@ namespace Modules.SpellSystem.Behaviours
         {
             base.OnTick();
             
-            
             if (Input.GetKeyDown(_bindingsData.AttackKey))
             {
                 _animationData.Component.SetTrigger(_animationData.AttackAnimationKey);

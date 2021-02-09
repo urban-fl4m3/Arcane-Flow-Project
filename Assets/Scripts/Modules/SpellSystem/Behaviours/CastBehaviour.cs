@@ -12,9 +12,9 @@ namespace Modules.SpellSystem.Behaviours
     [CreateAssetMenu(fileName = "New Cast Behaviour", menuName = "Behaviours/Cast")]
     public class CastBehaviour : TickBehaviour
     {
-        private SpellData _spellData;
         private TransformData _ownerTransformData;
         private AnimationEventHandlerData _animationEventHandlerData;
+        private SpellData _spellData;
 
         private ICaster _caster;
         

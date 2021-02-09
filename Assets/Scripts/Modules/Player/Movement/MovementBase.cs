@@ -12,9 +12,9 @@ namespace Modules.Player.Movement
     {
         protected readonly TransformData _transformData;
         protected readonly MovementData _movementData;
+        protected readonly RotationData _rotationData;
         private readonly KeyBindingsData _bindingsData;
         private readonly AnimationData _animationData;
-        private readonly RotationData _rotationData;
         
         private readonly InputAxis _inputAxisDelegate;
 
@@ -55,7 +55,7 @@ namespace Modules.Player.Movement
             
         }
 
-        protected abstract void MovementCalculation(float speed);
+        protected abstract void MovementCalculation(Vector3 direction, float speed);
 
         protected void InternalMovement()
         {
@@ -84,12 +84,20 @@ namespace Modules.Player.Movement
             
                 if (!_animationData.ApplyRootMotion)
                 {
-                    MovementCalculation(_movementData.MovementSpeed);
+                    var direction = GetDirection(horizontalMovement, verticalMovement);
+                    MovementCalculation(direction, _movementData.MovementSpeed);
                 }
             }
             
             var movement = Mathf.Abs(horizontalMovement) + Mathf.Abs(verticalMovement);
             _animationData.Component.SetFloat(_bindingsData.HorizontalKeyAxis, movement);
+        }
+
+        private Vector3 GetDirection(float horizontalDirection, float verticalDirection)
+        {
+            return _rotationData.ApplyMovementRotation && _rotationData.SyncRotationWithMovement
+                ? _transformData.Component.forward
+                : new Vector3(horizontalDirection, 0, verticalDirection);
         }
 
         private void MovementRotate(float horizontal, float vertical)
@@ -98,7 +106,7 @@ namespace Modules.Player.Movement
             var atanAngle = Mathf.Atan2(horizontal, vertical);
             var angle = atanAngle / Mathf.PI * halfRound;
             var rotation = Quaternion.AngleAxis(angle, Vector3.up);
-            rotation = Quaternion.Slerp(_transformData.Component.rotation, rotation, _rotationData.RotationFade);
+            rotation = Quaternion.Slerp(_transformData.Component.rotation, rotation, _rotationData.RotationSmooth);
             _transformData.Component.rotation = rotation;
         }
         
