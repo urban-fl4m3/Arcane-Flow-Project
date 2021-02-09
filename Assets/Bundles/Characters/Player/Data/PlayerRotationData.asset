@@ -16,3 +16,5 @@ MonoBehaviour:
   _rotationFade: 0.9
   _applyMovementRotation: 1
   _syncRotationWithMovement: 0
+  _lookAtMouseCursor:
+    _value: 0

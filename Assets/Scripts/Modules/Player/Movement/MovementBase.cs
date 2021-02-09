@@ -62,12 +62,9 @@ namespace Modules.Player.Movement
             var horizontalMovement = _inputAxisDelegate(_bindingsData.HorizontalKeyAxis);
             var verticalMovement = _inputAxisDelegate(_bindingsData.VerticalKeyAxis);
             
-            var isMoving = !Mathf.Approximately(horizontalMovement, 0)
-                           || !Mathf.Approximately(verticalMovement, 0);
+            var inputPressed = horizontalMovement != 0 || verticalMovement != 0;
             
-            _animationData.Component.SetBool(_animationData.MovingAnimationKey, isMoving);
-            
-            if (!isMoving)
+            if (!inputPressed)
             {
                 var fade = _movementData.MovementFade;
                 horizontalMovement = FadeAxisValue(_bindingsData.HorizontalKeyAxis, fade);
@@ -79,10 +76,10 @@ namespace Modules.Player.Movement
             {
                 if (_rotationData.ApplyMovementRotation)
                 {
-                    MovementRotate(horizontalMovement, verticalMovement);
+                    MovementRotate(horizontalMovement, verticalMovement, _rotationData.RotationSmooth);
                 }
             
-                if (!_animationData.ApplyRootMotion)
+                if (!_animationData.ApplyRootMotion.Value)
                 {
                     var direction = GetDirection(horizontalMovement, verticalMovement);
                     MovementCalculation(direction, _movementData.MovementSpeed);
@@ -90,6 +87,8 @@ namespace Modules.Player.Movement
             }
             
             var movement = Mathf.Abs(horizontalMovement) + Mathf.Abs(verticalMovement);
+            
+            _animationData.Component.SetBool(_animationData.MovingAnimationKey, movement > 0);
             _animationData.Component.SetFloat(_bindingsData.HorizontalKeyAxis, movement);
         }
 
@@ -100,13 +99,13 @@ namespace Modules.Player.Movement
                 : new Vector3(horizontalDirection, 0, verticalDirection);
         }
 
-        private void MovementRotate(float horizontal, float vertical)
+        private void MovementRotate(float horizontal, float vertical, float smooth)
         {
             const float halfRound = 180;
             var atanAngle = Mathf.Atan2(horizontal, vertical);
             var angle = atanAngle / Mathf.PI * halfRound;
             var rotation = Quaternion.AngleAxis(angle, Vector3.up);
-            rotation = Quaternion.Slerp(_transformData.Component.rotation, rotation, _rotationData.RotationSmooth);
+            rotation = Quaternion.Slerp(_transformData.Component.rotation, rotation, smooth);
             _transformData.Component.rotation = rotation;
         }
         

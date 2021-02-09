@@ -15,5 +15,5 @@ MonoBehaviour:
   _smoothInput: 0
   _canMove: 1
   _moveWithPhysics: 1
-  _movementSpeed: 150
-  _movementFade: 0.01
+  _movementSpeed: 200
+  _movementFade: 0.2

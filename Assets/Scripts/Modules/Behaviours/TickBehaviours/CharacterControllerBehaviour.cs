@@ -59,16 +59,18 @@ namespace Modules.Behaviours.TickBehaviours
 
         private void AttackAnimationStart(object sender, EventArgs e)
         {
-            _movement.SlowDown(0.5f);
+            _movement.SlowDown(_movementData.MovementFade);
             _rotationData.ApplyMovementRotation = false;
             _rotationData.LookAtMouseCursor.Value = true;
+            _animationData.ApplyRootMotion.Value = false;
         }
 
         private void AttackAnimationEnd(object sender, EventArgs e)
         {
-            _movement.SpeedUp(0.5f);
+            _movement.SpeedUp(_movementData.MovementFade);
             _rotationData.ApplyMovementRotation = true;
             _rotationData.LookAtMouseCursor.Value = false;
+            _animationData.ApplyRootMotion.ToDefault();
         }
         
         

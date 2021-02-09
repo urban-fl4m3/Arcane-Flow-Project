@@ -1,4 +1,5 @@
 ﻿using Modules.Actors;
+using Modules.Common;
 using UnityEngine;
 
 namespace Modules.Data.Animation
@@ -8,12 +9,12 @@ namespace Modules.Data.Animation
     {
         [SerializeField] private string _movingAnimationKey;
         [SerializeField] private string _attackAnimationKey;
-        [SerializeField] private bool applyRootMotion;
+        [SerializeField] private DynamicBool applyRootMotion;
 
         public Animator Component { get; private set; }
         public string MovingAnimationKey => _movingAnimationKey;
         public string AttackAnimationKey => _attackAnimationKey;
-        public bool ApplyRootMotion => applyRootMotion;
+        public DynamicBool ApplyRootMotion => applyRootMotion;
 
         protected override void OnInitialize(IActor owner)
         {
