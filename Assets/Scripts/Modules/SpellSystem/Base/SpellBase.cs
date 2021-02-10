@@ -1,34 +1,45 @@
 ﻿using System.Collections.Generic;
 using Modules.Actors.Types;
-using Modules.SpellSystem.Configs;
 using Modules.SpellSystem.Enum;
 using Modules.SpellSystem.Inputs;
 using Modules.SpellSystem.Models;
+using Modules.SpellSystem.Presets;
 
 namespace Modules.SpellSystem.Base
 {
-    public abstract class SpellBase : ISpell
+    public abstract class SpellBase<TSpellPreset> : ISpell where TSpellPreset : ISpellPreset
     {
-        protected readonly ActorBase _actor;
+        protected TSpellPreset _preset { get; private set; }
+        protected ActorBase _actor { get; private set; }
+        
      
-        private readonly string _id;
-        private readonly SpellType _type;
-        private readonly IEnumerable<Tag> _tags;
+        private string _id;
+        private IEnumerable<Tag> _tags;
 
-        protected SpellBase(ISpellPreset preset)
+        public void Init(ISpellPreset preset)
         {
+            InitInternal((TSpellPreset)preset);    
+        }
+
+        private void InitInternal(TSpellPreset preset)
+        {
+            _preset = preset;
+            
             _id = preset.Id;
-            _type = preset.Type;
             _actor = preset.Actor;
             _tags = preset.Tags;
 
             AnimationContext = preset.AnimationContext;
+            
+            OnInitialize(preset);
         }
+
+        public abstract ISpellInput GenerateInputs();
+        protected abstract void OnInitialize(TSpellPreset preset);
         
         public string Id { get; }
-        public AnimationContext AnimationContext { get; }
+        public AnimationContext AnimationContext { get; private set; }
 
-        public abstract ISpellInput SpellInput { get; }
-        protected abstract void Cast(TransformContext context);
+        public abstract void Cast(TransformContext context);
     }
 }

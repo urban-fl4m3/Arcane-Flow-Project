@@ -1,5 +1,6 @@
 ﻿using Modules.Actors;
 using Modules.Data.KeyBindings;
+using Modules.SpellSystem.Inputs;
 using Modules.SpellSystem.Models;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ namespace Modules.SpellSystem.Behaviours
     public class PlayerCastBehaviour : CastBehaviour
     {
         private KeyBindingsData _bindingsData;
+
+        private ISpellInput _spellInput;
         
         protected override void OnInitialize(IActor owner)
         {
@@ -26,15 +29,20 @@ namespace Modules.SpellSystem.Behaviours
             var context 
                 = new TransformContext(_caster.SpawnPoint.position, _ownerTransformData.Component.forward);
             
-            var activeSpell = GetActiveSpell();
-            activeSpell.SpellInput.OnSpellPointDown(context);
-            activeSpell.SpellInput.OnSpellHolding(context);
-            activeSpell.SpellInput.OnSpellPointUp(context);
+            _spellInput.OnSpellPointDown(context);
+            _spellInput.OnSpellHolding(context);
+            _spellInput.OnSpellPointUp(context);
             
             if (Input.GetKeyDown(_bindingsData.AttackKey))
             {
                 _animationData.Component.SetTrigger(_animationData.AttackAnimationKey);
             }
+        }
+
+        protected override void OnSpellChange(int spellId)
+        {
+            base.OnSpellChange(spellId);
+            _spellInput = _activeSpell.GenerateInputs();
         }
     }
 }

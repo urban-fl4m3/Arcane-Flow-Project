@@ -1,23 +1,26 @@
-﻿using Modules.SpellSystem.Configs;
-using Modules.SpellSystem.Inputs;
+﻿using Modules.SpellSystem.Inputs;
 using Modules.SpellSystem.Models;
+using Modules.SpellSystem.Presets;
 using UnityEngine;
 
 namespace Modules.SpellSystem.Base
 {
-    public class AoeSpell : SpellBase
+    public class AoeSpell : SpellBase<AoeSpellPreset>
     {
-        public AoeSpell(ISpellPreset preset) : base(preset)
+        protected override void OnInitialize(AoeSpellPreset preset)
         {
-            SpellInput = new AreaSelectionSpellInput();
+            
         }
 
-        public override ISpellInput SpellInput { get; }
-
-        protected override void Cast(TransformContext context)
+        public override void Cast(TransformContext context)
         {
             var endPoint = context.SpawnPoint + context.Direction * 5.0f;
             var spellInstance = Object.Instantiate(_actor, endPoint, Quaternion.identity);
+        }
+        
+        public override ISpellInput GenerateInputs()
+        {
+            return new AreaSelectionSpellInput();
         }
     }
 }

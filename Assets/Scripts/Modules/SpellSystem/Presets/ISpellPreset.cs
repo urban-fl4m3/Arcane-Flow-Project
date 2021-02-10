@@ -3,7 +3,7 @@ using Modules.Actors.Types;
 using Modules.SpellSystem.Enum;
 using Modules.SpellSystem.Models;
 
-namespace Modules.SpellSystem.Configs
+namespace Modules.SpellSystem.Presets
 {
     public interface ISpellPreset
     {

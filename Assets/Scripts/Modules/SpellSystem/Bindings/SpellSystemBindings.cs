@@ -1,5 +1,4 @@
-﻿using Modules.SpellSystem.Configs;
-using Modules.SpellSystem.Providers;
+﻿using Modules.SpellSystem.Providers;
 using Zenject;
 
 namespace Modules.SpellSystem.Bindings

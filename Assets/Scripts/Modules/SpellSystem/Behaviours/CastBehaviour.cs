@@ -6,6 +6,7 @@ using Modules.Data.Animation;
 using Modules.Data.Transforms;
 using Modules.SpellSystem.Base;
 using Modules.SpellSystem.Data;
+using Modules.SpellSystem.Models;
 using UnityEngine;
 
 namespace Modules.SpellSystem.Behaviours
@@ -15,12 +16,13 @@ namespace Modules.SpellSystem.Behaviours
     public class CastBehaviour : TickBehaviour
     {
         protected AnimationData _animationData;
-        
         protected TransformData _ownerTransformData;
+
+        protected ISpell _activeSpell;
+        protected ICaster _caster;
+        
         private AnimationEventHandlerData _animationEventHandlerData;
         private SpellData _spellData;
-
-        protected ICaster _caster;
         
         protected override void OnInitialize(IActor owner)
         {
@@ -34,6 +36,8 @@ namespace Modules.SpellSystem.Behaviours
                 _caster = caster;
             }
 
+            OnSpellChange( _caster.ActiveSpell);
+            
             _animationEventHandlerData.EventHandler.Subscribe("Cast", Cast);
             
             _animationEventHandlerData.EventHandler.Subscribe("StartAttackAnimation", AttackAnimationStart);
@@ -48,21 +52,21 @@ namespace Modules.SpellSystem.Behaviours
         private void Cast(object sender, EventArgs e)
         {
             // activeSpell.Cast(context);
+            
+            var context 
+                = new TransformContext(_caster.SpawnPoint.position, _ownerTransformData.Component.forward);
+            _activeSpell.Cast(context);
         }
-
-        protected ISpell GetActiveSpell()
+        
+        protected virtual void OnSpellChange(int spellId)
         {
-            var activeSpellLocalId = _caster.ActiveSpell;
-            var activeSpellId = _caster.ListOfSpellsID[activeSpellLocalId];
-            var activeSpell = _spellData.Spells[activeSpellId];
-
-            return activeSpell;
+            var activeSpellId = _caster.ListOfSpellsID[spellId];
+            _activeSpell = _spellData.Spells[activeSpellId];
         }
 
         private void AttackAnimationStart(object sender, EventArgs e)
         {
-            var spell = GetActiveSpell();
-            _animationData.ApplyRootMotion.Value = spell.AnimationContext.ApplyRootMotion;
+            _animationData.ApplyRootMotion.Value = _activeSpell.AnimationContext.ApplyRootMotion;
         }
         
         private void AttackAnimationEnd(object sender, EventArgs e)

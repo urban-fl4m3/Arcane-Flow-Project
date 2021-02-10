@@ -117,19 +117,19 @@ PrefabInstance:
         type: 3}
       propertyPath: _components._exposedBehaviours.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: e030aa2d1a5178e4cb8a9f6484ee4df9,
+      objectReference: {fileID: 11400000, guid: 6ea8b6a6eca74494a8a723826203d0cc,
         type: 2}
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: _components._exposedBehaviours.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 6ea8b6a6eca74494a8a723826203d0cc,
+      objectReference: {fileID: 11400000, guid: 22dee8ee8f197d54e97c41d8cbd19f69,
         type: 2}
     - target: {fileID: 7684249342670152409, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}
       propertyPath: _components._exposedBehaviours.Array.data[4]
       value: 
-      objectReference: {fileID: 11400000, guid: 22dee8ee8f197d54e97c41d8cbd19f69,
+      objectReference: {fileID: 11400000, guid: e030aa2d1a5178e4cb8a9f6484ee4df9,
         type: 2}
     - target: {fileID: 7684249342670152411, guid: 69358da03c19a3944a9fb33579235009,
         type: 3}

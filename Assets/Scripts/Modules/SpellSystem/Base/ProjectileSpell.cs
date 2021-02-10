@@ -1,21 +1,19 @@
 ﻿using Modules.SpellSystem.Actors;
-using Modules.SpellSystem.Configs;
 using Modules.SpellSystem.Inputs;
 using Modules.SpellSystem.Models;
+using Modules.SpellSystem.Presets;
 using UnityEngine;
 
 namespace Modules.SpellSystem.Base
 {
-    public class PointAndClickSpell : SpellBase
+    public class ProjectileSpell : SpellBase<ProjectileSpellPreset>
     {
-        public PointAndClickSpell(ISpellPreset preset) : base(preset)
+        protected override void OnInitialize(ProjectileSpellPreset preset)
         {
-            SpellInput = new PointAndClickSpellInput();
+            
         }
 
-        public override ISpellInput SpellInput { get; }
-
-        protected override void Cast(TransformContext context)
+        public override void Cast(TransformContext context)
         {
             var spellInstance = (ProjectileActor)Object.Instantiate(_actor, context.SpawnPoint, Quaternion.identity);
             
@@ -23,6 +21,11 @@ namespace Modules.SpellSystem.Base
             {
                 spellInstance.Direction = context.Direction;
             }
+        }
+        
+        public override ISpellInput GenerateInputs()
+        {
+            return new PointAndClickSpellInput();
         }
     }
 }

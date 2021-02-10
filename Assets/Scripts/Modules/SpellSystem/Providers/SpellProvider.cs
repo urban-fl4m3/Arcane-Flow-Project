@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Modules.SpellSystem.Base;
-using Modules.SpellSystem.Configs;
 using Modules.SpellSystem.Enum;
+using Modules.SpellSystem.Presets;
 using UnityEngine;
 
 namespace Modules.SpellSystem.Providers
@@ -23,16 +23,25 @@ namespace Modules.SpellSystem.Providers
         public static ISpell CreateSpell(string ID)
         {
             var preset = _presetsDictionary[ID];
-            
+
+            ISpell spell = null;
+
             switch (preset.Type)
             {
                 case SpellType.PointAndClick:
-                    return new PointAndClickSpell(preset);
+                {
+                    spell = new ProjectileSpell();
+                    break;
+                }
                 case SpellType.AreaSelector:
-                    return new AoeSpell(preset);
+                {
+                    spell = new AoeSpell();
+                    break;
+                }
             }
 
-            return null;
+            spell?.Init(preset);
+            return spell;
         }
     }
 }
