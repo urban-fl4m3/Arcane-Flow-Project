@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Modules.Actors;
 using Modules.SpellSystem.Base;
 using Modules.SpellSystem.Enum;
 using Modules.SpellSystem.Presets;
@@ -20,7 +21,7 @@ namespace Modules.SpellSystem.Providers
             }
         }
 
-        public static ISpell CreateSpell(string ID)
+        public static ISpell CreateSpell(IActor caster, string ID)
         {
             var preset = _presetsDictionary[ID];
 
@@ -40,7 +41,7 @@ namespace Modules.SpellSystem.Providers
                 }
             }
 
-            spell?.Init(preset);
+            spell?.Init(caster, preset);
             return spell;
         }
     }

@@ -1,5 +1,4 @@
-﻿using Modules.SpellSystem.Inputs;
-using Modules.SpellSystem.Models;
+﻿using Modules.SpellSystem.Models;
 using Modules.SpellSystem.Presets;
 using UnityEngine;
 
@@ -12,15 +11,25 @@ namespace Modules.SpellSystem.Base
             
         }
 
-        public override void Cast(TransformContext context)
+        public override void RaiseSpell(TransformContext context)
         {
             var endPoint = context.SpawnPoint + context.Direction * 5.0f;
             var spellInstance = Object.Instantiate(_actor, endPoint, Quaternion.identity);
         }
-        
-        public override ISpellInput GenerateInputs()
+
+        public override void OnCastStart()
         {
-            return new AreaSelectionSpellInput();
+            
+        }
+
+        public override void OnCastContinue()
+        {
+            
+        }
+
+        public override void OnCastEnd()
+        {
+            
         }
     }
 }

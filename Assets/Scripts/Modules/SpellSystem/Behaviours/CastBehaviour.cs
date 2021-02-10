@@ -3,10 +3,8 @@ using Modules.Actors;
 using Modules.Animations.Data;
 using Modules.Behaviours.AbstractTicks;
 using Modules.Data.Animation;
-using Modules.Data.Transforms;
 using Modules.SpellSystem.Base;
 using Modules.SpellSystem.Data;
-using Modules.SpellSystem.Models;
 using UnityEngine;
 
 namespace Modules.SpellSystem.Behaviours
@@ -16,7 +14,6 @@ namespace Modules.SpellSystem.Behaviours
     public class CastBehaviour : TickBehaviour
     {
         protected AnimationData _animationData;
-        protected TransformData _ownerTransformData;
 
         protected ISpell _activeSpell;
         protected ICaster _caster;
@@ -27,7 +24,6 @@ namespace Modules.SpellSystem.Behaviours
         protected override void OnInitialize(IActor owner)
         {
             _spellData = Owner.GetData<SpellData>();
-            _ownerTransformData = Owner.GetData<TransformData>();
             _animationEventHandlerData = Owner.GetData<AnimationEventHandlerData>();
             _animationData = Owner.GetData<AnimationData>();
             
@@ -38,7 +34,6 @@ namespace Modules.SpellSystem.Behaviours
 
             OnSpellChange( _caster.ActiveSpell);
             
-            _animationEventHandlerData.EventHandler.Subscribe("Cast", Cast);
             
             _animationEventHandlerData.EventHandler.Subscribe("StartAttackAnimation", AttackAnimationStart);
             _animationEventHandlerData.EventHandler.Subscribe("EndAttackAnimation", AttackAnimationEnd);
@@ -48,17 +43,8 @@ namespace Modules.SpellSystem.Behaviours
         {
 
         }
-
-        private void Cast(object sender, EventArgs e)
-        {
-            // activeSpell.Cast(context);
-            
-            var context 
-                = new TransformContext(_caster.SpawnPoint.position, _ownerTransformData.Component.forward);
-            _activeSpell.Cast(context);
-        }
         
-        protected virtual void OnSpellChange(int spellId)
+        private void OnSpellChange(int spellId)
         {
             var activeSpellId = _caster.ListOfSpellsID[spellId];
             _activeSpell = _spellData.Spells[activeSpellId];
@@ -77,8 +63,6 @@ namespace Modules.SpellSystem.Behaviours
 
         public override void Dispose()
         {
-            _animationEventHandlerData.EventHandler.Unsubscribe("Cast", Cast);
-            
             _animationEventHandlerData.EventHandler.Unsubscribe("StartAttackAnimation", AttackAnimationStart);
             _animationEventHandlerData.EventHandler.Unsubscribe("EndAttackAnimation", AttackAnimationEnd);
             base.Dispose();

@@ -16,4 +16,4 @@ MonoBehaviour:
   _canMove: 1
   _moveWithPhysics: 1
   _movementSpeed: 160
-  _movementFade: 0.48
+  _movementFade: 0.2

@@ -22,7 +22,7 @@ namespace Modules.SpellSystem.Data
 
             foreach (var spellID in _caster.ListOfSpellsID)
             {
-                _spells.Add(spellID, SpellProvider.CreateSpell(spellID));
+                _spells.Add(spellID, SpellProvider.CreateSpell(Owner, spellID));
             }
         }
 

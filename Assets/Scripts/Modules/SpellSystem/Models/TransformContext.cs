@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Modules.SpellSystem.Models
 {
+    [Serializable]
     public class TransformContext
     {
         public TransformContext(Vector3 spawnPoint, Vector3 direction)
