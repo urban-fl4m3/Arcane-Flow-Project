@@ -2,6 +2,7 @@
 using Modules.Actors.Types;
 using Modules.SpellSystem.Configs;
 using Modules.SpellSystem.Enum;
+using Modules.SpellSystem.Inputs;
 using Modules.SpellSystem.Models;
 
 namespace Modules.SpellSystem.Base
@@ -27,6 +28,7 @@ namespace Modules.SpellSystem.Base
         public string Id { get; }
         public AnimationContext AnimationContext { get; }
 
-        public abstract void Cast(TransformContext context);
+        public abstract ISpellInput SpellInput { get; }
+        protected abstract void Cast(TransformContext context);
     }
 }

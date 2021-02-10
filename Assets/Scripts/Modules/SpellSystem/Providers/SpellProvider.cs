@@ -26,9 +26,9 @@ namespace Modules.SpellSystem.Providers
             
             switch (preset.Type)
             {
-                case SpellType.Projectile:
-                    return new ProjectileSpell(preset);
-                case SpellType.AOE:
+                case SpellType.PointAndClick:
+                    return new PointAndClickSpell(preset);
+                case SpellType.AreaSelector:
                     return new AoeSpell(preset);
             }
 

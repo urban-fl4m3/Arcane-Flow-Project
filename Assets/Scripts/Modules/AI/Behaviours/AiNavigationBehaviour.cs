@@ -1,6 +1,5 @@
 ﻿using Modules.Actors;
 using Modules.AI.Data;
-using Modules.Behaviours;
 using Modules.Behaviours.AbstractTicks;
 using Modules.Data.Animation;
 using Modules.Data.Transforms;
@@ -9,13 +8,14 @@ using UnityEngine.AI;
 
 namespace Modules.AI.Behaviours
 {
-    [CreateAssetMenu(fileName = "Ai Navigation Behaviour", menuName = "Behaviours/Ai Navgation")]
+    [CreateAssetMenu(fileName = "Ai Navigation Behaviour", menuName = "Behaviours/Ai Navigation")]
     public class AiNavigationBehaviour : TickBehaviour
     {
-        private TransformData _transformData;
-        private TransformData _followingTransformData;
         private AnimationData _animationData;
         private AiNavigationData _aiNavigationData;
+        
+        private TransformData _transformData;
+        private TransformData _followingTransformData;
         
         private NavMeshAgent _navMeshAgent;
 
@@ -37,13 +37,11 @@ namespace Modules.AI.Behaviours
             _navMeshAgent.SetDestination(_followingTransformData.Component.position);
             _navMeshAgent.nextPosition = _transformData.Component.position;
 
-            var reachedTarget = _navMeshAgent.remainingDistance < _aiNavigationData.ReachDistance;
+            var remainingDistance = _navMeshAgent.remainingDistance;
+            _aiNavigationData.DistanceToTarget = remainingDistance;
+            
+            var reachedTarget = remainingDistance < _aiNavigationData.ReachDistance;
             _animationData.Component.SetBool(_animationData.MovingAnimationKey, !reachedTarget);
-
-            if (reachedTarget)
-            {
-                _animationData.Component.SetTrigger(_animationData.AttackAnimationKey);
-            }
         }
 
         private void HandleFollowingActorChanged(object sender, IActor actor)

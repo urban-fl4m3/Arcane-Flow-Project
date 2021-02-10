@@ -1,11 +1,12 @@
-﻿using Modules.SpellSystem.Models;
+﻿using Modules.SpellSystem.Inputs;
+using Modules.SpellSystem.Models;
 
 namespace Modules.SpellSystem.Base
 {
     public interface ISpell
     {
         string Id { get; }
-        void Cast(TransformContext context);
+        ISpellInput SpellInput { get; }
         
         AnimationContext AnimationContext { get; }
     }

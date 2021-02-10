@@ -3,7 +3,7 @@
     public enum SpellType
     {
         None = 0,
-        Projectile = 1,
-        AOE = 2,
+        PointAndClick = 1,
+        AreaSelector = 2,
     }
 }

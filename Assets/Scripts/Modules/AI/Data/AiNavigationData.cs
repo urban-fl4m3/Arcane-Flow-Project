@@ -10,11 +10,6 @@ namespace Modules.AI.Data
     public class AiNavigationData : BaseData
     {
         [SerializeField] private float _reachDistance;
-        
-        public DynamicActor Player { get; private set; }
-        public NavMeshAgent NavMeshAgent { get; private set; }
-
-        public float ReachDistance => _reachDistance;
 
         protected override void OnInitialize(IActor owner)
         {
@@ -26,5 +21,11 @@ namespace Modules.AI.Data
         {
             Player.Value = actor;
         }
+        
+        public float DistanceToTarget { get; set; }
+        public DynamicActor Player { get; private set; }
+        public NavMeshAgent NavMeshAgent { get; private set; }
+
+        public float ReachDistance => _reachDistance;
     }
 }

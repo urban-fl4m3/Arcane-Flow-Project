@@ -1,7 +1,11 @@
-﻿namespace Modules.SpellSystem.Inputs
+﻿using Modules.SpellSystem.Models;
+
+namespace Modules.SpellSystem.Inputs
 {
-    public class ISpellInput
+    public interface ISpellInput
     {
-        
+        void OnSpellPointDown(TransformContext context);
+        void OnSpellHolding(TransformContext context);
+        void OnSpellPointUp(TransformContext context);
     }
 }

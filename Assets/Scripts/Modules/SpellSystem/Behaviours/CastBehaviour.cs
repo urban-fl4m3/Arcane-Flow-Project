@@ -6,7 +6,6 @@ using Modules.Data.Animation;
 using Modules.Data.Transforms;
 using Modules.SpellSystem.Base;
 using Modules.SpellSystem.Data;
-using Modules.SpellSystem.Models;
 using UnityEngine;
 
 namespace Modules.SpellSystem.Behaviours
@@ -17,11 +16,11 @@ namespace Modules.SpellSystem.Behaviours
     {
         protected AnimationData _animationData;
         
-        private TransformData _ownerTransformData;
+        protected TransformData _ownerTransformData;
         private AnimationEventHandlerData _animationEventHandlerData;
         private SpellData _spellData;
 
-        private ICaster _caster;
+        protected ICaster _caster;
         
         protected override void OnInitialize(IActor owner)
         {
@@ -43,18 +42,15 @@ namespace Modules.SpellSystem.Behaviours
 
         protected override void OnTick()
         {
-            
+
         }
 
         private void Cast(object sender, EventArgs e)
         {
-            var activeSpell = GetActiveSpell();
-            var context 
-                = new TransformContext(_caster.SpawnPoint.position, _ownerTransformData.Component.forward);
-            activeSpell.Cast(context);
+            // activeSpell.Cast(context);
         }
 
-        private ISpell GetActiveSpell()
+        protected ISpell GetActiveSpell()
         {
             var activeSpellLocalId = _caster.ActiveSpell;
             var activeSpellId = _caster.ListOfSpellsID[activeSpellLocalId];
