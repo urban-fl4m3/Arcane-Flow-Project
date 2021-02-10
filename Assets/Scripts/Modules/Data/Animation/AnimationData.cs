@@ -18,7 +18,7 @@ namespace Modules.Data.Animation
 
         protected override void OnInitialize(IActor owner)
         {
-            Component = owner.GetGameObject().GetComponent<Animator>();
+            Component = owner.Object.GetComponent<Animator>();
         }
     }
 }

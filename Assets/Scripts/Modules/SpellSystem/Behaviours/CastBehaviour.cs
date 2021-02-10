@@ -14,9 +14,7 @@ namespace Modules.SpellSystem.Behaviours
     public class CastBehaviour : TickBehaviour
     {
         protected AnimationData _animationData;
-
         protected ISpell _activeSpell;
-        protected ICaster _caster;
         
         private AnimationEventHandlerData _animationEventHandlerData;
         private SpellData _spellData;
@@ -27,12 +25,8 @@ namespace Modules.SpellSystem.Behaviours
             _animationEventHandlerData = Owner.GetData<AnimationEventHandlerData>();
             _animationData = Owner.GetData<AnimationData>();
             
-            if (owner is ICaster caster)
-            {
-                _caster = caster;
-            }
 
-            OnSpellChange( _caster.ActiveSpell);
+            OnSpellChange(_spellData.ActiveSpellId);
             
             
             _animationEventHandlerData.EventHandler.Subscribe("StartAttackAnimation", AttackAnimationStart);
@@ -46,8 +40,7 @@ namespace Modules.SpellSystem.Behaviours
         
         private void OnSpellChange(int spellId)
         {
-            var activeSpellId = _caster.ListOfSpellsID[spellId];
-            _activeSpell = _spellData.Spells[activeSpellId];
+            _activeSpell = _spellData.GetSpell(spellId);
         }
 
         private void AttackAnimationStart(object sender, EventArgs e)

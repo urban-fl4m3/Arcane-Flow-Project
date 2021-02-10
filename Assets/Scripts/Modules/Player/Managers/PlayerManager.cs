@@ -42,7 +42,7 @@ namespace Modules.Player.Managers
         public void SpawnPlayer()
         {
             _playerActor = Object.Instantiate(_playerConfig.GetActor());
-            _playerActor.Init(_tickManager, _cameraManager.GameCamera);
+            _playerActor.Init(_tickManager, _cameraManager.GameCamera.Component);
             _cameraManager.SetCameraTarget(_playerActor);
         }
 

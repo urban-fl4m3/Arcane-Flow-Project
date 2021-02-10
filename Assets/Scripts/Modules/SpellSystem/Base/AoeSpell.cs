@@ -1,12 +1,13 @@
-﻿using Modules.SpellSystem.Models;
+﻿using Modules.SpellSystem.Actors;
+using Modules.SpellSystem.Models;
 using Modules.SpellSystem.Presets;
 using UnityEngine;
 
 namespace Modules.SpellSystem.Base
 {
-    public class AoeSpell : SpellBase<AoeSpellPreset>
+    public class AoeSpell : SpellBase<AoeSpellPreset, AoeActor>
     {
-        protected override void OnInitialize(AoeSpellPreset preset)
+        protected override void OnInitialize()
         {
             
         }

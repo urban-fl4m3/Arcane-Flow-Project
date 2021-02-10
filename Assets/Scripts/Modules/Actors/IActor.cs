@@ -10,25 +10,17 @@ namespace Modules.Actors
 {
     public interface IActor
     {
-        event EventHandler OnInitializeComplete;
-
         bool Enabled { get; }
         ITickManager TickManager { get; }
         Camera Camera { get; }
+        GameObject Object { get; }
+        Actor Child { get; }
         
-        void Init(ITickManager tickManager, CameraActor mainCamera);
         void Init(ITickManager tickManager, Camera mainCamera);
-        void Init();
         void DestroyActor();
-        
-        GameObject GetGameObject();
-
-        Actor GetChild();
-
         void Stop();
         void Resume();
-
-        TBehaviour GetBehaviour<TBehaviour>() where TBehaviour : class, IBaseBehaviour;
+        
         TData GetData<TData>() where TData : class, IBaseData;
     }
 }

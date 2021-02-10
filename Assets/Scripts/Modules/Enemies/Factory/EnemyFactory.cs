@@ -35,7 +35,7 @@ namespace Modules.Enemies.Factory
             {
                 foreach (var enemy in enemyGroup.Actors)
                 {
-                    enemy.Init(_tickManager, _cameraManager.GameCamera);
+                    enemy.Init(_tickManager, _cameraManager.GameCamera.Component);
                 }
                 
                 enemyWave.Add(enemyGroup);

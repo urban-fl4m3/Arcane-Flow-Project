@@ -3,6 +3,7 @@ using Modules.Animations.Data;
 using Modules.Data.Animation;
 using Modules.Data.Transforms;
 using Modules.SpellSystem.Actors;
+using Modules.SpellSystem.Data;
 using Modules.SpellSystem.Models;
 using Modules.SpellSystem.Presets;
 using UnityEngine;
@@ -10,24 +11,26 @@ using Object = UnityEngine.Object;
 
 namespace Modules.SpellSystem.Base
 {
-    public class ProjectileSpell : SpellBase<ProjectileSpellPreset>
+    public class ProjectileSpell : SpellBase<ProjectileSpellPreset, ProjectileActor>
     {
         private AnimationData _casterAnimationData;
         private TransformData _casterTransformData;
         private AnimationEventHandlerData _casterEventHandlerData;
+        private SpellData _spellData;
         
-        protected override void OnInitialize(ProjectileSpellPreset preset)
+        protected override void OnInitialize()
         {
             _casterTransformData = _owner.GetData<TransformData>();
             _casterAnimationData = _owner.GetData<AnimationData>();
             _casterEventHandlerData = _owner.GetData<AnimationEventHandlerData>();
+            _spellData = _owner.GetData<SpellData>();
             
             _casterEventHandlerData.EventHandler.Subscribe("Cast", Cast);
         }
 
         public override void RaiseSpell(TransformContext context)
         {
-            var spellInstance = (ProjectileActor)Object.Instantiate(_actor, context.SpawnPoint, Quaternion.identity);
+            var spellInstance = Object.Instantiate(_actor, context.SpawnPoint, Quaternion.identity);
             
             if (spellInstance != null)
             {
@@ -53,9 +56,8 @@ namespace Modules.SpellSystem.Base
 
         private void Cast(object sender, EventArgs e)
         {
-            var caster = (ICaster) _owner;
             var context = new TransformContext(
-                caster.SpawnPoint.position, _casterTransformData.Component.forward);
+                _spellData.SpawnPoint.position, _casterTransformData.Component.forward);
             RaiseSpell(context);
         }
     }

@@ -13,7 +13,7 @@ namespace Modules.AI.Data
 
         protected override void OnInitialize(IActor owner)
         {
-            NavMeshAgent = owner.GetGameObject().GetComponent<NavMeshAgent>();
+            NavMeshAgent = owner.Object.GetComponent<NavMeshAgent>();
             Player = new DynamicActor();
         }
 

@@ -11,7 +11,7 @@ namespace Modules.Animations.Data
         
         protected override void OnInitialize(IActor owner)
         {
-            EventHandler = owner.GetGameObject().GetComponent<AnimationEventHandler>();
+            EventHandler = owner.Object.GetComponent<AnimationEventHandler>();
         }
     }
 }

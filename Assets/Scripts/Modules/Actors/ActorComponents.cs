@@ -19,17 +19,16 @@ namespace Modules.Actors
 
         private IActor _owner;
         
-        public void SetOwner(IActor owner)
+        public void InitializeComponents(IActor owner, Action postDataInitCallback)
         {
             _owner = owner;
-        }
         
-        public void AddExposedData()
-        {
             foreach (var behaviour in _exposedBehaviours)
             {
                 InitializeBehaviourData(behaviour.Data);
             }
+            
+            postDataInitCallback?.Invoke();
 
             foreach (var behaviour in _exposedBehaviours)
             {

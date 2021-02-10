@@ -8,7 +8,7 @@ namespace Modules.Data.Transforms
     {
         protected override void OnInitialize(IActor owner)
         {
-            Component = Owner.GetGameObject().transform;
+            Component = Owner.Object.GetComponent<Transform>();
         }
 
         public Transform Component { get; private set; }

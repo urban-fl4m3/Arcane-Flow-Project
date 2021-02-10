@@ -17,7 +17,7 @@ namespace Modules.Behaviours.TickBehaviours
         
         protected override void OnInitialize(IActor owner)
         {
-            _childTransform = Owner.GetChild().GetData<TransformData>().Component;
+            _childTransform = Owner.Child.GetData<TransformData>().Component;
             _rootTransform = Owner.GetData<TransformData>().Component;
             
             var localPosition = _childTransform.localPosition;

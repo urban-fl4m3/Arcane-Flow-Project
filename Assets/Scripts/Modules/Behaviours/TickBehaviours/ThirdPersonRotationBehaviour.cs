@@ -1,6 +1,7 @@
 ﻿using Modules.Actors;
 using Modules.Behaviours.AbstractTicks;
 using Modules.Data.Transforms;
+using Modules.Render.Data;
 using UnityEngine;
 
 namespace Modules.Behaviours.TickBehaviours
@@ -12,28 +13,39 @@ namespace Modules.Behaviours.TickBehaviours
         private float _velocity;
         
         private Transform _actorTransform;
+        private Transform _cameraTransform;
         
         private TransformData _transformData;
         private RotationData _rotationData;
-        private Transform _cameraTransform;
+        private FollowActorData _followActorData;
         
         protected override void OnInitialize(IActor owner)
         {
             _cameraTransform = owner.GetData<TransformData>().Component;
+            _followActorData = owner.GetData<FollowActorData>();
+
+            _followActorData.ActorToFollow.PropertyChanged += HandleActorToFollowChanged;
+        }
+
+        private void HandleActorToFollowChanged(object sender, IActor e)
+        {
+            if (e == null)
+            {
+                DisposeTick();
+            }
+            else
+            {
+                SetActorToFollow(e);
+            }
         }
         
-        public void SetActorToFollow(IActor actor)
+        private void SetActorToFollow(IActor actor)
         {
             _transformData = actor.GetData<TransformData>();
             _rotationData = actor.GetData<RotationData>();
             _actorTransform = _transformData.Component;
             
             StartTick();
-        }
-
-        public void StopFollow()
-        {
-            DisposeTick();
         }
 
         protected override void OnTick()
@@ -58,6 +70,12 @@ namespace Modules.Behaviours.TickBehaviours
                 newRotation * Quaternion.Euler(0.0f, inCameraRotation, 0.0f), 0.1f);
 
             _actorTransform.rotation = newRotation;
+        }
+        
+        public override void Dispose()
+        {
+            base.Dispose();
+            _followActorData.ActorToFollow.PropertyChanged -= HandleActorToFollowChanged;
         }
     }
 }

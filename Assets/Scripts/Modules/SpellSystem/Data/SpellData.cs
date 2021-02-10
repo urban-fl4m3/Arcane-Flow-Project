@@ -10,27 +10,35 @@ namespace Modules.SpellSystem.Data
     [CreateAssetMenu(fileName = "Spell Data", menuName = "Data/Spells")]
     public class SpellData : BaseData
     {
+        public Transform SpawnPoint { get; private set; }
+        public int ActiveSpellId { get; private set; }
+        
         private readonly Dictionary<string, ISpell> _spells = new Dictionary<string, ISpell>();
-        private ICaster _caster;
+        private IReadOnlyList<string> _spellIds;
         
         protected override void OnInitialize(IActor owner)
         {
-            if (owner is ICaster caster)
-            {
-                _caster = caster;
-            }
+        }
 
-            foreach (var spellID in _caster.ListOfSpellsID)
+        public void AddCasterContext(IReadOnlyList<string> spellIds, Transform spawnPoint, int activeSpellId)
+        {
+            _spellIds = spellIds;
+            
+            foreach (var spellID in spellIds)
             {
                 _spells.Add(spellID, SpellProvider.CreateSpell(Owner, spellID));
             }
+
+            SpawnPoint = spawnPoint;
+            ActiveSpellId = activeSpellId;
+        }
+
+        public ISpell GetSpell(int index)
+        {
+            var spellId = _spellIds[index];
+            return _spells[spellId];
         }
 
         public IReadOnlyDictionary<string, ISpell> Spells => _spells;
-        
-        public void Add(ISpell spell)
-        {
-            _spells.Add(spell.Id, spell);
-        }
     }
 }

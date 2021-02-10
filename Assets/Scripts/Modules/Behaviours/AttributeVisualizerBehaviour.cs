@@ -27,7 +27,7 @@ namespace Modules.Behaviours
 
             if (!hasAttribute)
             {
-                Debug.LogWarning($"Actor {owner.GetGameObject().name} doesn't have the {_attribute}" +
+                Debug.LogWarning($"Actor {owner.Object.name} doesn't have the {_attribute}" +
                                  " attribute in data");
                 return;
             }

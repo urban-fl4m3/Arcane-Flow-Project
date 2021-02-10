@@ -8,7 +8,7 @@ namespace Modules.Data.Physics
     {
         protected override void OnInitialize(IActor owner)
         {
-            Component = owner.GetGameObject().GetComponent<Rigidbody>();
+            Component = owner.Object.GetComponent<Rigidbody>();
         }
         
         public Rigidbody Component { get; private set; }

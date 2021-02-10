@@ -7,10 +7,12 @@ using Modules.SpellSystem.Presets;
 
 namespace Modules.SpellSystem.Base
 {
-    public abstract class SpellBase<TSpellPreset> : ISpell where TSpellPreset : ISpellPreset
+    public abstract class SpellBase<TSpellPreset, TActor> : ISpell 
+        where TSpellPreset : ISpellPreset
+        where TActor : ActorBase
     {
         protected TSpellPreset _preset { get; private set; }
-        protected ActorBase _actor { get; private set; }
+        protected TActor _actor { get; private set; }
         protected IActor _owner { get; private set; }
 
         private string _id;
@@ -25,17 +27,16 @@ namespace Modules.SpellSystem.Base
         private void InitInternal(TSpellPreset preset)
         {
             _preset = preset;
-            
             _id = preset.Id;
-            _actor = preset.Actor;
             _tags = preset.Tags;
+            _actor = (TActor)preset.Actor;
 
             AnimationContext = preset.AnimationContext;
             
-            OnInitialize(preset);
+            OnInitialize();
         }
         
-        protected abstract void OnInitialize(TSpellPreset preset);
+        protected abstract void OnInitialize();
         
         public string Id { get; }
         public AnimationContext AnimationContext { get; private set; }
