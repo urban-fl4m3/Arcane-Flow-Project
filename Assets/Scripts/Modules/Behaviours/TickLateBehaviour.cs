@@ -17,12 +17,12 @@ namespace Modules.Behaviours
             if (Enabled)
             {
                 OnTick();
-            }    
+            }
         }
-        
+
         protected abstract void OnTick();
 
-        protected void StopTick()
+        protected void DisposeTick()
         {
             Owner.TickManager.RemoveTick(this);
         }
@@ -31,7 +31,13 @@ namespace Modules.Behaviours
         {
             Owner.TickManager.AddTick(Owner, this);
         }
-        
+
+        public override void Dispose()
+        {
+            base.Dispose();
+            DisposeTick();
+        }
+
         public override void Stop()
         {
             base.Stop();
