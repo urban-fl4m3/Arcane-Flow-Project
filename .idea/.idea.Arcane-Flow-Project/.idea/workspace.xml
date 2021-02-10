@@ -21,11 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5d47f0dd-bb60-4430-9b51-7b998602c23d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Animations/RockGolemAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Animations/RockGolemAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Data/PlayerFeetIkData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Data/PlayerFeetIkData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Player_Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Player_Character.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/_Base/Animations/Mixamo_POLYGON_Guy_Naked@Running.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/_Base/Animations/Mixamo_POLYGON_Guy_Naked@Running.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Polygon/PolygonDungeon/Materials/Dungeons_Material_Characters_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Polygon/PolygonDungeon/Materials/Dungeons_Material_Characters_01.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MoveObjectChildToFirstRayCastHitBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MoveObjectChildToFirstRayCastHitBehaviour.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +81,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/BaseBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/IBaseBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MovementBehaviour.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MoveObjectChildToFirstRayCastHitBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/PlayerFollowerBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MovementBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Actors/MapActor.cs" root0="FORCE_HIGHLIGHTING" />
@@ -142,6 +141,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Data/SpellData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ProjectileSpell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MoveObjectChildToFirstRayCastHitBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -200,7 +200,7 @@
       <workItem from="1612581991782" duration="866000" />
       <workItem from="1612613275703" duration="2156000" />
       <workItem from="1612690462113" duration="1321000" />
-      <workItem from="1612694011974" duration="13033000" />
+      <workItem from="1612694011974" duration="17137000" />
     </task>
     <servers />
   </component>
@@ -269,9 +269,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="246" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612143570389" />
-    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1612468983954">
+    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1612849016537">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612468983954" />
+    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612849016537" />
   </component>
 </project>

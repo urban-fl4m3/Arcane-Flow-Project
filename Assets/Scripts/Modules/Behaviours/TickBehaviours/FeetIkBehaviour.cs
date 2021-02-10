@@ -60,14 +60,10 @@ namespace Modules.Behaviours.TickBehaviours
             var rayStart = leftLegPosition + Vector3.up * 0.3f;
 
             var rayDown = new Ray(rayStart, Vector3.down);
-            Debug.DrawLine(rayStart, leftLegPosition + Vector3.down * 0.6f);
-            float FootPlaceStateLeft0 = 0.0f;
 
             RaycastHit hit;
             if (Physics.Raycast(rayDown, out hit, 1.0f, _ikData.EnvironmentLayer))
             {
-                FootPlaceStateLeft0 = 1.0f;
-
                 newLeftLegPosition = hit.point;
             }
 
@@ -78,11 +74,8 @@ namespace Modules.Behaviours.TickBehaviours
             newRightPosition.y = _transformData.Component.position.y;
             rayStart = rightLegPosition + Vector3.up * 0.3f;
             rayDown = new Ray(rayStart, Vector3.down);
-            float FootPlaceStateRight0 = 0.0f;
             if (Physics.Raycast(rayDown, out hit, 1.0f, _ikData.EnvironmentLayer))
             {
-                FootPlaceStateRight0 = 1.0f;
-
                 newRightPosition = hit.point;
             }
 
@@ -91,13 +84,12 @@ namespace Modules.Behaviours.TickBehaviours
 
             var leftFootOffset = Math.Abs(leftLegPosition.y - _transformData.Component.position.y);
             var rightFootOffset = Mathf.Abs(rightLegPosition.y - _transformData.Component.position.y);
-            Debug.Log(rightFootOffset + " ");
 
             leftFootWeightGoal = newLeftLegPosition.y;
             rightFootWeightGoal = newRightPosition.y;
                 
-            leftFootWeightValue = Mathf.Lerp(leftFootWeightValue, leftFootWeightGoal, 0.1f);
-            rightFootWeightValue = Mathf.Lerp(rightFootWeightValue, rightFootWeightGoal, 0.1f);
+            leftFootWeightValue = Mathf.Lerp(leftFootWeightValue, leftFootWeightGoal, 0.2f);
+            rightFootWeightValue = Mathf.Lerp(rightFootWeightValue, rightFootWeightGoal, 0.2f);
 
             newLeftLegPosition.y = leftFootWeightValue;
             newRightPosition.y = rightFootWeightValue;
@@ -109,23 +101,12 @@ namespace Modules.Behaviours.TickBehaviours
             
             animator.SetIKPosition(AvatarIKGoal.RightFoot, newRightPosition + Vector3.up * rightFootOffset);
             animator.SetIKPosition(AvatarIKGoal.LeftFoot, newLeftLegPosition + Vector3.up * leftFootOffset);
-            // animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, 1.0f);
-            // animator.SetIKPosition(AvatarIKGoal.LeftFoot, leftLegPosition);
 
-
-            
-            // animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, 1.0f);
-            //
-            // animator.SetIKPosition(AvatarIKGoal.RightFoot, rightLegPosition);
 
 
             var b = animator.bodyPosition;
             var minimumLegPosition = newLeftLegPosition.y;
-            minimumLegPosition = Mathf.Min(minimumLegPosition,
-                newRightPosition.y);
-            Debug.Log(minimumLegPosition);
-
-            // Debug
+            minimumLegPosition = Mathf.Min(minimumLegPosition,newRightPosition.y);
             b.y = (minimumLegPosition + _ikData.PelvisOffset);
             animator.bodyPosition = b;
 

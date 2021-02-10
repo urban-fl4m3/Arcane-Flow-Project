@@ -13,6 +13,7 @@ namespace Modules.Behaviours.TickBehaviours
         private float _defaultOffset;
         private RaycastHit _hit;
         private Vector3 _defaultLocalPosition;
+        private float _oldOffset = 0.0f;
         
         protected override void OnInitialize(IActor owner)
         {
@@ -30,13 +31,20 @@ namespace Modules.Behaviours.TickBehaviours
         {
             var offset = _defaultOffset;
             if (Physics.SphereCast(_rootTransform.position,
-                0.1f, (_childTransform.position - _rootTransform.position).normalized,
+                0.001f, (_childTransform.position - _rootTransform.position).normalized,
                 out _hit, _defaultOffset, LayerMask.GetMask("Default")))
             {
+                // var hitObject = _hit.transform.gameObject;
+                // var meshComponent = hitObject.GetComponent<MeshRenderer>();
+                // var currColor = meshComponent.material.color;
+                // currColor.a = 0.5f;
+                // currColor = Color.black;
+                // meshComponent.material.color = currColor;
                 offset = (_hit.point - _rootTransform.position).magnitude;
             }
-            
-            _childTransform.localPosition = _defaultLocalPosition.normalized * offset;
+
+            _oldOffset = Mathf.Lerp(_oldOffset, offset, 0.3f);
+            _childTransform.localPosition = _defaultLocalPosition.normalized * _oldOffset;
         }
     }
 }
