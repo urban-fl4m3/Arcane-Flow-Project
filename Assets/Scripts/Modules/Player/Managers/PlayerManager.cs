@@ -4,6 +4,7 @@ using Modules.Player.Configs;
 using Modules.Render.Managers;
 using Modules.SpellSystem.Data;
 using Modules.Ticks.Managers;
+using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace Modules.Player.Managers

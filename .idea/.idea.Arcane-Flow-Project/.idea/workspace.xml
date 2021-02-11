@@ -21,13 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="5d47f0dd-bb60-4430-9b51-7b998602c23d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Spells/Fireball/AoeBall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Spells/Fireball/AoeBall.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/UI/Common/HealthBar/HealthBarMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/UI/Common/HealthBar/HealthBarMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Spells/AoeBall.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Spells/AoeBall.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Spells/HugeBall.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Spells/HugeBall.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Providers/SpellProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Providers/SpellProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Spell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ProjectileSpell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Spell.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ProjectileSpell.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Zenject.csproj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MoveObjectChildToFirstRayCastHitBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MoveObjectChildToFirstRayCastHitBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Common/Components.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Components.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/GameCore.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Inputs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Models.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,14 +46,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Data/SpellData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/PlayerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Enum/SpellType.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Datas/BaseData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/ProjectileActor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Main/IInstantiator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Render/Actors/CameraActor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/SpellPreset.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Datas/Animation/AnimationData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Bindings/SpellSystemBindings.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Datas/Animation/IAnimationData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Configs/ISpellPreset.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/ICameraManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/CameraManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -81,12 +79,16 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Types/ActorBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/AoeSpell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Managers/IEnemyManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickFixedBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickLateBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/BaseBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/IBaseBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MovementBehaviour.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MoveObjectChildToFirstRayCastHitBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/PlayerFollowerBehavior.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Data/IK/IkData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MovementBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Actors/MapActor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MouseRotationBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
@@ -144,6 +146,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/AoeActor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Data/SpellData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ProjectileSpell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MoveObjectChildToFirstRayCastHitBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -199,6 +203,11 @@
       <workItem from="1612043732183" duration="6059000" />
       <workItem from="1612140862613" duration="3670000" />
       <workItem from="1612155601426" duration="648000" />
+      <workItem from="1612581991782" duration="866000" />
+      <workItem from="1612613275703" duration="2156000" />
+      <workItem from="1612690462113" duration="1321000" />
+      <workItem from="1612694011974" duration="17684000" />
+      <workItem from="1613026394631" duration="272000" />
     </task>
     <servers />
   </component>
@@ -267,9 +276,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="246" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612143570389" />
-    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1612143959070">
+    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1612849016537">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612143959070" />
+    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612849016537" />
   </component>
 </project>

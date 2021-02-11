@@ -5,6 +5,7 @@
     <e p="C:\Users\Денис\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_Arcane-Flow-Project.1932139651.00" t="ExcludeRecursive" />
     <e p="D:\Dark_genesis\Arcane-Flow-Project" t="IncludeRecursive">
       <e p="Arcane-Flow-Project.sln" t="IncludeFlat" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Plugins" t="Include">
@@ -358,6 +359,9 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Editor" t="Include">
+            <e p="RectExtensions.cs" t="Include" />
+          </e>
           <e p="Generics" t="Include">
             <e p="MemberContainer.cs" t="Include" />
             <e p="TypeContainer.cs" t="Include" />
@@ -365,6 +369,13 @@
           <e p="Modules" t="Include">
             <e p="Actors" t="Include">
               <e p="Actor.cs" t="Include" />
+              <e p="ActorComponents.cs" t="Include" />
+              <e p="Components" t="Include">
+                <e p="IkAnimationComponent.cs" t="Include" />
+              </e>
+              <e p="Editor" t="Include">
+                <e p="ActorComponentPropertyDrawer.cs" t="Include" />
+              </e>
               <e p="IActor.cs" t="Include" />
               <e p="IActorMember.cs" t="Include" />
               <e p="Types" t="Include">
@@ -393,9 +404,11 @@
               <e p="AnimationBehaviour.cs" t="Include" />
               <e p="AttributeVisualizerBehaviour.cs" t="Include" />
               <e p="BaseBehaviour.cs" t="Include" />
+              <e p="CustomBehaviour.cs" t="Include" />
               <e p="IBaseBehaviour.cs" t="Include" />
               <e p="TickBehaviour.cs" t="Include" />
               <e p="TickBehaviours" t="Include">
+                <e p="FeetIkBehaviour.cs" t="Include" />
                 <e p="LookAtActorBehaviour.cs" t="Include" />
                 <e p="MouseRotationBehaviour.cs" t="Include" />
                 <e p="MovementBehaviour.cs" t="Include" />
@@ -403,6 +416,7 @@
                 <e p="PlayerFollowerBehavior.cs" t="Include" />
                 <e p="ThirdPersonRotationBehaviour.cs" t="Include" />
               </e>
+              <e p="TickFixedBehaviour.cs" t="Include" />
               <e p="TickLateBehaviour.cs" t="Include" />
             </e>
             <e p="Commands" t="Include">
@@ -444,7 +458,7 @@
                 <e p="IManager.cs" t="Include" />
               </e>
             </e>
-            <e p="Datas" t="Include">
+            <e p="Data" t="Include">
               <e p="Animation" t="Include">
                 <e p="AnimationData.cs" t="Include" />
                 <e p="IAnimationData.cs" t="Include" />
@@ -455,6 +469,9 @@
               </e>
               <e p="BaseData.cs" t="Include" />
               <e p="IBaseData.cs" t="Include" />
+              <e p="IK" t="Include">
+                <e p="IkData.cs" t="Include" />
+              </e>
               <e p="KeyBindings" t="Include">
                 <e p="IKeyBindingsData.cs" t="Include" />
                 <e p="KeyBindingsData.cs" t="Include" />
