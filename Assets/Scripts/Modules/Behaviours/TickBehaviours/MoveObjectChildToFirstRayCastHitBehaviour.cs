@@ -34,12 +34,6 @@ namespace Modules.Behaviours.TickBehaviours
                 0.001f, (_childTransform.position - _rootTransform.position).normalized,
                 out _hit, _defaultOffset, LayerMask.GetMask("Default")))
             {
-                // var hitObject = _hit.transform.gameObject;
-                // var meshComponent = hitObject.GetComponent<MeshRenderer>();
-                // var currColor = meshComponent.material.color;
-                // currColor.a = 0.5f;
-                // currColor = Color.black;
-                // meshComponent.material.color = currColor;
                 offset = (_hit.point - _rootTransform.position).magnitude;
             }
 
