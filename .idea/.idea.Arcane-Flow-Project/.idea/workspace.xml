@@ -20,18 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d47f0dd-bb60-4430-9b51-7b998602c23d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Player_Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Player_Character.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/UI/StartMenuWindow/StartMenuWindow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/UI/StartMenuWindow/StartMenuWindow.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Data/IK/IkData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Data/IK/IkData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Configs/CameraConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Configs/CameraConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Configs/ICameraConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Configs/ICameraConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Camera/Camera3D/Camera3D.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Camera/Camera3D/Camera3D.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/PlayerFollowerBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/PlayerFollowerBehavior.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/CameraManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuScheme.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuScheme.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +75,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Types/ActorBattle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Types/ActorBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Managers/IEnemyManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Bundles/Camera/Camera2D/Behaviours/CamraPlayerFollowBehaviour.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickFixedBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/BaseBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
@@ -108,7 +101,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/Managers/TickManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/Managers/ITickManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickLateBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/PlayerFollowerBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/AnimationBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/AI/Behaviours/AiNavigationBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/EnemyRoot.cs" />
@@ -147,8 +139,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuScheme.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Configs/CameraConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/CameraManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Configs/ICameraConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/CameraManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/PlayerFollowerBehavior.cs" />
       </list>
     </option>
   </component>
@@ -277,9 +270,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="246" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612143570389" />
-    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1612849016537">
+    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1613029704944">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612849016537" />
+    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613029704944" />
   </component>
 </project>

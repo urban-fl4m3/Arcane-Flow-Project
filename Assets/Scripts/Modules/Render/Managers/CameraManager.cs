@@ -54,6 +54,7 @@ namespace Modules.Render.Managers
 
         public void LoadMainCamera()
         {
+            if (_gameCamera != null) Object.Destroy(_gameCamera);
             if (state == 0) _gameCamera = Object.Instantiate(_cameraConfig.Camera2D);
             else _gameCamera = Object.Instantiate(_cameraConfig.Camera3D);
         }
@@ -71,6 +72,7 @@ namespace Modules.Render.Managers
         public void SetState(int newState)
         {
             state = newState;
+            LoadMainCamera();
         }
     }
 }

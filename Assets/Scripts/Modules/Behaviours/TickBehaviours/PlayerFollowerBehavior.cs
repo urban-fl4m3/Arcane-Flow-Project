@@ -46,10 +46,10 @@ namespace Modules.Behaviours.TickBehaviours
         
         protected override void OnTick()
         {
-            _ownerActorTransform.position = Vector3.Slerp(
-                _ownerActorTransform.position,
-                _followingActorTransform.position,
-                _offset);
+            _ownerActorTransform.position = _followingActorTransform.position; // Vector3.Lerp(
+                // _ownerActorTransform.position,
+                // _followingActorTransform.position,
+                // _offset);
         }
 
         public override void Dispose()
