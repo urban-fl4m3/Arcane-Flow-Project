@@ -9,12 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6b5b360adc84a55a412f0f75a29465e, type: 3}
-  m_Name: PlayerRotationData
+  m_Script: {fileID: 11500000, guid: 2d9c0379e1674ebc99db5fab4bc2c7b6, type: 3}
+  m_Name: CameraTransformData
   m_EditorClassIdentifier: 
-  _rotationSmooth: 0.1
-  _rotationFade: 0.9
-  _applyMovementRotation: 1
-  _syncRotationWithMovement: 1
-  _lookAtMouseCursor:
-    _value: 0

@@ -28,8 +28,9 @@ namespace UI.Views.StartMenuWindow
             _viewManager.AddView(Window.StartMenu, new StartMenuModel(HandleStartButtonPressed));
         }
 
-        private void HandleStartButtonPressed(object sender, EventArgs e)
+        private void HandleStartButtonPressed(object sender, int state)
         {
+            _cameraManager.SetState(state);
             var worldSettings = Resources.Load<WorldSettings>("Maps/Worlds/DefaultWorld");
             var world = new World(_tickManager, _cameraManager, worldSettings);
             world.LoadMap();

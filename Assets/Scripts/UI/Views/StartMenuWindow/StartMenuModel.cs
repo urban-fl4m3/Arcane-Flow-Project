@@ -5,11 +5,11 @@ namespace UI.Views.StartMenuWindow
     public class StartMenuModel : ICustomModel
     {
         
-        public StartMenuModel(EventHandler startButtonPressed)
+        public StartMenuModel(EventHandler<int> startButtonPressed)
         {
             StartButtonPressed = startButtonPressed;
         }
 
-        public readonly EventHandler StartButtonPressed;
+        public readonly EventHandler<int> StartButtonPressed;
     }
 }

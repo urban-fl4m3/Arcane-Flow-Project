@@ -6,7 +6,8 @@ namespace Modules.Render.Configs
 {
     public interface ICameraConfig
     {
-        CameraActor MainCamera { get; }
+        CameraActor Camera2D { get; }
+        CameraActor Camera3D { get; }
         IReadOnlyList<BaseBehaviour> GameSceneBaseBehaviours { get; }
     }
 }

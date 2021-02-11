@@ -13,7 +13,7 @@ namespace Modules.Data.IK
 
         protected override void OnInitialize(IActor owner)
         {
-            Component = owner.GetGameObject().GetComponent<IkAnimationComponent>();
+            Component = owner.Object.GetComponent<IkAnimationComponent>();
         }
         
         public IkAnimationComponent Component { get; private set; }

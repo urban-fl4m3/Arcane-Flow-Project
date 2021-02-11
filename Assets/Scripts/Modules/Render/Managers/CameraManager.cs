@@ -13,6 +13,8 @@ namespace Modules.Render.Managers
 
         private CameraActor _gameCamera;
 
+        private int state = 0;
+
         public CameraActor GameCamera
         {
             get
@@ -52,7 +54,8 @@ namespace Modules.Render.Managers
 
         public void LoadMainCamera()
         {
-            _gameCamera = Object.Instantiate(_cameraConfig.MainCamera);
+            if (state == 0) _gameCamera = Object.Instantiate(_cameraConfig.Camera2D);
+            else _gameCamera = Object.Instantiate(_cameraConfig.Camera3D);
         }
 
         public void Stop()
@@ -63,6 +66,11 @@ namespace Modules.Render.Managers
         public void Resume()
         {
             GameCamera.Resume();
+        }
+
+        public void SetState(int newState)
+        {
+            state = newState;
         }
     }
 }
