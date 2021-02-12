@@ -31,11 +31,15 @@ namespace Modules.SpellSystem.Base
         public override void RaiseSpell(TransformContext context)
         {
             var spellInstance = Object.Instantiate(_actor, context.SpawnPoint, Quaternion.identity);
-            
-            if (spellInstance != null)
+
+            if (spellInstance == null)
             {
-                spellInstance.Direction = context.Direction;
+                return;
             }
+            
+            spellInstance.Init(null, null);
+            spellInstance.SetLifetime(5.0f);
+            spellInstance.Direction = context.Direction;
         }
 
         public override void OnCastStart()

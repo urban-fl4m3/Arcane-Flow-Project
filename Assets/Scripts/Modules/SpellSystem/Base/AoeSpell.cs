@@ -20,7 +20,6 @@ namespace Modules.SpellSystem.Base
         
         protected override void OnInitialize()
         {
-            
             _casterTransformData = _owner.GetData<TransformData>();
             _casterAnimationData = _owner.GetData<AnimationData>();
             _casterEventHandlerData = _owner.GetData<AnimationEventHandlerData>();
@@ -33,6 +32,11 @@ namespace Modules.SpellSystem.Base
         {
             var endPoint = context.SpawnPoint + context.Direction * 5.0f;
             var spellInstance = Object.Instantiate(_actor, endPoint, Quaternion.identity);
+
+            if (spellInstance != null)
+            {
+                spellInstance.Init(null, null);
+            }
         }
 
         public override void OnCastStart()

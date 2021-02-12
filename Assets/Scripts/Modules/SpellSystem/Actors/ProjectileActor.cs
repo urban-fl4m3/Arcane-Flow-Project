@@ -1,6 +1,5 @@
 ﻿using System;
 using Modules.Actors;
-using Modules.Actors.Types;
 using Modules.Data.Attributes;
 using Modules.SpellSystem.Enum;
 using UnityEngine;
@@ -8,30 +7,13 @@ using Attribute = Modules.Common.Attribute;
 
 namespace Modules.SpellSystem.Actors
 {
-    public class ProjectileActor : ActorBase
+    public class ProjectileActor : SpellActor
     {
-#pragma warning disable 67
-        public event EventHandler OnCastEventHandler;
-#pragma warning restore 67
-        public event EventHandler<Collision> OnHitEventHandler;
-        
-        private Tag[] _tags;
-        
-        public void Init(Tag[] tags)
-        {
-            _tags = tags;
-        }
-        
-        protected override void OnAwake()
-        {
-            
-        }
-
-        public Vector3 Direction { get; set; }
-
         [SerializeField] private float _speed;
         [SerializeField] private float _damage;
-
+        
+        public Vector3 Direction { get; set; }
+        
         private void Update()
         {
             transform.position += Direction.normalized * (_speed * Time.deltaTime);
@@ -39,7 +21,7 @@ namespace Modules.SpellSystem.Actors
 
         private void OnCollisionEnter(Collision other)
         {
-            OnHitEventHandler?.Invoke(this, other);
+            OnHit(other);
 
             var isActor = other.gameObject.TryGetComponent<Actor>(out var actor);
 
