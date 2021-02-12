@@ -73,8 +73,6 @@ namespace Modules.Maps.Managers
         {
             _map = UnityEngine.Object.Instantiate(Settings.Map);
             UnityEngine.Object.Instantiate(Settings.Lightning);
-            
-            _worldManagers.Resolve<ICameraManager>().InitThirdPersonBehaviours();
         }
 
         public void RunWorld()

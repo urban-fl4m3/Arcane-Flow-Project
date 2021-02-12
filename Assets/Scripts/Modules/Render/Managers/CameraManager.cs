@@ -13,7 +13,7 @@ namespace Modules.Render.Managers
 
         private CameraActor _gameCamera;
 
-        private int state = 0;
+        private int _state = 0;
 
         public CameraActor GameCamera
         {
@@ -39,14 +39,6 @@ namespace Modules.Render.Managers
             _gameCamera.Init(_tickManager, _gameCamera.Component);
         }
 
-        public void InitThirdPersonBehaviours()
-        {
-            foreach (var behaviour in _cameraConfig.GameSceneBaseBehaviours)
-            {
-                _gameCamera.AddBehaviour(behaviour);
-            }   
-        }
-
         public void SetCameraTarget(IActor actor)
         {
             _gameCamera.FollowActor(actor);
@@ -54,9 +46,8 @@ namespace Modules.Render.Managers
 
         public void LoadMainCamera()
         {
-            if (_gameCamera != null) Object.Destroy(_gameCamera);
-            if (state == 0) _gameCamera = Object.Instantiate(_cameraConfig.Camera2D);
-            else _gameCamera = Object.Instantiate(_cameraConfig.Camera3D);
+            if (_gameCamera != null) Object.Destroy(_gameCamera.Object);
+            _gameCamera = Object.Instantiate(_state == 0 ? _cameraConfig.Camera2D : _cameraConfig.Camera3D);
         }
 
         public void Stop()
@@ -71,7 +62,7 @@ namespace Modules.Render.Managers
 
         public void SetState(int newState)
         {
-            state = newState;
+            _state = newState;
             LoadMainCamera();
         }
     }

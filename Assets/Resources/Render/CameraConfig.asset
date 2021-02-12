@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e14cc187f54be180bda9af96dba957, type: 3}
   m_Name: CameraConfig
   m_EditorClassIdentifier: 
-  _main: {fileID: 5031521063332076175, guid: 8f0346ed915f0584b852322c8d10ec3e, type: 3}
-  _gameSceneBaseBehaviours:
-  - {fileID: 11400000, guid: 13497deeffeda854097dbdfc4900c044, type: 2}
+  _camera2D: {fileID: 5031521063332076175, guid: 8f0346ed915f0584b852322c8d10ec3e,
+    type: 3}
+  _camera3D: {fileID: 5031521063332076175, guid: 5baf755e8f687a64390e5b30c0ca9790,
+    type: 3}
+  _gameSceneBaseBehaviours: []

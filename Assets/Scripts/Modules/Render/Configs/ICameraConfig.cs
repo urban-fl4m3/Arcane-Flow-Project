@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Modules.Behaviours;
-using Modules.Render.Actors;
+﻿using Modules.Render.Actors;
 
 namespace Modules.Render.Configs
 {
@@ -8,6 +6,5 @@ namespace Modules.Render.Configs
     {
         CameraActor Camera2D { get; }
         CameraActor Camera3D { get; }
-        IReadOnlyList<BaseBehaviour> GameSceneBaseBehaviours { get; }
     }
 }
