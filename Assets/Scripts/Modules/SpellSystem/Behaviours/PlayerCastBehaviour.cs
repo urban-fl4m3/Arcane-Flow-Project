@@ -21,20 +21,30 @@ namespace Modules.SpellSystem.Behaviours
         protected override void OnTick()
         {
             base.OnTick();
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                _spellData.ActiveSpellId.Value++;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                _spellData.ActiveSpellId.Value--;
+            }
             
             if (Input.GetKeyDown(_bindingsData.AttackKey))
             {
-                _activeSpell.OnCastStart();
+                _spellData.ActiveSpell?.OnCastStart();
             }
             
             if (Input.GetKey(_bindingsData.AttackKey))
             {
-                _activeSpell.OnCastContinue();
+                _spellData.ActiveSpell?.OnCastContinue();
             }
             
             if (Input.GetKeyUp(_bindingsData.AttackKey))
             {
-                _activeSpell.OnCastEnd();
+                _spellData.ActiveSpell?.OnCastEnd();
             }
         }
     }

@@ -1,10 +1,11 @@
-﻿using Modules.Actors;
+﻿using System;
+using Modules.Actors;
 using Modules.SpellSystem.Models;
 using Modules.SpellSystem.Presets;
 
 namespace Modules.SpellSystem.Base
 {
-    public interface ISpell
+    public interface ISpell : IDisposable
     {
         string Id { get; }
         AnimationContext AnimationContext { get; }

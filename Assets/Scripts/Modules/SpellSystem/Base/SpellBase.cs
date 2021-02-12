@@ -45,5 +45,10 @@ namespace Modules.SpellSystem.Base
         public abstract void OnCastStart();
         public abstract void OnCastContinue();
         public abstract void OnCastEnd();
+
+        public virtual void Dispose()
+        {   
+            
+        }
     }
 }

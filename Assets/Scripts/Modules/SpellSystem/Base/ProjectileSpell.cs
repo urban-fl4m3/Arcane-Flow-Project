@@ -52,13 +52,17 @@ namespace Modules.SpellSystem.Base
         {
             
         }
-        
 
         private void Cast(object sender, EventArgs e)
         {
             var context = new TransformContext(
                 _spellData.SpawnPoint.position, _casterTransformData.Component.forward);
             RaiseSpell(context);
+        }
+
+        public override void Dispose()
+        {
+            _casterEventHandlerData.EventHandler.Unsubscribe("Cast", Cast);
         }
     }
 }
