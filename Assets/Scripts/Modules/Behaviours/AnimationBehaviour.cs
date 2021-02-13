@@ -24,6 +24,7 @@ namespace Modules.Behaviours
 
         private void OnRootMotionChanged(bool value)
         {
+            Debug.Log(value + "XXXX");
             _animationData.Component.applyRootMotion = value;
         }
         

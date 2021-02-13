@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d60191851cc4f659d010f1b6163fdf8, type: 3}
-  m_Name: PlayerLookAtObjectBehaviour
+  m_Script: {fileID: 11500000, guid: adeaeb978b24b4348a2fb89e3bb24364, type: 3}
+  m_Name: MovementBehaviour3D
   m_EditorClassIdentifier: 
-  _behaviourData:
-  - {fileID: 11400000, guid: 825f26b830ffcff40a631cca1b2cfdf7, type: 2}
-  - {fileID: 11400000, guid: 728cfe3a243e996458b44902a1d587b4, type: 2}
+  _behaviourData: []

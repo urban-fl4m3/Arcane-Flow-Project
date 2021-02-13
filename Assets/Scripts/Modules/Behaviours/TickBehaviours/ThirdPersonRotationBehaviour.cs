@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Modules.Behaviours.TickBehaviours
 {
     [CreateAssetMenu(fileName = "New Third Person Rotation Behaviour", menuName = "Behaviours/Third Person Rotation Behaviour")]
-    public class ThirdPersonRotationBehaviour : TickBehaviour
+    public class ThirdPersonRotationBehaviour : TickLateBehaviour
     {
         private float _rotationInMovementDirection;
         private float _velocity;

@@ -21,16 +21,19 @@
   <component name="ChangeListManager">
     <list default="true" id="5d47f0dd-bb60-4430-9b51-7b998602c23d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Zenject.csproj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Common/Components.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Components.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/GameCore.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Managers/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Managers/World.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Configs/IPlayerConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Configs/IPlayerConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Configs/PlayerConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Configs/PlayerConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/IPlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/IPlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/PlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuScheme.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuScheme.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arcane-Flow-Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Camera/Camera3D/Camera3D.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Camera/Camera3D/Camera3D.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Player3D/Animations/RockGolemAnimator.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Player3D/Animations/RockGolemAnimator.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Player3D/Behaviours/PlayerLookAtObjectBehaviour.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Player3D/Behaviours/PlayerLookAtObjectBehaviour.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Player3D/Behaviours/PlayerMovementBehaviour.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Player3D/Behaviours/PlayerMovementBehaviour.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Player3D/Player_Character3D.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/Characters/Player/Player3D/Player_Character3D.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/AnimationBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/AnimationBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/PlayerFollowerBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/PlayerFollowerBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/ThirdPersonRotationBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/ThirdPersonRotationBehaviour.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +48,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Views/GameHudWindow/GameHudView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Managers/World.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Data/SpellData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/CharacterControllerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/PlayerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Enum/SpellType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Actors/ProjectileActor.cs" root0="FORCE_HIGHLIGHTING" />
@@ -56,15 +60,19 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Render/Configs/CameraConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/ICameraManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/CameraManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Data/KeyBindings/KeyBindingsData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2F1C602E-AE0D-45C2-93FF-F3E3AEF759FA/d7/5e0823f7/SerializedProperty.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Providers/SpellProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Generics/MemberContainer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Behaviours/PlayerCastBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Behaviours/CastBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/02/34e24bd6/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Binding/Binders/Factory/PlaceholderFactoryBindingFinalizer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Data/Animation/AnimationData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/ITick.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Providers/ComponentProviders/AddToGameObjectComponentProviders/AddToGameObjectComponentProviderBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Data/Movement/MovementData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuScheme.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Configs/IAvailableEnemiesConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Configs/AvailableEnemiesConfig.cs" root0="FORCE_HIGHLIGHTING" />
@@ -87,6 +95,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickFixedBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/BaseBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MovementBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/IBaseBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MoveObjectChildToFirstRayCastHitBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/ThirdPersonRotationBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
@@ -102,14 +111,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Generics/MemberContainer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/IBaseBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Actors/Actor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Views/GameHudWindow/GameHudView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/Managers/TickManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Ticks/Managers/ITickManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickLateBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/AnimationBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/AI/Behaviours/AiNavigationBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/EnemyRoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Enemies/Factory/IEnemyFactory.cs" />
@@ -139,20 +144,24 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/Data/SpellData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/SpellSystem/ProjectileSpell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MoveObjectChildToFirstRayCastHitBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Data/IK/IkData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Configs/CameraConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Configs/ICameraConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Render/Managers/CameraManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/PlayerFollowerBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Configs/PlayerConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Configs/IPlayerConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Views/StartMenuWindow/StartMenuScheme.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/IPlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Player/Managers/PlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Maps/Managers/World.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/MovementBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Data/Animation/AnimationData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/AnimationBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/PlayerFollowerBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/ThirdPersonRotationBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Modules/Behaviours/TickBehaviours/FeetIkBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -213,7 +222,7 @@
       <workItem from="1612690462113" duration="1321000" />
       <workItem from="1612694011974" duration="17684000" />
       <workItem from="1613026394631" duration="272000" />
-      <workItem from="1613213438678" duration="339000" />
+      <workItem from="1613213438678" duration="4019000" />
     </task>
     <servers />
   </component>
@@ -282,9 +291,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="246" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612143570389" />
-    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1613213557255">
+    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1613218291215">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613213557255" />
+    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613218291215" />
   </component>
 </project>

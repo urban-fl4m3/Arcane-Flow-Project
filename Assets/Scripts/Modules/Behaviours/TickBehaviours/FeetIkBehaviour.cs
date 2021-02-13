@@ -32,6 +32,8 @@ namespace Modules.Behaviours.TickBehaviours
         private float leftFootHeightGoal = 0.0f;
         private float leftFootHeightValue = 0.0f;
 
+        private float _oldBodyPosition = 0.0f;
+
 
         protected override void OnInitialize(IActor owner)
         {
@@ -40,6 +42,7 @@ namespace Modules.Behaviours.TickBehaviours
             _ikData = owner.GetData<IkData>();
             _animationData = owner.GetData<AnimationData>();
             _transformData = owner.GetData<TransformData>();
+            _oldBodyPosition = _animationData.Component.bodyPosition.y;
 
             _ikData.Component.AnimatorIkTick += HandleAnimatorIKTick;
         }
@@ -108,7 +111,8 @@ namespace Modules.Behaviours.TickBehaviours
             var bodyPosition = animator.bodyPosition;
             var minimumLegPosition = newLeftLegPosition.y;
             minimumLegPosition = Mathf.Min(minimumLegPosition,newRightPosition.y);
-            bodyPosition.y = (minimumLegPosition + _ikData.PelvisOffset);
+            _oldBodyPosition = Mathf.Lerp(_oldBodyPosition, minimumLegPosition + _ikData.PelvisOffset, 0.3f);
+            bodyPosition.y = _oldBodyPosition;
             animator.bodyPosition = bodyPosition;
 
          

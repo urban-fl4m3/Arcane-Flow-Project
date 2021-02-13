@@ -47,11 +47,11 @@ MonoBehaviour:
   _child: {fileID: 9130956384504230548}
   _components:
     _exposedBehaviours:
-    - {fileID: 11400000, guid: bc7943a1bfe88534fabdc3f1c6dd66f1, type: 2}
-    - {fileID: 11400000, guid: f529d715ca6f1c04bba782f3e69b052c, type: 2}
-    - {fileID: 11400000, guid: d22484da020ab0d4a93f25986ee5102b, type: 2}
+    - {fileID: 11400000, guid: b7f55c5d3b1adca499800682d7c0eb29, type: 2}
     - {fileID: 11400000, guid: 7589fad546c061246b1216c52277a084, type: 2}
+    - {fileID: 11400000, guid: f529d715ca6f1c04bba782f3e69b052c, type: 2}
     - {fileID: 11400000, guid: c3800c24724e4084e86a71e81e12bdcb, type: 2}
+    - {fileID: 11400000, guid: d22484da020ab0d4a93f25986ee5102b, type: 2}
 --- !u!1 &4589702589763862820
 GameObject:
   m_ObjectHideFlags: 0

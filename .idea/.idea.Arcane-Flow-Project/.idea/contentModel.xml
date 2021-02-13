@@ -419,6 +419,7 @@
                 <e p="LookAtActorBehaviour.cs" t="Include" />
                 <e p="LookAtObjectBehaviour.cs" t="Include" />
                 <e p="MouseRotationBehaviour.cs" t="Include" />
+                <e p="MovementBehaviour.cs" t="Include" />
                 <e p="MoveObjectChildToFirstRayCastHitBehaviour.cs" t="Include" />
                 <e p="PlayerFollowerBehavior.cs" t="Include" />
                 <e p="ThirdPersonRotationBehaviour.cs" t="Include" />
