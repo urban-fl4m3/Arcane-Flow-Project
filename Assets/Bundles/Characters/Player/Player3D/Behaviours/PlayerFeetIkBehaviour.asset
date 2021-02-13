@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3939dbde45ae44e08e40252690ee63ec, type: 3}
+  m_Name: PlayerFeetIkBehaviour
+  m_EditorClassIdentifier: 
+  _behaviourData:
+  - {fileID: 11400000, guid: d5738a0ebaecbda438120440893cd37e, type: 2}
+  - {fileID: 11400000, guid: 825f26b830ffcff40a631cca1b2cfdf7, type: 2}
+  - {fileID: 11400000, guid: a62fa43ecee7d284cbe7ddd30329c5f1, type: 2}

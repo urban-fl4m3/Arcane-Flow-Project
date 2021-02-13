@@ -40,9 +40,9 @@ namespace Modules.Player.Managers
             _playerActor.Resume();
         }
 
-        public void SpawnPlayer()
+        public void SpawnPlayer(int state)
         {
-            _playerActor = Object.Instantiate(_playerConfig.GetActor());
+            _playerActor = Object.Instantiate(_playerConfig.GetActor(state));
             _playerActor.Init(_tickManager, _cameraManager.GameCamera.Component);
             _cameraManager.SetCameraTarget(_playerActor);
         }
