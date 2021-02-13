@@ -34,7 +34,7 @@ namespace UI.Views.StartMenuWindow
             var worldSettings = Resources.Load<WorldSettings>("Maps/Worlds/DefaultWorld");
             var world = new World(_tickManager, _cameraManager, worldSettings);
             world.LoadMap();
-            world.RunWorld();
+            world.RunWorld(state);
 
             CompleteBehaviour(Scheme.GameHud);
         }

@@ -440,6 +440,7 @@
               <e p="DynamicActor.cs" t="Include" />
               <e p="DynamicBool.cs" t="Include" />
               <e p="DynamicFloat.cs" t="Include" />
+              <e p="DynamicInt.cs" t="Include" />
               <e p="DynamicProperty.cs" t="Include" />
               <e p="MeshBarComponent.cs" t="Include" />
             </e>
@@ -593,6 +594,7 @@
               <e p="Actors" t="Include">
                 <e p="aoeActor.cs" t="Include" />
                 <e p="projectileActor.cs" t="Include" />
+                <e p="SpellActor.cs" t="Include" />
               </e>
               <e p="Base" t="Include">
                 <e p="AoeSpell.cs" t="Include" />
@@ -616,6 +618,7 @@
               </e>
               <e p="Models" t="Include">
                 <e p="AnimationContext.cs" t="Include" />
+                <e p="AreaSelectionContext.cs" t="Include" />
                 <e p="TransformContext.cs" t="Include" />
               </e>
               <e p="Presets" t="Include">

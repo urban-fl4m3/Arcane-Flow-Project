@@ -38,6 +38,7 @@ namespace Modules.Maps.Managers
         private readonly TypeContainer _worldManagers = new TypeContainer();
 
         private MapActor _map;
+        private int _worldState = 0;
         
         public World(ITickManager tickManager, ICameraManager cameraManager, WorldSettings settings)
         {
@@ -75,12 +76,13 @@ namespace Modules.Maps.Managers
             UnityEngine.Object.Instantiate(Settings.Lightning);
         }
 
-        public void RunWorld()
+        public void RunWorld(int state)
         {
+            _worldState = state;
             var playerManager = _worldManagers.Resolve<IPlayerManager>();
             var enemyManager = _worldManagers.Resolve<IEnemyManager>();
             
-            playerManager.SpawnPlayer();
+            playerManager.SpawnPlayer(_worldState);
             
             _map.AddPlayer(playerManager.PlayerActor);
             
@@ -104,7 +106,7 @@ namespace Modules.Maps.Managers
             enemyManager.ClearAllEnemies();
             _map.Dispose();
 
-            RunWorld();
+            RunWorld(_worldState);
             
             MapReset?.Invoke(this, EventArgs.Empty);
         }

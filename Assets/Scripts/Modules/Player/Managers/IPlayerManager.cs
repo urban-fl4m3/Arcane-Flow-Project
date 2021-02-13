@@ -7,7 +7,7 @@ namespace Modules.Player.Managers
     {
         IActor PlayerActor { get; }
         
-        void SpawnPlayer();
+        void SpawnPlayer(int state);
         void RemovePlayer();
     }
 }
