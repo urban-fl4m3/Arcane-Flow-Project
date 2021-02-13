@@ -19,8 +19,9 @@ namespace Modules.SpellSystem.Presets
         public string Id => _id;
         public IEnumerable<Tag> Tags => _tags;
         public ActorBase Actor => _actor;
+        public AnimationContext AnimationContext => _animationContext;
+        
         public virtual SpellType Type => SpellType.None;
 
-        public AnimationContext AnimationContext => _animationContext;
     }
 }
