@@ -22,30 +22,62 @@ namespace Modules.SpellSystem.Behaviours
         {
             base.OnTick();
 
+            if (_spellData.ActiveSpell == null)
+            {
+                return;
+            }
+            
+            NextSpell();
+            PreviousSpell();
+            SpellCastStart();
+            SpellCastContinue();
+            SpellCastEnd();
+            SpellCastTick();
+        }
+
+        private void NextSpell()
+        {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 _spellData.ActiveSpellId.Value++;
             }
+        }
 
+        private void PreviousSpell()
+        {
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 _spellData.ActiveSpellId.Value--;
             }
-            
+        }
+
+        private void SpellCastStart()
+        {
             if (Input.GetKeyDown(_bindingsData.AttackKey))
             {
-                _spellData.ActiveSpell?.OnCastStart();
+                _spellData.ActiveSpell.OnCastStart();
             }
-            
+        }
+
+        private void SpellCastContinue()
+        {
             if (Input.GetKey(_bindingsData.AttackKey))
             {
-                _spellData.ActiveSpell?.OnCastContinue();
+                _spellData.ActiveSpell.OnCastContinue();
             }
-            
+        }
+
+        private void SpellCastEnd()
+        {
             if (Input.GetKeyUp(_bindingsData.AttackKey))
             {
-                _spellData.ActiveSpell?.OnCastEnd();
+                _spellData.ActiveSpell.OnCastEnd();
             }
+        }
+
+        private void SpellCastTick()
+        {
+            _spellData.ActiveSpell.OnCastTick();
         }
     }
 }

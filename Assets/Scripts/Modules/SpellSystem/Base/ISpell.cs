@@ -16,5 +16,6 @@ namespace Modules.SpellSystem.Base
         void OnCastStart();
         void OnCastContinue();
         void OnCastEnd();
+        void OnCastTick();
     }
 }

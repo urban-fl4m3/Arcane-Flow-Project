@@ -11,19 +11,51 @@ namespace Modules.SpellSystem.Base
         where TSpellPreset : ISpellPreset
         where TActor : ActorBase
     {
+        public string Id { get; }
+        public AnimationContext AnimationContext { get; private set; }
+        
         protected TSpellPreset _preset { get; private set; }
         protected TActor _actor { get; private set; }
         protected IActor _owner { get; private set; }
 
         private string _id;
         private IEnumerable<Tag> _tags;
-
+        
         public void Init(IActor caster, ISpellPreset preset)
         {
             _owner = caster;
             InitInternal((TSpellPreset)preset);    
         }
+        
+        public abstract void RaiseSpell(TransformContext context);
 
+        public virtual void OnCastStart()
+        {
+            
+        }
+
+        public virtual void OnCastContinue()
+        {
+            
+        }
+
+        public virtual void OnCastEnd()
+        {
+            
+        }
+
+        public virtual void OnCastTick()
+        {
+            
+        }
+
+        public virtual void Dispose()
+        {   
+            
+        }
+
+        protected abstract void OnInitialize();
+        
         private void InitInternal(TSpellPreset preset)
         {
             _preset = preset;
@@ -34,21 +66,6 @@ namespace Modules.SpellSystem.Base
             AnimationContext = preset.AnimationContext;
             
             OnInitialize();
-        }
-        
-        protected abstract void OnInitialize();
-        
-        public string Id { get; }
-        public AnimationContext AnimationContext { get; private set; }
-
-        public abstract void RaiseSpell(TransformContext context);
-        public abstract void OnCastStart();
-        public abstract void OnCastContinue();
-        public abstract void OnCastEnd();
-
-        public virtual void Dispose()
-        {   
-            
         }
     }
 }

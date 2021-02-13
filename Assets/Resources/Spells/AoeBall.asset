@@ -17,3 +17,5 @@ MonoBehaviour:
   _actor: {fileID: 2963518513460446211, guid: 51042558d25400e40b11bf307954579b, type: 3}
   _animationContext:
     _applyRootMotion: 0
+  _selectionContext:
+    _selectionSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
